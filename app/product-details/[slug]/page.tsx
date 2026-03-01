@@ -52,7 +52,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                 <div className="blog-details-post">
                   <div className="single-blog-post single-blog">
                     <div className="blog-image">
-                      <img src={`/assets/images/blog/${content.heroImg}`} alt="" />
+                      <img src={`/assets/images/${content.heroImg}`} alt="" />
                     </div>
                     <div className="blog-content">
                       <h3 className="title">
@@ -85,50 +85,37 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                     {content.productVideos && content.productVideos.length > 0 && (
                       <div className="blog-details-text">
                         <h4 className="mb-3">
-                          <span data-lang="vi">Video sản phẩm</span>
-                          <span data-lang="en">Product videos</span>
+                          <span data-lang="vi">Chức năng & Video sản phẩm</span>
+                          <span data-lang="en">Features & product videos</span>
                         </h4>
-                        <p className="mb-3 text-muted">
-                          <span data-lang="vi">Giao diện app và video mô phỏng các chức năng giải pháp.</span>
-                          <span data-lang="en">App interface and demo videos for each feature.</span>
+                        <p className="mb-4 text-muted">
+                          <span data-lang="vi">Giao diện app và video mô phỏng từng chức năng. Xem video xong đọc mô tả bên dưới.</span>
+                          <span data-lang="en">App interface and demo video for each feature. Watch the video then read the description below.</span>
                         </p>
-                        <div className="row g-3">
-                          {content.productVideos.map((v, i) => (
-                            <div key={i} className="col-12">
-                              <p className="mb-1 fw-semibold">
-                                <span data-lang="vi">{v.labelVi}</span>
-                                <span data-lang="en">{v.labelEn}</span>
-                              </p>
-                              <video
-                                src={`/assets/videos/products/${content.slug}/${encodeURIComponent(v.file)}`}
-                                controls
-                                playsInline
-                                className="w-100 rounded"
-                                style={{ maxHeight: "400px", background: "#000" }}
-                              >
-                                Trình duyệt không hỗ trợ video.
-                              </video>
-                            </div>
-                          ))}
-                        </div>
+                        {(content.productVideos as { file: string; labelVi: string; labelEn: string }[]).map((v, i) => (
+                          <div key={i} className="mb-5">
+                            <h5 className="mb-2 fw-semibold">
+                              <span data-lang="vi">{v.labelVi}</span>
+                              <span data-lang="en">{v.labelEn}</span>
+                            </h5>
+                            <video
+                              src={`/assets/videos/products/${content.slug}/${encodeURIComponent(v.file)}`}
+                              controls
+                              playsInline
+                              className="w-100 rounded mb-3"
+                              style={{ maxHeight: "400px", background: "#000" }}
+                            >
+                              Trình duyệt không hỗ trợ video.
+                            </video>
+                            {content.applications[i] && (
+                              <div className="ps-0">
+                                <p className="mb-0">{content.applications[i].text}</p>
+                              </div>
+                            )}
+                          </div>
+                        ))}
                       </div>
                     )}
-                    <div className="blog-details-text">
-                      <h4 className="mb-3">
-                        <span data-lang="vi">Ứng dụng trong thực tế</span>
-                        <span data-lang="en">{content.applicationsTitle}</span>
-                      </h4>
-                      <p className="mb-3">
-                        <span data-lang="en">Our solutions are used in a variety of business and life scenarios. See a few examples below.</span>
-                        <span data-lang="vi">Giải pháp được ứng dụng trong nhiều lĩnh vực. Dưới đây là một số ví dụ.</span>
-                      </p>
-                      {content.applications.map((a, i) => (
-                        <div key={i} className="mb-4">
-                          <h5 className="mb-2">{a.title}</h5>
-                          <p>{a.text}</p>
-                        </div>
-                      ))}
-                    </div>
                     <div className="blog-details-text">
                       <h4 className="mb-3">
                         <span data-lang="vi">Sản phẩm và thiết bị liên quan</span>
@@ -214,28 +201,21 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                     {content.sampleVehicleInfo && content.sampleVehicleInfo.length > 0 && (
                       <div className="blog-details-text">
                         <h4 className="mb-3">
-                          <span data-lang="vi">Ví dụ thông tin chi tiết phương tiện</span>
-                          <span data-lang="en">Sample vehicle details (recognition result)</span>
+                          <span data-lang="vi">Thông tin chi tiết phương tiện</span>
+                          <span data-lang="en">Vehicle details (recognition result)</span>
                         </h4>
-                        <p className="mb-3 text-muted small">
-                          <span data-lang="vi">Khi tìm kiếm lịch sử nhận dạng, mỗi kết quả có thể xem thông tin chi tiết như sau:</span>
-                          <span data-lang="en">When searching recognition history, each result can show detailed vehicle information such as:</span>
+                        <p className="mb-3 text-muted">
+                          <span data-lang="vi">Khi tìm kiếm lịch sử nhận dạng, mỗi kết quả có thể xem các thông tin chi tiết sau:</span>
+                          <span data-lang="en">When searching recognition history, each result can show the following details:</span>
                         </p>
-                        <div className="table-responsive">
-                          <table className="table table-bordered table-sm">
-                            <tbody>
-                              {content.sampleVehicleInfo.map((f, i) => (
-                                <tr key={i}>
-                                  <td className="text-nowrap fw-semibold" style={{ width: "40%" }}>
-                                    <span data-lang="vi">{f.labelVi}</span>
-                                    <span data-lang="en">{f.labelEn}</span>
-                                  </td>
-                                  <td>{f.value || "—"}</td>
-                                </tr>
-                              ))}
-                            </tbody>
-                          </table>
-                        </div>
+                        <ul className="list-unstyled row g-2">
+                          {content.sampleVehicleInfo.map((f, i) => (
+                            <li key={i} className="col-md-6 col-lg-4">
+                              <span data-lang="vi">• {f.labelVi}</span>
+                              <span data-lang="en">• {f.labelEn}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
                     <div className="blog-quote">

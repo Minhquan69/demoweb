@@ -19,7 +19,7 @@ export default function ProductsPage() {
                   <div className="single-blog">
                     <div className="blog-image">
                       <Link href={`/product-details/${p.slug}`}>
-                        <img src={`/assets/images/blog/${p.img}`} alt="" />
+                        <img src={`/assets/images/${p.img}`} alt="" />
                       </Link>
                     </div>
                     <div className="blog-content">

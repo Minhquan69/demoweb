@@ -5,7 +5,7 @@ export const PRODUCTS = [
     titleEn: "Intelligent Video Surveillance & Threat Prediction Assistant",
     shortVi: "Giải pháp đăng kiểm (body cam): LiveView, xem lại video, xuất báo cáo, tìm kiếm lịch sử nhận dạng face/plate.",
     shortEn: "Vehicle inspection solution (body cam): LiveView, playback, export & reports, face/plate recognition history search.",
-    img: "blog-1.jpg",
+    img: "Product/dangkiem-1724071272803999041132.jpg",
   },
 ] as const;
 

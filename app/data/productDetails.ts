@@ -45,7 +45,7 @@ const INTELLIGENT_VIDEO_SURVEILLANCE: ProductDetailContent = {
   slug: "intelligent-video-surveillance",
   titleVi: "Giám sát video thông minh & Trợ lý dự đoán mối đe dọa",
   titleEn: "Intelligent Video Surveillance & Threat Prediction Assistant",
-  heroImg: "blog-s-1.jpg",
+  heroImg: "Product/dangkiem-1724071272803999041132.jpg",
   whatIsTitle: "What is Intelligent Video Surveillance & Threat Prediction?",
   whatIsText:
     "Our solution combines body-worn cameras with AI-powered video analytics for vehicle inspection (đăng kiểm) and field operations. It delivers real-time LiveView of people and vehicles, instant playback, export of video and reports, and deep search over recognition history—by face, license plate, or both—with filters by date, time range, camera, and vehicle. The system helps inspectors and supervisors work smarter with accurate, traceable evidence and actionable insights.",

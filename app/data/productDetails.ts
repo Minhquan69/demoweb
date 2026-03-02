@@ -111,8 +111,8 @@ const INTELLIGENT_VIDEO_SURVEILLANCE: ProductDetailContent = {
     {
       titleVi: "Xuất video và báo cáo",
       titleEn: "Export video and reports",
-      textVi: "Xuất các đoạn video đã chọn và báo cáo kèm theo (PDF hoặc file khác) để lưu trữ, chia sẻ nội bộ hoặc nộp cơ quan. Đảm bảo tính toàn vẹn và truy xuất nguồn gốc.",
-      textEn: "Export selected clips and generate reports (e.g. PDF) for archiving, internal sharing, or submission to authorities, with full traceability.",
+      textVi: "Xuất các đoạn video đã chọn và báo cáo kèm theo (Excel hoặc video) để lưu trữ, chia sẻ nội bộ hoặc nộp cơ quan. Đảm bảo tính toàn vẹn và truy xuất nguồn gốc.",
+      textEn: "Export selected clips and generate reports (e.g. Excel or video) for archiving, internal sharing, or submission to authorities, with full traceability.",
     },
     {
       titleVi: "Tìm kiếm lịch sử nhận dạng",
@@ -193,8 +193,160 @@ const INTELLIGENT_VIDEO_SURVEILLANCE: ProductDetailContent = {
   exploreTechs: [],
 };
 
+const BODYCAM_SMART_RECORDER: ProductDetailContent = {
+  slug: "bodycam-smart-recorder",
+  titleVi: "Bodycam thông minh cho lực lượng hiện trường",
+  titleEn: "Smart Bodycam for Field Forces",
+  heroImg: "Product/bodycam1.jpg",
+  whatIsTitleVi: "Bodycam thông minh là gì?",
+  whatIsTitleEn: "What is the Smart Bodycam?",
+  whatIsTextVi:
+    "Bodycam thông minh của iVista Tech là dòng camera đeo người chuẩn công vụ, được thiết kế cho lực lượng hiện trường (cảnh sát, thanh tra, đăng kiểm, đội phản ứng nhanh...). Thiết bị hỗ trợ quay video độ phân giải cao, truyền hình ảnh thời gian thực qua 4G/LTE/Wi-Fi về trung tâm, lưu trữ an toàn trên thiết bị và server, đồng thời tích hợp AI để nhận dạng khuôn mặt, biển số và gắn kết với hồ sơ vụ việc. Hệ thống cho phép quản lý ca trực, phân quyền người dùng và truy xuất lịch sử đầy đủ, giúp minh bạch hóa tác nghiệp và nâng cao chất lượng phục vụ người dân.",
+  whatIsTextEn:
+    "iVista Tech Smart Bodycam is a duty-grade body-worn camera designed for field forces such as police, inspectors, vehicle examiners, and rapid response teams. It captures high-resolution video, streams live over 4G/LTE/Wi-Fi to the command center, stores evidence securely on-device and on the server, and integrates AI for face and license plate recognition linked to cases. The platform supports shift management, user access control, and complete history audit, improving transparency, accountability, and service quality.",
+  benefitsTitleVi: "Lợi ích chính",
+  benefitsTitleEn: "Key benefits",
+  benefits: [
+    {
+      titleVi: "Tăng tính minh bạch và bảo vệ cán bộ",
+      titleEn: "Increased transparency and officer protection",
+      textVi:
+        "Mọi tương tác giữa cán bộ và người dân được ghi lại dưới dạng video, âm thanh và vị trí. Đây là nguồn bằng chứng khách quan giúp bảo vệ cả hai bên khi có khiếu nại, tố cáo, đồng thời giảm xung đột do hiểu nhầm tại hiện trường.",
+      textEn:
+        "All interactions between officers and citizens are recorded with video, audio, and location. This provides objective evidence to protect both sides when complaints arise, and helps reduce conflicts caused by misunderstandings in the field.",
+    },
+    {
+      titleVi: "Giám sát tập trung theo thời gian thực",
+      titleEn: "Real-time centralized monitoring",
+      textVi:
+        "Trung tâm chỉ huy có thể xem trực tiếp nhiều camera đeo người trên cùng một màn hình, theo dõi vị trí từng tổ công tác, đưa ra chỉ đạo kịp thời khi có tình huống bất thường hoặc yêu cầu hỗ trợ.",
+      textEn:
+        "The command center can view multiple bodycams live on a single dashboard, track the location of each team, and provide timely instructions or backup when incidents occur.",
+    },
+    {
+      titleVi: "Chuỗi bằng chứng số liền mạch",
+      titleEn: "Seamless digital evidence chain",
+      textVi:
+        "Video, ảnh, ghi chú và metadata (thời gian, vị trí, đơn vị, ca trực) được lưu trữ đồng bộ, có nhật ký truy cập và chỉnh sửa. Điều này giúp cơ quan nhà nước dễ dàng tra cứu, tổng hợp báo cáo và đáp ứng yêu cầu thanh tra, kiểm tra.",
+      textEn:
+        "Video, images, notes, and metadata (time, location, unit, shift) are stored in a unified system with full access and modification logs. This makes it easier for public agencies to search, compile reports, and respond to audits or inspections.",
+    },
+    {
+      titleVi: "Tối ưu chi phí vận hành và mở rộng",
+      titleEn: "Optimized operational cost and scalability",
+      textVi:
+        "Hệ thống hỗ trợ triển khai theo nhiều mô hình: on-premise, cloud hoặc hybrid, dễ dàng mở rộng từ vài chục đến hàng nghìn thiết bị. Cơ quan nhà nước có thể tái sử dụng hạ tầng mạng sẵn có, giảm chi phí đầu tư ban đầu.",
+      textEn:
+        "The platform supports on-premise, cloud, or hybrid deployment models, and scales from dozens to thousands of devices. Public agencies can reuse existing network infrastructure and reduce upfront investment.",
+    },
+  ],
+  applicationsTitleVi: "Tình huống sử dụng tiêu biểu",
+  applicationsTitleEn: "Typical use cases",
+  applications: [
+    {
+      titleVi: "Tuần tra, kiểm soát của lực lượng công an",
+      titleEn: "Patrol and traffic enforcement",
+      textVi:
+        "Trang bị bodycam cho chiến sĩ công an khi tuần tra giao thông hoặc xử lý vi phạm trật tự đô thị. Hình ảnh hiện trường được ghi lại đầy đủ, giúp xử lý vi phạm minh bạch và giảm tranh chấp.",
+      textEn:
+        "Equip officers with bodycams during traffic patrol and urban order enforcement. Field footage is recorded end-to-end, leading to transparent handling of violations and fewer disputes.",
+    },
+    {
+      titleVi: "Cán bộ đăng kiểm, thanh tra chuyên ngành",
+      titleEn: "Vehicle inspection and sector inspectors",
+      textVi:
+        "Ghi lại toàn bộ quá trình kiểm tra phương tiện, hồ sơ và trao đổi với chủ xe. Dữ liệu được gắn với biển số, thời gian, địa điểm và đơn vị thực hiện, hỗ trợ hậu kiểm và thanh tra chuyên ngành.",
+      textEn:
+        "Record the entire vehicle inspection process, including documents and conversations with owners. Evidence is linked to license plates, time, location, and responsible unit, supporting post-inspection review and sector audits.",
+    },
+    {
+      titleVi: "Lực lượng phản ứng nhanh và cứu hộ",
+      titleEn: "Rapid response and rescue teams",
+      textVi:
+        "Truyền hình ảnh hiện trường theo thời gian thực về sở chỉ huy, giúp lãnh đạo đánh giá tình hình, phân bổ nguồn lực và phối hợp nhiều lực lượng trên cùng một khu vực.",
+      textEn:
+        "Stream live images from incident sites back to headquarters, allowing leaders to assess the situation, allocate resources, and coordinate multiple forces in the same area.",
+    },
+    {
+      titleVi: "Triển khai tại một số cơ quan nhà nước",
+      titleEn: "Deployment in public agencies",
+      textVi:
+        "Giải pháp bodycam đã được triển khai thí điểm tại một số cơ quan nhà nước ở Việt Nam như trung tâm đăng kiểm, đơn vị công an địa phương và lực lượng thanh tra chuyên ngành. Kết quả bước đầu cho thấy tỷ lệ khiếu nại giảm, thời gian xử lý vụ việc rút ngắn và mức độ hài lòng của người dân tăng lên.",
+      textEn:
+        "The bodycam solution has been piloted at several public agencies in Vietnam such as vehicle inspection centers, local police units, and specialized inspectorates. Early results show fewer complaints, faster case resolution, and higher citizen satisfaction.",
+    },
+  ],
+  equippedTitleVi: "Bộ giải pháp bao gồm",
+  equippedTitleEn: "What the solution includes",
+  equippedIntroVi:
+    "Bộ bodycam của iVista Tech không chỉ là phần cứng, mà là một giải pháp tổng thể từ thiết bị, phần mềm đến hạ tầng lưu trữ và quản trị người dùng.",
+  equippedIntroEn:
+    "The iVista Tech bodycam offering is not just hardware but a complete solution from devices to software, storage, and user management.",
+  equippedProducts: [
+    {
+      titleVi: "Thiết bị bodycam chuẩn công vụ",
+      titleEn: "Duty-grade bodycam device",
+      textVi:
+        "Camera đeo vai/ngực với cảm biến độ phân giải cao, góc rộng, hồng ngoại ban đêm, GPS, micro khử ồn, bộ nhớ trong và khe thẻ nhớ, pin dung lượng lớn đủ cho một ca trực.",
+      textEn:
+        "Shoulder/chest-mounted camera with high-resolution sensor, wide angle lens, night-vision IR, GPS, noise-cancelling microphone, internal storage and SD slot, and high-capacity battery for a full shift.",
+    },
+    {
+      titleVi: "Dock sạc & trạm nạp dữ liệu",
+      titleEn: "Charging & data upload dock",
+      textVi:
+        "Dock sạc nhiều khe cho phép sạc nóng và thay phiên liên tục: khi pin gần hết, thiết bị vẫn duy trì hoạt động thêm khoảng 3 phút để cán bộ hoàn tất thao tác. Mỗi bodycam sử dụng pin 500 mAh, hỗ trợ cả sạc nhanh tại chỗ lẫn gắn vào dock tập trung, và tự động đẩy dữ liệu lên server ngay khi có kết nối internet ổn định.",
+      textEn:
+        "The multi-bay charging dock supports hot charging and continuous rotation: when the battery is low, the device can keep recording for about 3 minutes so officers can safely finish their task. Each bodycam uses a 500 mAh battery, supporting both quick top-up in the field and centralized dock charging, and automatically pushes data to the server whenever a stable internet connection is available.",
+    },
+    {
+      titleVi: "Phần mềm quản lý & cổng xem lại",
+      titleEn: "Management software & review portal",
+      textVi:
+        "Giao diện web cho phép xem lại, tìm kiếm và chia sẻ video theo thời gian, đơn vị, người dùng hoặc loại vụ việc; phân quyền chi tiết theo vai trò (lãnh đạo, cán bộ, thanh tra...).",
+      textEn:
+        "Web interface to review, search, and share video by time, unit, user, or case type; fine-grained role-based access control for managers, officers, and auditors.",
+    },
+    {
+      titleVi: "Tích hợp AI nhận dạng và bản đồ",
+      titleEn: "AI recognition and mapping integration",
+      textVi:
+        "Kết hợp với nền tảng AI của iVista Tech để nhận dạng khuôn mặt, cơ thể người, vật thể và biển số xe, từ đó gắn kết sự kiện với đối tượng liên quan. Hệ thống cũng hiển thị tuyến tuần tra và vị trí thiết bị trên bản đồ số, giúp lãnh đạo nắm được bức tranh tổng thể tại hiện trường.",
+      textEn:
+        "Integrates with iVista Tech AI platform for face, full-body, object, and license plate recognition, linking events to the right people and assets. The system also visualizes patrol routes and device locations on a digital map, giving commanders a clear overview of what is happening in the field.",
+    },
+  ],
+  resourcesTitleVi: "Tài nguyên",
+  resourcesTitleEn: "Resources",
+  solutions: [
+    { labelVi: "Giải pháp giám sát video", labelEn: "Video surveillance solution", href: "/#services" },
+    { labelVi: "Sản phẩm bodycam", labelEn: "Bodycam product", href: "/products" },
+  ],
+  downloads: [],
+  productVideos: [],
+  sampleVehicleInfo: undefined,
+  contactTitleVi: "Bạn cần demo bodycam?",
+  contactTitleEn: "Want a bodycam demo?",
+  contactTextVi: "Đội ngũ chúng tôi sẵn sàng tổ chức demo và tư vấn triển khai cho đơn vị của bạn.",
+  contactTextEn: "Our team is ready to run demos and advise on deployment for your organization.",
+  contactCtaVi: "Đặt lịch demo",
+  contactCtaEn: "Request a demo",
+  exploreTitleVi: "Khám phá thêm các giải pháp liên quan",
+  exploreTitleEn: "Explore related solutions",
+  exploreTechs: [
+    {
+      titleVi: "Giám sát video thông minh & Trợ lý dự đoán mối đe dọa",
+      titleEn: "Intelligent Video Surveillance & Threat Prediction Assistant",
+      href: "/product-details/intelligent-video-surveillance",
+      textVi: "Kết hợp bodycam với phân tích video AI nâng cao để giám sát tập trung, tìm kiếm lịch sử và cảnh báo sớm.",
+      textEn: "Combine bodycams with advanced AI video analytics for centralized monitoring, history search, and early warnings.",
+    },
+  ],
+};
+
 export const PRODUCT_DETAILS: Record<ProductSlug, ProductDetailContent> = {
   "intelligent-video-surveillance": INTELLIGENT_VIDEO_SURVEILLANCE,
+  "bodycam-smart-recorder": BODYCAM_SMART_RECORDER,
 };
 
 export function getProductDetail(slug: string): ProductDetailContent | undefined {

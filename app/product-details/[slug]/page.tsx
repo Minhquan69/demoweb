@@ -40,7 +40,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
         <div className="container">
           <div className="blog-details-wrap">
             <div className="row">
-              <div className="col-xl-8 col-lg-8">
+              <div className="col-xl-9 col-lg-9">
                 <div className="blog-details-post">
                   <div className="single-blog-post single-blog">
                     <div className="blog-image">
@@ -80,6 +80,50 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                         </div>
                       ))}
                     </div>
+                    {slug === "bodycam-smart-recorder" && (
+                      <div className="blog-details-text">
+                        {/* Bộ ảnh demo bodycam – minh họa sản phẩm thực tế (phần trên) */}
+                        <div className="mb-4">
+                          <img
+                            src="/assets/images/Product/bodycam2.jpg"
+                            alt="Các tư thế đeo bodycam trên vai và ngực"
+                            className="img-fluid rounded mb-3"
+                          />
+                          <p className="mb-0">
+                            <span data-lang="vi">
+                              Bộ ảnh minh họa cho thấy bodycam có thể đeo linh hoạt ở vai, ngực hoặc phía trước áo, phản ánh đúng góc nhìn thực tế
+                              của cán bộ ngoài hiện trường. Thiết kế dây đai và ngàm kẹp giúp thiết bị bám chắc ngay cả khi di chuyển nhanh, đồng thời
+                              không làm vướng thao tác nghiệp vụ.
+                            </span>
+                            <span data-lang="en">
+                              The demo photos show how the bodycam can be worn flexibly on the shoulder, chest, or front of the uniform, capturing a
+                              realistic field-of-view. Straps and clips are designed to keep the device firmly in place even during rapid movement
+                              without interfering with operational tasks.
+                            </span>
+                          </p>
+                        </div>
+
+                        <div className="mb-4">
+                          <img
+                            src="/assets/images/Product/bodycam3.jpg"
+                            alt="Dock sạc và trạm nạp dữ liệu cho bodycam"
+                            className="img-fluid rounded mb-3"
+                          />
+                          <p className="mb-0">
+                            <span data-lang="vi">
+                              Dock sạc minh họa cách đơn vị có thể bố trí khu vực tiếp nhận bodycam sau ca trực: cán bộ chỉ cần gắn thiết bị vào dock,
+                              hệ thống sẽ lo phần sạc pin và đồng bộ dữ liệu lên server. Cách tổ chức này giúp quy trình bàn giao ca trực gọn gàng và
+                              chuyên nghiệp hơn.
+                            </span>
+                            <span data-lang="en">
+                              The charging dock photo demonstrates how units can set up a bodycam handover area at the end of each shift: officers
+                              simply place devices into the dock while the system handles charging and synchronizing data to the server, making shift
+                              handover cleaner and more professional.
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    )}
                     {content.productVideos && content.productVideos.length > 0 && (
                       <div className="blog-details-text">
                         <h4 className="mb-3">
@@ -142,6 +186,50 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                         </div>
                       ))}
                     </div>
+                    {slug === "bodycam-smart-recorder" && (
+                      <div className="blog-details-text">
+                        <div className="row g-4 align-items-start">
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/bodycam4.jpg"
+                              alt="Giao diện phần mềm quản lý video từ bodycam"
+                              className="img-fluid rounded mb-3"
+                            />
+                            <p className="mb-0">
+                              <span data-lang="vi">
+                                Ảnh giao diện phần mềm cho thấy cán bộ có thể xem lại, lọc và đánh dấu các đoạn video quan trọng sau ca trực. Đây là
+                                công cụ hỗ trợ quản lý, thanh tra và đào tạo nội bộ, chứ không phải là tính năng tách rời, giúp toàn bộ vòng đời dữ
+                                liệu từ hiện trường đến trung tâm trở nên liền mạch.
+                              </span>
+                              <span data-lang="en">
+                                The software interface screenshot illustrates how officers and managers can review, filter, and flag important clips
+                                after a shift. It supports supervision, auditing, and internal training as part of a unified evidence workflow rather
+                                than a standalone feature.
+                              </span>
+                            </p>
+                          </div>
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/bodycam5.jpg"
+                              alt="Triển khai bodycam tại cơ quan nhà nước"
+                              className="img-fluid rounded mb-3"
+                            />
+                            <p className="mb-0">
+                              <span data-lang="vi">
+                                Hình ảnh triển khai thực tế tại cơ quan nhà nước minh họa cách bodycam đi vào hoạt động trong môi trường công vụ. Qua
+                                các dự án thí điểm, thiết bị đã giúp giảm số lượng khiếu nại liên quan đến xử lý tại hiện trường và cung cấp tư liệu
+                                trực quan để cải tiến quy trình làm việc.
+                              </span>
+                              <span data-lang="en">
+                                A real-world deployment photo at a public agency demonstrates how bodycams operate in official settings. Pilot projects
+                                have shown fewer complaints about field handling and provided rich visual material for refining and improving work
+                                procedures.
+                              </span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     <div className="blog-details-text">
                       <h4 className="mb-3">
                         <span data-lang="vi">{content.resourcesTitleVi}</span>
@@ -149,10 +237,6 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                       </h4>
                       <div className="row">
                         <div className="col-md-6 mb-3">
-                          <h6 className="text-uppercase text-muted mb-2">
-                            <span data-lang="vi">Giải pháp</span>
-                            <span data-lang="en">Solutions</span>
-                          </h6>
                           <ul className="list-unstyled">
                             {content.solutions.map((s, i) => (
                               <li key={i}>
@@ -320,7 +404,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                   </div>
                 </div>
               </div>
-              <div className="col-xl-3 col-lg-4">
+              <div className="col-xl-3 col-lg-3 text-xl-end text-lg-end">
                 <div className="blog-sidebar">
                   <div className="sidebar-widget">
                     <div className="widget-title">

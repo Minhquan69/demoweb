@@ -11,7 +11,7 @@ export const metadata = {
 
 const layoutLinks = (
   <>
-    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon_1.png" />
     <link rel="stylesheet" href="/assets/css/plugins/all.min.css" />
     <link rel="stylesheet" href="/assets/css/plugins/flaticon.css" />
     <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css" />
@@ -80,7 +80,7 @@ export default function RootLayout({
           <div className="offcanvas offcanvas-start" id="offcanvasExample">
             <div className="offcanvas-header">
               <div className="offcanvas-logo">
-                <a href="/"><img src="/assets/images/logo-white.png" alt="" /></a>
+                <a href="/"><img src="/assets/images/logo-white_1.png" alt="" /></a>
               </div>
               <button type="button" className="close-btn" data-bs-dismiss="offcanvas"><i className="flaticon-close"></i></button>
             </div>

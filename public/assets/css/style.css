@@ -7483,6 +7483,23 @@ textarea:-ms-input-placeholder {
   transition: all 0.3s linear;
 }
 
+/* Ensure product grid thumbnails use uniform 16:9 ratio */
+.techwix-blog-grid-section .single-blog .blog-image {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.techwix-blog-grid-section .single-blog .blog-image a {
+  position: absolute;
+  inset: 0;
+}
+
+.techwix-blog-grid-section .single-blog .blog-image a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .single-blog .blog-image .top-meta {
   position: absolute;
   top: 35px;

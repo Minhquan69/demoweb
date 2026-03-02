@@ -14,6 +14,14 @@ function loadFragment(targetId, url) {
         });
 }
 
+function updateFormPlaceholders(lang) {
+    document.querySelectorAll('input[data-placeholder-vi], textarea[data-placeholder-vi]').forEach(function (el) {
+        var vi = el.getAttribute('data-placeholder-vi') || '';
+        var en = el.getAttribute('data-placeholder-en') || vi;
+        el.placeholder = lang === 'vi' ? vi : en;
+    });
+}
+
 function applyLanguage(lang) {
     if (lang !== 'vi' && lang !== 'en') {
         lang = 'vi';
@@ -34,6 +42,9 @@ function applyLanguage(lang) {
     if (searchInput) {
         searchInput.placeholder = lang === 'vi' ? 'Tìm kiếm...' : 'Search Your Keyword...';
     }
+
+    // Update form placeholders based on language
+    updateFormPlaceholders(lang);
 
     document.querySelectorAll('[data-lang]:not(.lang-btn)').forEach(function (el) {
         el.classList.add('lang-hidden');
@@ -60,6 +71,7 @@ function initLanguageSwitcher() {
         savedLang = 'vi';
     }
 
+    // Áp dụng ngay lần đầu
     applyLanguage(savedLang);
 
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
@@ -151,6 +163,17 @@ function initLayout() {
     ]).then(function () {
         initLanguageSwitcher();
         setActiveMenu();
+        // Khi Next.js chuyển trang (client-side), form có thể được render sau.
+        // Quan sát DOM để cập nhật lại placeholder cho các field mới xuất hiện.
+        try {
+            var observer = new MutationObserver(function () {
+                var currentLang = document.documentElement.getAttribute('lang') || 'vi';
+                updateFormPlaceholders(currentLang);
+            });
+            observer.observe(document.body, { childList: true, subtree: true });
+        } catch (e) {
+            // MutationObserver không khả dụng, bỏ qua.
+        }
         // Cập nhật active-menu khi click menu hoặc đổi hash
         var allLinks = document.querySelectorAll('.header-menu .main-menu a, .offcanvas-menu .main-menu a');
         allLinks.forEach(function (a) {

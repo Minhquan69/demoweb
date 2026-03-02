@@ -58,7 +58,10 @@ export default function ContactPage() {
                 <div className="contact-form">
                   <div className="contact-form-wrap">
                     <div className="heading-wrap text-center">
-                      <span className="sub-title"><span data-lang="vi">Yêu cầu báo giá</span><span data-lang="en">request a quote</span></span>
+                      <span className="sub-title">
+                        <span data-lang="vi">Liên hệ với chúng tôi</span>
+                        <span data-lang="en">Contact us</span>
+                      </span>
                       <h3 className="title"><span data-lang="vi">Chúng tôi có thể giúp gì cho bạn!</span><span data-lang="en">How May We Help You!</span></h3>
                     </div>
                     <form action="#">
@@ -99,7 +102,17 @@ export default function ContactPage() {
       </div>
       <div className="section contact-map-section">
         <div className="contact-map-wrap">
-          <iframe scrolling="no" marginHeight={0} marginWidth={0} src="https://maps.google.com/maps?q=New%20York%20University%20&t=m&z=10&output=embed&iwloc=near" title="New York University" aria-label="New York University" frameBorder={0}></iframe>
+          <iframe
+            scrolling="no"
+            marginHeight={0}
+            marginWidth={0}
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232.8015730028195!2d105.80320538518609!3d20.999644202677064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acbd2fe80e37%3A0x1cba3dc65e97045f!2zWFJYMytWNzMsIFRoYW5oIFh1w6JuIFRydW5nLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2sus!4v1772446359594!5m2!1sen!2sus"
+            title="8B Ngõ 172 Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
+            aria-label="8B Ngõ 172 Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
+            frameBorder={0}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </>

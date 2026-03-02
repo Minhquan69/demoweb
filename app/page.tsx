@@ -190,25 +190,37 @@ export default function HomePage() {
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
                   <span><span className="counter">354</span>+</span>
-                  <p><span data-lang="vi">Dự án hoàn thành</span><span data-lang="en">Completed projects</span></p>
+                  <p>
+                    <span data-lang="vi">Dự án hoàn thành</span>
+                    <span data-lang="en">Completed Projects</span>
+                  </p>
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
                   <span><span className="counter">119</span>+</span>
-                  <p><span data-lang="vi">Tự động hóa robot</span><span data-lang="en">Robotic automation</span></p>
+                  <p>
+                    <span data-lang="vi">Tự động hóa robot</span>
+                    <span data-lang="en">Robotic Automation</span>
+                  </p>
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
                   <span><span className="counter">99</span>%</span>
-                  <p><span data-lang="vi">Phân tích website</span><span data-lang="en">Website analysis</span></p>
+                  <p>
+                    <span data-lang="vi">Phân tích website</span>
+                    <span data-lang="en">Web Site Analyse</span>
+                  </p>
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
                   <span><span className="counter">321</span>+</span>
-                  <p><span data-lang="vi">Hỗ trợ khách hàng</span><span data-lang="en">Client support</span></p>
+                  <p>
+                    <span data-lang="vi">Hỗ trợ khách hàng</span>
+                    <span data-lang="en">Clients Supoort Done</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -235,7 +247,7 @@ export default function HomePage() {
                       <img src="/assets/images/ser-icon9.png" alt="" />
                     </div>
                     <div className="choose-us-content">
-                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Công nghệ <br /> hạ tầng</span><span data-lang="en">Infrastructure <br /> technology</span></Link></h3>
+                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Công nghệ hạ tầng</span><span data-lang="en">Infrastructure technology</span></Link></h3>
                       <p><span data-lang="vi">Đẩy nhanh đổi mới với đội ngũ công nghệ đẳng cấp, đồng hành cùng bạn toàn diện.</span><span data-lang="en">Accelerate innovation with world-class tech teams. We&apos;ll match you to an entire.</span></p>
                     </div>
                   </div>
@@ -257,7 +269,7 @@ export default function HomePage() {
                       <img src="/assets/images/ser-icon10.png" alt="" />
                     </div>
                     <div className="choose-us-content">
-                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Quản lý <br /> bảo mật</span><span data-lang="en">Security <br /> management</span></Link></h3>
+                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Quản lý bảo mật</span><span data-lang="en">Security management</span></Link></h3>
                       <p><span data-lang="vi">Đẩy nhanh đổi mới với đội ngũ công nghệ đẳng cấp, đồng hành cùng bạn toàn diện.</span><span data-lang="en">Accelerate innovation with world-class tech teams. We&apos;ll match you to an entire.</span></p>
                     </div>
                   </div>
@@ -268,7 +280,7 @@ export default function HomePage() {
                       <img src="/assets/images/ser-icon12.png" alt="" />
                     </div>
                     <div className="choose-us-content">
-                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Máy tính <br /> để bàn</span><span data-lang="en">Desktop <br /> computing</span></Link></h3>
+                      <h3 className="title"><Link href="/choose-us"><span data-lang="vi">Máy tính để bàn</span><span data-lang="en">Desktop computing</span></Link></h3>
                       <p><span data-lang="vi">Đẩy nhanh đổi mới với đội ngũ công nghệ đẳng cấp, đồng hành cùng bạn toàn diện.</span><span data-lang="en">Accelerate innovation with world-class tech teams. We&apos;ll match you to an entire.</span></p>
                     </div>
                   </div>

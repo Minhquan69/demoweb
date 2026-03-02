@@ -631,6 +631,33 @@ textarea:-ms-input-placeholder {
   color: #11ddf5;
 }
 
+@media only screen and (max-width: 767px) {
+  .btn {
+    font-size: 16px;
+    height: 52px;
+    line-height: 48px;
+    padding: 0 32px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .btn {
+    font-size: 14px;
+    height: 48px;
+    line-height: 44px;
+    padding: 0 24px;
+  }
+}
+
+@media only screen and (max-width: 449px) {
+  .btn {
+    font-size: 13px;
+    height: 44px;
+    line-height: 40px;
+    padding: 0 18px;
+  }
+}
+
 .btn-round {
   border-radius: 100px;
 }
@@ -734,6 +761,90 @@ textarea:-ms-input-placeholder {
 
 .header-logo a img {
   width: 150px;
+}
+
+.header-logo a p {
+  margin: 0.25em 0 0;
+  line-height: 1.35;
+}
+
+@media only screen and (max-width: 767px) {
+  .header-section-05 .header-logo a p {
+    line-height: 1.25;
+    font-size: 12px;
+    margin-top: 0.2em;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .header-section-05 .header-logo a p {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+  .header-section-05 .header-logo a img {
+    width: 100px;
+  }
+  .header-section-05 .header-meta {
+    gap: 0;
+    margin-left: 8px;
+  }
+  .header-section-05 .header-language-switcher {
+    margin-right: 6px;
+    gap: 2px;
+  }
+  .header-section-05 .header-language-switcher .lang-btn {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+  .header-section-05 .header-language-switcher span {
+    font-size: 10px;
+  }
+  .header-section-05 .header-social {
+    padding-right: 10px;
+    margin-right: 6px;
+  }
+  .header-section-05 .header-social::before {
+    height: 18px;
+  }
+  .header-section-05 .header-social ul li a {
+    font-size: 12px;
+  }
+  .header-section-05 .header-social ul li a i {
+    font-size: 12px;
+  }
+  .header-section-05 .header-social ul li + li {
+    margin-left: 4px;
+  }
+  .header-section-05 .header-search {
+    margin-left: 8px;
+    padding-left: 6px;
+  }
+  .header-section-05 .header-search .search-btn {
+    font-size: 14px;
+  }
+  .header-meta .header-search {
+    margin-left: 8px;
+    padding-left: 6px;
+  }
+}
+
+@media only screen and (max-width: 379px) {
+  .header-section-05 .header-logo a p .logo-line2 {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 339px) {
+  .header-section-05 .header-logo a p .logo-line2,
+  .header-section-05 .header-logo a p .logo-line3 {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 450px) {
+  .header-section-05 .header-logo a p {
+    font-size: 13px;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -2623,6 +2734,19 @@ textarea:-ms-input-placeholder {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
     width: 100%;
     min-width: 100%;
+    height: 52px;
+    line-height: 48px;
+    font-size: 16px;
+    padding: 0 24px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+    height: 48px;
+    line-height: 44px;
+    font-size: 14px;
+    padding: 0 20px;
   }
 }
 
@@ -5404,21 +5528,65 @@ textarea:-ms-input-placeholder {
 
 .single-counter-02 {
   margin-top: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.single-counter-02 span {
+.single-counter-02 > span {
   font-size: 50px;
-  line-height: 30px;
+  line-height: 1;
   font-family: "Barlow", sans-serif;
   font-weight: 700;
   color: #086ad8;
 }
 
 .single-counter-02 p {
-  font-size: 14px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 1.6;
   text-transform: capitalize;
   color: #ffffff;
+  margin-top: 6px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 991px) {
+  .techwix-counter-section-03 .single-counter-02 p,
+  .techwix-counter-section-04 .counter-wrap .single-counter-02 p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .techwix-counter-section-03 .single-counter-02 p,
+  .techwix-counter-section-04 .counter-wrap .single-counter-02 p {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+  .techwix-counter-section-03 .counter-wrap .mt-4 .btn,
+  .techwix-counter-section-04 .counter-wrap .mt-4 .btn {
+    font-size: 16px;
+    height: 50px;
+    line-height: 46px;
+    padding: 0 28px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .techwix-counter-section-03 .single-counter-02 p,
+  .techwix-counter-section-04 .counter-wrap .single-counter-02 p {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+  .techwix-counter-section-03 .counter-wrap .mt-4 .btn,
+  .techwix-counter-section-04 .counter-wrap .mt-4 .btn {
+    font-size: 14px;
+    height: 46px;
+    line-height: 42px;
+    padding: 0 22px;
+  }
 }
 
 .techwix-counter-section-04 {
@@ -7054,8 +7222,24 @@ textarea:-ms-input-placeholder {
 
 .choose-us-item-02 .choose-us-content .title {
   font-size: 22px;
-  line-height: 30px;
+  line-height: 1.4;
   margin-top: 20px;
+  text-align: center;
+}
+
+.choose-us-item-02 .choose-us-content .title a {
+  text-align: center;
+  display: inline-block;
+}
+
+.techwix-choose-us-section-03 .choose-us-item-02 .choose-us-img {
+  display: flex;
+  justify-content: center;
+}
+
+.techwix-choose-us-section-03 .choose-us-item-02 .choose-us-content .title,
+.techwix-choose-us-section-03 .choose-us-item-02 .choose-us-content .title a {
+  text-align: center;
 }
 
 .choose-us-item-02 .choose-us-content p {
@@ -7097,6 +7281,17 @@ textarea:-ms-input-placeholder {
 @media only screen and (max-width: 767px) {
   .techwix-choose-us-section-03 {
     padding-top: 60px;
+  }
+  .techwix-choose-us-section-03 .choose-us-item-02 {
+    text-align: center;
+  }
+  .techwix-choose-us-section-03 .choose-us-item-02 .choose-us-img {
+    display: flex;
+    justify-content: center;
+  }
+  .techwix-choose-us-section-03 .choose-us-item-02 .choose-us-content .title,
+  .techwix-choose-us-section-03 .choose-us-item-02 .choose-us-content .title a {
+    text-align: center;
   }
 }
 

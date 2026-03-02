@@ -19,8 +19,7 @@ export default function ContactPage() {
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Gọi cho chúng tôi</span><span data-lang="en">Give us a call</span></h5>
-                    <p>(+1) 400-630 123</p>
-                    <p>(+2) 500-950 456</p>
+                    <p><a href="tel:+84983835686">+84 983 835 686</a></p>
                   </div>
                 </div>
               </div>
@@ -43,7 +42,7 @@ export default function ContactPage() {
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Đến văn phòng chúng tôi</span><span data-lang="en">Visit our office</span></h5>
-                    <p>New York. 112 W 34th St caroline, USA</p>
+                    <p><span data-lang="vi">8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam</span><span data-lang="en">8B Alley 172, Nguyen Tuan Street, Thanh Xuan Trung, Thanh Xuan, Hanoi, Vietnam</span></p>
                   </div>
                 </div>
               </div>

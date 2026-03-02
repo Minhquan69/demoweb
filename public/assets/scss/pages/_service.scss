@@ -547,19 +547,32 @@
     & .service-item-04 {
         margin-top: 30px;
         & .service-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             & img {
                 transition: $transition-default;
             }
         }
 
         & .service-content {
-            
+
             & .title {
                 font-size: 24px;
-                line-height: 27px;
+                line-height: 1.4;
                 font-weight: 600;
                 margin-top: 30px;
-                padding-right: 70px;
+                padding-right: 0;
+                & a {
+                    color: inherit;
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+                    word-wrap: break-word;
+                    display: inline-block;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
             }
             & p {
                 font-size: 16px;
@@ -583,36 +596,111 @@
     @media #{$laptop-device} {
 
         & .service-item-04 {
-    
+
             & .service-content {
-                
+
                 & .title {
-                    padding-right: 30px;
+                    padding-right: 0;
                 }
             }
         }
     }
     @media #{$tablet-device} {
-        padding-bottom: 100px;
+        padding-bottom: 80px;
         & .service-wrap {
-            padding-left: 70px;
-            padding-right: 70px;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        & .service-item-04 {
+            margin-top: 24px;
+            & .service-img img {
+                max-width: 200px;
+                max-height: 116px;
+            }
+            & .service-content .title {
+                font-size: 20px;
+                line-height: 1.45;
+                margin-top: 20px;
+                padding-right: 0;
+            }
+            & .service-content p {
+                font-size: 15px;
+                line-height: 1.6;
+                margin-top: 12px;
+            }
         }
     }
     @media #{$large-mobile} {
+        padding-bottom: 60px;
         & .service-wrap {
-            padding-left: 40px;
-            padding-right: 40px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
         & .service-item-04 {
-    
-            & .service-content {
-                
-                & .title {
-                    padding-right: 0px;
-                }
+            margin-top: 20px;
+            & .service-img img {
+                max-width: 160px;
+                max-height: 94px;
             }
+            & .service-content .title {
+                font-size: 18px;
+                line-height: 1.45;
+                margin-top: 16px;
+                padding-right: 0;
+            }
+            & .service-content p {
+                font-size: 14px;
+                line-height: 1.6;
+                margin-top: 10px;
+            }
+        }
+    }
+    @media #{$small-mobile} {
+        padding-bottom: 50px;
+        & .service-wrap {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        & .service-content-wrap .row {
+            margin-left: -8px;
+            margin-right: -8px;
+        }
+        & .service-content-wrap .row > [class*="col-"] {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        & .service-item-04 {
+            margin-top: 16px;
+            & .service-img img {
+                max-width: 120px;
+                max-height: 70px;
+            }
+            & .service-content .title {
+                font-size: 16px;
+                margin-top: 12px;
+            }
+            & .service-content p {
+                font-size: 13px;
+                margin-top: 8px;
+            }
+        }
+        & .text-center.mt-5 .btn {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+    }
+    @media #{$extra-small-mobile} {
+        & .service-wrap {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+        & .section-title .title {
+            font-size: 22px;
+            line-height: 1.35;
+        }
+        & .section-title .sub-title {
+            font-size: 14px;
         }
     }
 }

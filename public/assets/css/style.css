@@ -3295,6 +3295,12 @@ textarea:-ms-input-placeholder {
   margin-top: 30px;
 }
 
+.techwix-service-section-05 .service-item-04 .service-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .techwix-service-section-05 .service-item-04 .service-img img {
   width: 240px;
   height: 140px;
@@ -3305,10 +3311,22 @@ textarea:-ms-input-placeholder {
 
 .techwix-service-section-05 .service-item-04 .service-content .title {
   font-size: 24px;
-  line-height: 27px;
+  line-height: 1.4;
   font-weight: 600;
   margin-top: 30px;
-  padding-right: 70px;
+  padding-right: 0;
+}
+
+.techwix-service-section-05 .service-item-04 .service-content .title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  word-wrap: break-word;
+  display: inline-block;
+}
+
+.techwix-service-section-05 .service-item-04 .service-content .title a:hover {
+  color: #086ad8;
 }
 
 .techwix-service-section-05 .service-item-04 .service-content p {
@@ -3323,27 +3341,182 @@ textarea:-ms-input-placeholder {
 
 @media only screen and (max-width: 1399px) {
   .techwix-service-section-05 .service-item-04 .service-content .title {
-    padding-right: 30px;
+    padding-right: 0;
   }
 }
 
 @media only screen and (max-width: 991px) {
   .techwix-service-section-05 {
-    padding-bottom: 100px;
+    padding-bottom: 80px;
   }
   .techwix-service-section-05 .service-wrap {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .techwix-service-section-05 .service-item-04 {
+    margin-top: 24px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-img img {
+    max-width: 200px;
+    max-height: 116px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-content .title {
+    font-size: 20px;
+    line-height: 1.45;
+    margin-top: 20px;
+    padding-right: 0;
+  }
+  .techwix-service-section-05 .service-item-04 .service-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 12px;
   }
 }
 
 @media only screen and (max-width: 767px) {
+  .techwix-service-section-05 {
+    padding-bottom: 60px;
+  }
   .techwix-service-section-05 .service-wrap {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .techwix-service-section-05 .service-item-04 {
+    margin-top: 20px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-img img {
+    max-width: 160px;
+    max-height: 94px;
   }
   .techwix-service-section-05 .service-item-04 .service-content .title {
-    padding-right: 0px;
+    font-size: 18px;
+    line-height: 1.45;
+    margin-top: 16px;
+    padding-right: 0;
+  }
+  .techwix-service-section-05 .service-item-04 .service-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .techwix-service-section-05 {
+    padding-bottom: 50px;
+  }
+  .techwix-service-section-05 .service-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .techwix-service-section-05 .service-content-wrap .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  .techwix-service-section-05 .service-content-wrap .row > [class*="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .techwix-service-section-05 .service-item-04 {
+    margin-top: 16px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-img img {
+    max-width: 120px;
+    max-height: 70px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-content .title {
+    font-size: 16px;
+    margin-top: 12px;
+  }
+  .techwix-service-section-05 .service-item-04 .service-content p {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+  .techwix-service-section-05 .text-center.mt-5 .btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 449px) {
+  .techwix-service-section-05 .service-wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .techwix-service-section-05 .section-title .title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+  .techwix-service-section-05 .section-title .sub-title {
+    font-size: 14px;
+  }
+}
+
+/* Product details & Products list - responsive */
+@media only screen and (max-width: 991px) {
+  .blog-details-section .blog-details-post {
+    padding-right: 0;
+  }
+  .blog-details-section .blog-sidebar {
+    margin-top: 40px;
+  }
+  .blog-details-section .blog-details-content video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .blog-details-section .blog-details-wrap .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+  .blog-details-section .blog-details-wrap .row > [class*="col-"] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .blog-details-section .single-blog-post.single-blog .blog-content .title {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+  .blog-details-section .blog-details-content .blog-details-text h4,
+  .blog-details-section .blog-details-content .blog-details-text h5 {
+    font-size: 18px;
+  }
+  .blog-details-section .blog-details-content .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .blog-details-section .blog-details-content .table {
+    font-size: 14px;
+  }
+  .techwix-blog-grid-section .single-blog .blog-content .title {
+    font-size: 20px;
+    line-height: 1.35;
+  }
+  .techwix-blog-grid-section .single-blog .blog-content .text {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .blog-details-section .single-blog-post.single-blog .blog-content .title {
+    font-size: 20px;
+  }
+  .blog-details-section .blog-details-content .blog-details-text h4 {
+    font-size: 16px;
+  }
+  .blog-details-section .blog-details-content video {
+    max-height: 260px;
+  }
+  .techwix-blog-grid-section .techwix-blog-grid-wrap .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .techwix-blog-grid-section .techwix-blog-grid-wrap .row > [class*="col-"] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .techwix-blog-grid-section .single-blog .blog-content .title {
+    font-size: 18px;
   }
 }
 

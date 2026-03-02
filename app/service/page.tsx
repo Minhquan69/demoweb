@@ -59,7 +59,7 @@ export default function ServicePage() {
                   </div>
                   <div className="cta-text">
                     <p><span data-lang="vi">Gọi cho chúng tôi để được tư vấn</span><span data-lang="en">Call Us For Any inquiry</span></p>
-                    <h3 className="number">+44 920 090 505</h3>
+                    <h3 className="number"><a href="tel:+84983835686" className="text-white text-decoration-none">+84 983 835 686</a></h3>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export default function ServicePage() {
               </div>
               <div className="col-xl-3 col-lg-4">
                 <div className="cta-btn">
-                  <a className="btn btn-white" href="#">+44 920 090 505</a>
+                  <a className="btn btn-white" href="tel:+84983835686">+84 983 835 686</a>
                 </div>
               </div>
             </div>

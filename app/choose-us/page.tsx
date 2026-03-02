@@ -113,7 +113,7 @@ export default function ChooseUsPage() {
                   </div>
                   <div className="cta-text">
                     <p>Call Us For Any inquiry</p>
-                    <h3 className="number">+44 920 090 505</h3>
+                    <h3 className="number"><a href="tel:+84983835686" className="text-white text-decoration-none">+84 983 835 686</a></h3>
                   </div>
                 </div>
               </div>

@@ -376,7 +376,7 @@ export default function AboutPage() {
               </div>
               <div className="col-xl-3 col-lg-4">
                 <div className="cta-btn">
-                  <a className="btn btn-white" href="#">+44 920 090 505</a>
+                  <a className="btn btn-white" href="tel:+84983835686">+84 983 835 686</a>
                 </div>
               </div>
             </div>

@@ -6,14 +6,6 @@ import { PRODUCTS, getProductBySlug } from "../../data/products";
 
 type Props = { params: Promise<{ slug: string }> };
 
-const VI_INTRO: Record<string, { title: string; text: string }> = {
-  "intelligent-video-surveillance": {
-    title: "Giải pháp là gì?",
-    text:
-      "Giải pháp Giám sát video thông minh & Trợ lý dự đoán mối đe dọa kết hợp body cam với AI phân tích video, phục vụ đăng kiểm và hiện trường. Hệ thống cung cấp LiveView theo dõi người và xe, xem lại video, xuất báo cáo và tìm kiếm lịch sử nhận dạng (khuôn mặt, biển số) theo ngày, camera và phương tiện.",
-  },
-};
-
 export async function generateStaticParams() {
   return PRODUCTS.map((p) => ({ slug: p.slug }));
 }
@@ -60,25 +52,31 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                         <span data-lang="en">{content.titleEn}</span>
                       </h3>
                       <h4 className="h5 mt-3 mb-2">
-                        <span data-lang="vi">{VI_INTRO[content.slug]?.title ?? content.whatIsTitle}</span>
-                        <span data-lang="en">{content.whatIsTitle}</span>
+                        <span data-lang="vi">{content.whatIsTitleVi}</span>
+                        <span data-lang="en">{content.whatIsTitleEn}</span>
                       </h4>
                       <p className="text">
-                        <span data-lang="vi">{VI_INTRO[content.slug]?.text ?? content.whatIsText}</span>
-                        <span data-lang="en">{content.whatIsText}</span>
+                        <span data-lang="vi">{content.whatIsTextVi}</span>
+                        <span data-lang="en">{content.whatIsTextEn}</span>
                       </p>
                     </div>
                   </div>
                   <div className="blog-details-content">
                     <div className="blog-details-text">
                       <h4 className="mb-3">
-                        <span data-lang="vi">Lợi ích của giải pháp</span>
-                        <span data-lang="en">{content.benefitsTitle}</span>
+                        <span data-lang="vi">{content.benefitsTitleVi}</span>
+                        <span data-lang="en">{content.benefitsTitleEn}</span>
                       </h4>
                       {content.benefits.map((b, i) => (
                         <div key={i} className="mb-4">
-                          <h5 className="text-primary mb-2">{b.title}</h5>
-                          <p>{b.text}</p>
+                          <h5 className="text-primary mb-2">
+                            <span data-lang="vi">{b.titleVi}</span>
+                            <span data-lang="en">{b.titleEn}</span>
+                          </h5>
+                          <p>
+                            <span data-lang="vi">{b.textVi}</span>
+                            <span data-lang="en">{b.textEn}</span>
+                          </p>
                         </div>
                       ))}
                     </div>
@@ -92,7 +90,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           <span data-lang="vi">Giao diện app và video mô phỏng từng chức năng. Xem video xong đọc mô tả bên dưới.</span>
                           <span data-lang="en">App interface and demo video for each feature. Watch the video then read the description below.</span>
                         </p>
-                        {(content.productVideos as { file: string; labelVi: string; labelEn: string }[]).map((v, i) => (
+                        {content.productVideos.map((v, i) => (
                           <div key={i} className="mb-5">
                             <h5 className="mb-2 fw-semibold">
                               <span data-lang="vi">{v.labelVi}</span>
@@ -105,11 +103,15 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               className="w-100 rounded mb-3"
                               style={{ maxHeight: "400px", background: "#000" }}
                             >
-                              Trình duyệt không hỗ trợ video.
+                              <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
+                              <span data-lang="en">Your browser does not support the video tag.</span>
                             </video>
                             {content.applications[i] && (
                               <div className="ps-0">
-                                <p className="mb-0">{content.applications[i].text}</p>
+                                <p className="mb-0">
+                                  <span data-lang="vi">{content.applications[i].textVi}</span>
+                                  <span data-lang="en">{content.applications[i].textEn}</span>
+                                </p>
                               </div>
                             )}
                           </div>
@@ -118,21 +120,32 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                     )}
                     <div className="blog-details-text">
                       <h4 className="mb-3">
-                        <span data-lang="vi">Sản phẩm và thiết bị liên quan</span>
-                        <span data-lang="en">{content.equippedTitle}</span>
+                        <span data-lang="vi">{content.equippedTitleVi}</span>
+                        <span data-lang="en">{content.equippedTitleEn}</span>
                       </h4>
-                      {content.equippedIntro && <p className="mb-3">{content.equippedIntro}</p>}
+                      {(content.equippedIntroVi != null || content.equippedIntroEn != null) && (
+                        <p className="mb-3">
+                          <span data-lang="vi">{content.equippedIntroVi}</span>
+                          <span data-lang="en">{content.equippedIntroEn}</span>
+                        </p>
+                      )}
                       {content.equippedProducts.map((p, i) => (
                         <div key={i} className="mb-4">
-                          <h5 className="mb-2">{p.title}</h5>
-                          <p>{p.text}</p>
+                          <h5 className="mb-2">
+                            <span data-lang="vi">{p.titleVi}</span>
+                            <span data-lang="en">{p.titleEn}</span>
+                          </h5>
+                          <p>
+                            <span data-lang="vi">{p.textVi}</span>
+                            <span data-lang="en">{p.textEn}</span>
+                          </p>
                         </div>
                       ))}
                     </div>
                     <div className="blog-details-text">
                       <h4 className="mb-3">
-                        <span data-lang="vi">Tài nguyên tham khảo</span>
-                        <span data-lang="en">{content.resourcesTitle}</span>
+                        <span data-lang="vi">{content.resourcesTitleVi}</span>
+                        <span data-lang="en">{content.resourcesTitleEn}</span>
                       </h4>
                       <div className="row">
                         <div className="col-md-6 mb-3">
@@ -143,54 +156,81 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           <ul className="list-unstyled">
                             {content.solutions.map((s, i) => (
                               <li key={i}>
-                                <Link href={s.href}>{s.label}</Link>
+                                <Link href={s.href}>
+                                  <span data-lang="vi">{s.labelVi}</span>
+                                  <span data-lang="en">{s.labelEn}</span>
+                                </Link>
                               </li>
                             ))}
                           </ul>
                         </div>
                         {content.downloads.length > 0 && (
                           <div className="col-md-6 mb-3">
-                            <h6 className="text-uppercase text-muted mb-2">Downloads</h6>
+                            <h6 className="text-uppercase text-muted mb-2">
+                              <span data-lang="vi">Tải xuống</span>
+                              <span data-lang="en">Downloads</span>
+                            </h6>
                             <ul className="list-unstyled">
                               {content.downloads.map((d, i) => (
                                 <li key={i}>
-                                  <Link href={d.href}>{d.label}</Link>
+                                  <Link href={d.href}>
+                                    <span data-lang="vi">{d.labelVi}</span>
+                                    <span data-lang="en">{d.labelEn}</span>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         )}
-                        {content.videoLinks && content.videoLinks.length > 0 && (
+                        {content.videoLinks && content.videoLinks.length > 0 && content.videoLabelVi != null && (
                           <div className="col-md-6 mb-3">
-                            <h6 className="text-uppercase text-muted mb-2">{content.videoLabel}</h6>
+                            <h6 className="text-uppercase text-muted mb-2">
+                              <span data-lang="vi">{content.videoLabelVi}</span>
+                              <span data-lang="en">{content.videoLabelEn}</span>
+                            </h6>
                             <ul className="list-unstyled">
                               {content.videoLinks.map((v, i) => (
                                 <li key={i}>
-                                  <Link href={v.href}>{v.label}</Link>
+                                  <Link href={v.href}>
+                                    <span data-lang="vi">{v.labelVi}</span>
+                                    <span data-lang="en">{v.labelEn}</span>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         )}
-                        {content.newsLinks && content.newsLinks.length > 0 && (
+                        {content.newsLinks && content.newsLinks.length > 0 && content.newsLabelVi != null && (
                           <div className="col-md-6 mb-3">
-                            <h6 className="text-uppercase text-muted mb-2">{content.newsLabel}</h6>
+                            <h6 className="text-uppercase text-muted mb-2">
+                              <span data-lang="vi">{content.newsLabelVi}</span>
+                              <span data-lang="en">{content.newsLabelEn}</span>
+                            </h6>
                             <ul className="list-unstyled">
                               {content.newsLinks.map((n, i) => (
                                 <li key={i}>
-                                  <Link href={n.href}>{n.label}</Link>
+                                  <Link href={n.href}>
+                                    <span data-lang="vi">{n.labelVi}</span>
+                                    <span data-lang="en">{n.labelEn}</span>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
                           </div>
                         )}
-                        {content.blogLinks && content.blogLinks.length > 0 && (
+                        {content.blogLinks && content.blogLinks.length > 0 && content.blogLabelVi != null && (
                           <div className="col-md-6 mb-3">
-                            <h6 className="text-uppercase text-muted mb-2">{content.blogLabel}</h6>
+                            <h6 className="text-uppercase text-muted mb-2">
+                              <span data-lang="vi">{content.blogLabelVi}</span>
+                              <span data-lang="en">{content.blogLabelEn}</span>
+                            </h6>
                             <ul className="list-unstyled">
                               {content.blogLinks.map((b, i) => (
                                 <li key={i}>
-                                  <Link href={b.href}>{b.label}</Link>
+                                  <Link href={b.href}>
+                                    <span data-lang="vi">{b.labelVi}</span>
+                                    <span data-lang="en">{b.labelEn}</span>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>
@@ -221,27 +261,31 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                     <div className="blog-quote">
                       <blockquote className="blockquote">
                         <p>
-                          <span data-lang="vi">Đội ngũ iVista Tech luôn sẵn sàng hỗ trợ bạn lựa chọn giải pháp phù hợp.</span>
-                          <span data-lang="en">{content.contactText}</span>
+                          <span data-lang="vi">{content.contactTextVi}</span>
+                          <span data-lang="en">{content.contactTextEn}</span>
                         </p>
                         <Link className="btn btn-primary mt-2" href="/contact">
-                          <span data-lang="vi">Liên hệ iVista Tech</span>
-                          <span data-lang="en">{content.contactCta}</span>
+                          <span data-lang="vi">{content.contactCtaVi}</span>
+                          <span data-lang="en">{content.contactCtaEn}</span>
                         </Link>
                       </blockquote>
                     </div>
                     <div className="blog-details-text">
                       <h4 className="mb-3">
-                        <span data-lang="vi">Khám phá thêm công nghệ khác</span>
-                        <span data-lang="en">{content.exploreTitle}</span>
+                        <span data-lang="vi">{content.exploreTitleVi}</span>
+                        <span data-lang="en">{content.exploreTitleEn}</span>
                       </h4>
                       {content.exploreTechs.length > 0 ? (
                         content.exploreTechs.map((t, i) => (
                           <div key={i} className="mb-3">
                             <Link href={t.href} className="fw-semibold">
-                              {t.title}
+                              <span data-lang="vi">{t.titleVi}</span>
+                              <span data-lang="en">{t.titleEn}</span>
                             </Link>
-                            <p className="mb-0 small">{t.text}</p>
+                            <p className="mb-0 small">
+                              <span data-lang="vi">{t.textVi}</span>
+                              <span data-lang="en">{t.textEn}</span>
+                            </p>
                           </div>
                         ))
                       ) : (
@@ -254,11 +298,14 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                     <div className="blog-details-tag-share">
                       <div className="blog-details-tag">
                         <div className="sidebar-widget">
-                          <span className="label">Tags :</span>
+                          <span className="label">
+                            <span data-lang="vi">Thẻ:</span>
+                            <span data-lang="en">Tags:</span>
+                          </span>
                           <ul className="sidebar-tag">
-                            <li><Link href="/products">Security</Link></li>
+                            <li><Link href="/products"><span data-lang="vi">An ninh</span><span data-lang="en">Security</span></Link></li>
                             <li><Link href="/products">AI</Link></li>
-                            <li><Link href="/products">Surveillance</Link></li>
+                            <li><Link href="/products"><span data-lang="vi">Giám sát</span><span data-lang="en">Surveillance</span></Link></li>
                           </ul>
                         </div>
                       </div>
@@ -288,15 +335,15 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                   </div>
                   <div className="sidebar-widget">
                     <div className="widget-title">
-                      <h3 className="title">Tags</h3>
+                      <h3 className="title"><span data-lang="vi">Thẻ</span><span data-lang="en">Tags</span></h3>
                     </div>
                     <ul className="sidebar-tag">
-                      <li><Link href="/products">Security</Link></li>
+                      <li><Link href="/products"><span data-lang="vi">An ninh</span><span data-lang="en">Security</span></Link></li>
                       <li><Link href="/products">AI</Link></li>
                       <li><Link href="/products">Face Recognition</Link></li>
-                      <li><Link href="/products">Surveillance</Link></li>
+                      <li><Link href="/products"><span data-lang="vi">Giám sát</span><span data-lang="en">Surveillance</span></Link></li>
                       <li><Link href="/products">Bodycam</Link></li>
-                      <li><Link href="/products">Technology</Link></li>
+                      <li><Link href="/products"><span data-lang="vi">Công nghệ</span><span data-lang="en">Technology</span></Link></li>
                     </ul>
                   </div>
                 </div>
@@ -314,7 +361,10 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                   <div className="cta-icon">
                     <img src="/assets/images/cta-icon2.png" alt="" />
                   </div>
-                  <p>We&apos;re Delivering the best customer Experience</p>
+                  <p>
+                    <span data-lang="vi">Chúng tôi mang đến trải nghiệm khách hàng tốt nhất</span>
+                    <span data-lang="en">We&apos;re delivering the best customer experience</span>
+                  </p>
                 </div>
               </div>
               <div className="col-xl-3 col-lg-4">

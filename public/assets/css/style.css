@@ -2602,8 +2602,28 @@ textarea:-ms-input-placeholder {
   margin-top: 40px;
 }
 
-.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 50px;
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+  margin-top: 0;
+  min-width: 220px;
+  height: 60px;
+  line-height: 56px;
+  padding: 0 40px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 767px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
+    width: 100%;
+    min-width: 100%;
+  }
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {

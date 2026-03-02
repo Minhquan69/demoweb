@@ -24,7 +24,7 @@ export default function HomePage() {
                     <span data-lang="en">We design, build, and deploy production-ready AI solutions for Vietnamese enterprises.</span>
                   </p>
                   <div className="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                    <a className="btn btn-outline style-02" href="#about"><span data-lang="vi">Xem thêm</span><span data-lang="en">Read More</span></a>&nbsp;
+                    <a className="btn btn-outline style-02" href="#about"><span data-lang="vi">Xem thêm</span><span data-lang="en">Read More</span></a>
                     <Link className="btn" href="/contact"><span data-lang="vi">Liên hệ tư vấn</span><span data-lang="en">Contact Us</span></Link>
                   </div>
                 </div>

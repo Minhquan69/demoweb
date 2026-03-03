@@ -42,7 +42,10 @@ export default function ContactPage() {
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Đến văn phòng chúng tôi</span><span data-lang="en">Visit our office</span></h5>
-                    <p><span data-lang="vi">8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam</span><span data-lang="en">8B Alley 172, Nguyen Tuan Street, Thanh Xuan Trung, Thanh Xuan, Hanoi, Vietnam</span></p>
+                    <p>
+                      <span data-lang="vi">Tòa nhà EZ, 8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam</span>
+                      <span data-lang="en">EZ Building, 8B Alley 172, Nguyen Tuan Street, Thanh Xuan Trung, Thanh Xuan, Hanoi, Vietnam</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -107,8 +110,8 @@ export default function ContactPage() {
             marginHeight={0}
             marginWidth={0}
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d232.8015730028195!2d105.80320538518609!3d20.999644202677064!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acbd2fe80e37%3A0x1cba3dc65e97045f!2zWFJYMytWNzMsIFRoYW5oIFh1w6JuIFRydW5nLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2sus!4v1772446359594!5m2!1sen!2sus"
-            title="8B Ngõ 172 Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
-            aria-label="8B Ngõ 172 Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
+            title="Tòa nhà EZ, 8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
+            aria-label="Tòa nhà EZ, 8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam"
             frameBorder={0}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

@@ -67,6 +67,44 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                         <span data-lang="vi">{content.benefitsTitleVi}</span>
                         <span data-lang="en">{content.benefitsTitleEn}</span>
                       </h4>
+                      {slug === "ai-alignment" && (
+                        <div className="mb-4">
+                          <video
+                            src={`/assets/videos/products/${content.slug}/${encodeURIComponent("AI Aligment.mp4")}`}
+                            controls
+                            playsInline
+                            className="w-100 rounded mb-3"
+                          >
+                            <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
+                            <span data-lang="en">Your browser does not support the video tag.</span>
+                          </video>
+                          <p className="mb-0">
+                            <span data-lang="vi">
+                              Video minh họa toàn bộ quy trình hoạt động của hệ thống AI Alignment trong môi trường nhà máy tự động hóa hiện đại, từ
+                              giai đoạn quét nhận dạng đến lắp ráp chính xác. Các linh kiện – từ chi tiết cơ khí đến vi mạch kích thước siêu nhỏ –
+                              di chuyển trên dây chuyền với tốc độ cao, mỗi sản phẩm đều có các điểm mark (fiducial mark) được in trên bề mặt để xác
+                              định vị trí chuẩn lắp ráp. Camera công nghiệp tốc độ cao quét từng sản phẩm khi đi qua; hệ thống AI thị giác máy phát
+                              hiện chính xác các điểm mark, kể cả khi kích thước rất nhỏ hoặc có sai lệch nhẹ do rung động dây chuyền. Trên giao diện
+                              giám sát, các dấu crosshair hiển thị vị trí mark cùng dữ liệu tọa độ X, Y và góc xoay θ được tính toán theo thời gian
+                              thực. Với mỗi sản phẩm, hệ thống xác định sai lệch ΔX, ΔY và Δθ riêng biệt; robot pick-and-place sau đó nhận dữ liệu
+                              hiệu chỉnh và tự động điều chỉnh vị trí thao tác, đảm bảo hai chi tiết được ghép khớp hoàn toàn. Video làm nổi bật khả
+                              năng phát hiện mark siêu nhỏ với độ chính xác sub-pixel, xử lý tốc độ cao, tính toán hiệu chỉnh theo thời gian thực,
+                              đồng bộ chính xác giữa camera, AI và robot, và sự khác biệt rõ ràng giữa trạng thái trước và sau alignment.
+                            </span>
+                          <span data-lang="en">
+                              The video illustrates the complete AI Alignment workflow in a modern automated factory, from mark scanning to precise
+                              assembly. Components – from mechanical parts to tiny ICs – move quickly along the line, each product carrying fiducial
+                              marks that define the reference position. A high-speed industrial camera captures each product; the AI vision engine
+                              accurately detects these marks even when they are very small or slightly shifted due to vibration. On the monitoring
+                              interface, crosshairs show the detected mark positions along with real-time X, Y and θ coordinates. For every product,
+                              the system computes its own ΔX, ΔY and Δθ and sends these corrections to the pick-and-place robot, which adjusts its
+                              motion so that parts are aligned perfectly. The video highlights sub-pixel accuracy on tiny marks, high-speed processing,
+                              real-time correction, tight synchronization between camera, AI, and robot, and the clear difference before and after
+                              alignment.
+                          </span>
+                          </p>
+                        </div>
+                      )}
                       {content.benefits.map((b, i) => (
                         <div key={i} className="mb-4">
                           <h5 className="text-primary mb-2">
@@ -88,7 +126,6 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           controls
                           playsInline
                           className="w-100 rounded mb-4"
-                          style={{ maxHeight: "420px", background: "#000" }}
                         >
                           <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
                           <span data-lang="en">Your browser does not support the video tag.</span>
@@ -127,7 +164,6 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           controls
                           playsInline
                           className="w-100 rounded mb-4"
-                          style={{ maxHeight: "420px", background: "#000" }}
                         >
                           <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
                           <span data-lang="en">Your browser does not support the video tag.</span>

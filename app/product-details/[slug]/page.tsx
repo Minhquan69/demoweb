@@ -80,6 +80,150 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                         </div>
                       ))}
                     </div>
+                    {slug === "ai-alignment" && (
+                      <div className="blog-details-text">
+                        {/* Media demo AI Alignment – video/ảnh xen kẽ với các đoạn mô tả chung */}
+                        <video
+                          src={`/assets/videos/products/${content.slug}/Alignmentvd1.mp4`}
+                          controls
+                          playsInline
+                          className="w-100 rounded mb-4"
+                          style={{ maxHeight: "420px", background: "#000" }}
+                        >
+                          <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
+                          <span data-lang="en">Your browser does not support the video tag.</span>
+                        </video>
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Video demo minh họa quy trình AI Alignment trên dây chuyền: camera chụp sản phẩm, mô-đun AI xử lý hình ảnh và tính toán
+                            sai lệch, sau đó gửi tọa độ hiệu chỉnh cho hệ thống điều khiển.
+                          </span>
+                          <span data-lang="en">
+                            The demo video shows the AI Alignment workflow on the line: the camera captures products, the AI module processes images and
+                            computes deviation, then sends correction coordinates to the control system.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/Alignment1.jpg"
+                          alt="AI Alignment demo 1"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Giải pháp được thiết kế như một cell thị giác máy độc lập nhưng dễ dàng tích hợp vào dây chuyền hiện hữu, cung cấp điểm
+                            tham chiếu chính xác để robot, CNC hoặc máy in luôn thao tác đúng vị trí.
+                          </span>
+                          <span data-lang="en">
+                            The solution is implemented as an independent vision cell that can be easily integrated into existing lines, providing
+                            accurate reference points so robots, CNC machines, or printers always operate at the correct position.
+                          </span>
+                        </p>
+
+                        <video
+                          src={`/assets/videos/products/${content.slug}/Alignmentvd2.mp4`}
+                          controls
+                          playsInline
+                          className="w-100 rounded mb-4"
+                          style={{ maxHeight: "420px", background: "#000" }}
+                        >
+                          <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
+                          <span data-lang="en">Your browser does not support the video tag.</span>
+                        </video>
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            AI Alignment không chỉ tìm thấy mark mà còn tính toán ΔX, ΔY, Δθ theo thời gian thực, giúp hệ thống bù sai lệch mà không
+                            cần dừng máy hoặc căn chỉnh thủ công.
+                          </span>
+                          <span data-lang="en">
+                            AI Alignment not only finds the mark but also computes ΔX, ΔY, and Δθ in real time, allowing the system to compensate for
+                            misalignment without stopping machines or performing manual adjustments.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/Alignment2.jpg"
+                          alt="AI Alignment demo 2"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Giải pháp có thể triển khai cho nhiều loại sản phẩm khác nhau – từ bảng mạch điện tử, chi tiết cơ khí đến các cụm lắp ráp –
+                            miễn là có vùng mark hoặc đặc trưng hình học đủ ổn định.
+                          </span>
+                          <span data-lang="en">
+                            The solution can be deployed for many product types – from PCBs and mechanical parts to assembled modules – as long as
+                            there is a stable mark region or geometric feature.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/Alignment3.jpg"
+                          alt="AI Alignment demo 3"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Nhờ ứng dụng deep learning, hệ thống vẫn có thể nhận dạng và căn chỉnh chính xác ngay cả khi mark bị mờ nhẹ, có nhiễu bề
+                            mặt hoặc thay đổi ánh sáng trong ca sản xuất.
+                          </span>
+                          <span data-lang="en">
+                            By leveraging deep learning, the system can still recognize and align accurately even when marks are slightly faded, the
+                            surface is noisy, or lighting conditions change during the shift.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/Alignment4.jpg"
+                          alt="AI Alignment demo 4"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Giao diện giám sát cho phép kỹ sư cấu hình vùng quan tâm, ngưỡng sai số và theo dõi lịch sử vận hành, hỗ trợ bảo trì và tối
+                            ưu dây chuyền về lâu dài.
+                          </span>
+                          <span data-lang="en">
+                            A monitoring interface lets engineers configure regions of interest, error thresholds, and track operation history, helping
+                            with maintenance and long-term line optimization.
+                          </span>
+                        </p>
+
+                        <div className="row g-4 mb-4">
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/Alignment5.jpg"
+                              alt="AI Alignment demo 5"
+                              className="img-fluid rounded"
+                            />
+                          </div>
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/Alignment6.jpg"
+                              alt="AI Alignment demo 6"
+                              className="img-fluid rounded"
+                            />
+                          </div>
+                        </div>
+
+                        <p className="mb-0">
+                          <span data-lang="vi">
+                            Khi được triển khai trong nhà máy, AI Alignment giúp giảm sai lệch cơ học, hạn chế phế phẩm, giảm thời gian dừng máy do lỗi
+                            căn chỉnh và tạo nền tảng dữ liệu cho các bài toán tự động hóa nâng cao khác.
+                          </span>
+                          <span data-lang="en">
+                            Once deployed in the factory, AI Alignment helps reduce mechanical deviations, minimize scrap, shorten downtime caused by
+                            alignment errors, and build a data foundation for more advanced automation scenarios.
+                          </span>
+                        </p>
+                      </div>
+                    )}
                     {slug === "bodycam-smart-recorder" && (
                       <div className="blog-details-text">
                         {/* Bộ ảnh demo bodycam – minh họa sản phẩm thực tế (phần trên) */}

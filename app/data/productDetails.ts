@@ -344,9 +344,170 @@ const BODYCAM_SMART_RECORDER: ProductDetailContent = {
   ],
 };
 
+const AI_ALIGNMENT: ProductDetailContent = {
+  slug: "ai-alignment",
+  titleVi: "AI Alignment – Định vị điểm mark cho nhà máy",
+  titleEn: "AI Alignment – Fiducial Alignment for Factories",
+  heroImg: "Product/Alignment1.jpg",
+  whatIsTitleVi: "Tổng quan giải pháp AI Alignment",
+  whatIsTitleEn: "AI Alignment solution overview",
+  whatIsTextVi:
+    "AI Alignment là giải pháp thị giác máy thông minh ứng dụng Trí tuệ nhân tạo (AI) để phát hiện và định vị chính xác điểm mark (fiducial mark) trên sản phẩm trong dây chuyền sản xuất tự động. Hệ thống tính toán sai lệch vị trí theo thời gian thực và cung cấp tọa độ hiệu chỉnh (X, Y, θ) cho robot, máy CNC, máy in hoặc các hệ thống tự động khác, giúp thao tác luôn chính xác và ổn định, ngay cả khi sản phẩm bị lệch, xoay hoặc môi trường có nhiều nhiễu.",
+  whatIsTextEn:
+    "AI Alignment is an intelligent machine vision solution that uses AI to detect and accurately locate fiducial marks on products in automated production lines. The system computes positional deviations in real time and provides correction coordinates (X, Y, θ) to robots, CNC machines, printers, and other automation systems, ensuring precise and stable operations even when products shift, rotate, or the environment is noisy.",
+  benefitsTitleVi: "Tính năng & lợi ích nổi bật",
+  benefitsTitleEn: "Key features & benefits",
+  benefits: [
+    {
+      titleVi: "Định vị chính xác sub-pixel",
+      titleEn: "Sub-pixel accurate alignment",
+      textVi:
+        "Mô hình AI và thuật toán nội suy sub-pixel cho phép xác định vị trí mark với sai số rất nhỏ; trong cấu hình phù hợp, sai số có thể đạt dưới 0.05 mm, đáp ứng yêu cầu của các dây chuyền điện tử, SMT và gia công chính xác.",
+      textEn:
+        "AI models and sub-pixel interpolation algorithms enable extremely precise mark localization. With the right configuration, errors can be below 0.05 mm, meeting the stringent requirements of electronics, SMT, and precision machining lines.",
+    },
+    {
+      titleVi: "Xử lý thời gian thực cho dây chuyền tốc độ cao",
+      titleEn: "Real-time processing for high-speed lines",
+      textVi:
+        "Thời gian xử lý mỗi khung hình thường dưới 50 ms, cho phép hệ thống theo kịp băng chuyền tốc độ cao mà không phải dừng máy hoặc giảm năng suất. Dữ liệu hiệu chỉnh được gửi ngay cho robot/PLC sau mỗi lần chụp.",
+      textEn:
+        "Per-frame processing latency is typically under 50 ms, allowing the system to keep up with high-speed conveyors without stopping machines or sacrificing throughput. Correction data is sent immediately to robots/PLCs after each image capture.",
+    },
+    {
+      titleVi: "Ổn định trong môi trường công nghiệp thực tế",
+      titleEn: "Robust in real industrial environments",
+      textVi:
+        "Giải pháp được thiết kế để hoạt động ổn định trong điều kiện có rung động, thay đổi ánh sáng, mark in mờ hoặc bề mặt phản sáng. Mô hình AI được huấn luyện trên dữ liệu thực tế sản xuất, giúp giảm nhạy cảm với nhiễu.",
+      textEn:
+        "The solution is engineered for stability under vibration, changing lighting, faint printed marks, or reflective surfaces. AI models are trained on real production data, making them less sensitive to noise and appearance variations.",
+    },
+    {
+      titleVi: "Linh hoạt với nhiều loại sản phẩm và mark",
+      titleEn: "Flexible across products and mark types",
+      textVi:
+        "Hệ thống hỗ trợ nhiều dạng mark (hình tròn, hình vuông, chữ thập, logo tùy chỉnh...) và cho phép cấu hình nhanh khi thay đổi model sản phẩm. Người dùng có thể thêm mẫu mới mà không phải thay đổi logic điều khiển phía sau.",
+      textEn:
+        "The system supports various mark types (circles, squares, crosses, custom logos, etc.) and can be reconfigured quickly when product models change. New templates can be added without modifying downstream control logic.",
+    },
+  ],
+  applicationsTitleVi: "Bài toán & nguyên lý hoạt động",
+  applicationsTitleEn: "Use cases & operating principle",
+  applications: [
+    {
+      titleVi: "Bài toán alignment trong thực tế sản xuất",
+      titleEn: "Alignment challenges in real production",
+      textVi:
+        "Trong dây chuyền công nghiệp, sản phẩm trên băng chuyền có thể bị lệch vị trí, xoay nhẹ do rung động cơ học và sai lệch tích lũy theo thời gian. Mark in trên bề mặt có thể mờ, phản sáng, trong khi hệ thống robot lại yêu cầu tọa độ chính xác gần như tuyệt đối để gắp linh kiện, lắp ráp, in mã hoặc gia công CNC. AI Alignment được xây dựng để bù lại những sai lệch này một cách thông minh.",
+      textEn:
+        "On industrial lines, products on conveyors may drift, rotate slightly due to vibration, and accumulate positional errors over time. Printed marks can fade or become reflective, while robots require near-perfect coordinates for picking, assembly, printing, or CNC machining. AI Alignment is designed to intelligently compensate for these deviations.",
+    },
+    {
+      titleVi: "Nguyên lý hoạt động",
+      titleEn: "Operating principle",
+      textVi:
+        "Camera công nghiệp (global shutter) chụp ảnh sản phẩm tại vị trí xác định. Mô hình AI phát hiện và định vị chính xác điểm mark ngay cả khi mark mờ, bị che một phần hoặc có nhiễu. Hệ thống tính toán ΔX, ΔY, Δθ giữa vị trí chuẩn và vị trí hiện tại, xây dựng ma trận biến đổi (Affine Transform hoặc Homography nếu cần), sau đó gửi tọa độ hiệu chỉnh đến robot/PLC/máy CNC để điều chỉnh thao tác theo thời gian thực.",
+      textEn:
+        "An industrial global-shutter camera captures the product at a defined station. The AI model detects and precisely localizes the mark even when it is faint, partially occluded, or noisy. The system computes ΔX, ΔY, and Δθ between the reference and current positions, builds a transform matrix (affine or homography when needed), then sends correction coordinates to robots/PLCs/CNC machines for real-time motion adjustment.",
+    },
+    {
+      titleVi: "Kiến trúc hệ thống",
+      titleEn: "System architecture",
+      textVi:
+        "Giải pháp gồm camera công nghiệp độ phân giải cao (global shutter, hỗ trợ trigger đồng bộ PLC), AI Vision Engine chạy trên bộ xử lý công nghiệp (Edge/IPC) để suy luận thời gian thực, và lớp tích hợp tự động hóa (TCP/IP, Modbus, OPC-UA) để kết nối với PLC, robot, máy in, máy CNC. Toàn bộ được thiết kế để lắp đặt gọn trong môi trường nhà máy hiện hữu.",
+      textEn:
+        "The solution consists of high-resolution industrial cameras (global shutter with PLC-synchronized trigger), an AI vision engine running on an industrial edge/IPC for real-time inference, and an automation integration layer (TCP/IP, Modbus, OPC-UA) connecting to PLCs, robots, printers, and CNC machines. The entire stack is designed to fit neatly into existing factory environments.",
+    },
+    {
+      titleVi: "Ứng dụng tiêu biểu",
+      titleEn: "Typical applications",
+      textVi:
+        "AI Alignment có thể áp dụng cho nhiều khâu: lắp ráp PCB/SMT, in mã QR/serial đúng vị trí, căn chỉnh phôi cho gia công CNC hoặc cắt laser, định vị chi tiết cơ khí trước khi dán tem, hàn, bắn vít hay lắp ráp tự động. Giải pháp cũng mở rộng được sang alignment 3D, multi-camera alignment và kết hợp kiểm tra ngoại quan bằng AI.",
+      textEn:
+        "AI Alignment can be applied in many steps: PCB/SMT assembly, accurate QR/serial code printing, aligning blanks for CNC machining or laser cutting, positioning mechanical parts before labeling, welding, screwing, or automatic assembly. The solution can be extended to 3D alignment, multi-camera alignment, and combined with AI-based visual inspection.",
+    },
+  ],
+  equippedTitleVi: "Kiến trúc & thành phần hệ thống",
+  equippedTitleEn: "System architecture & components",
+  equippedIntroVi:
+    "AI Alignment được triển khai như một mô-đun thị giác máy trong dây chuyền tự động, có thể tích hợp trực tiếp với hệ thống hiện tại thông qua PLC/robot hoặc hoạt động như một trạm độc lập.",
+  equippedIntroEn:
+    "AI Alignment is deployed as a vision module within the automation line, either integrated directly with existing PLC/robot systems or operating as an independent station.",
+  equippedProducts: [
+    {
+      titleVi: "Camera công nghiệp",
+      titleEn: "Industrial cameras",
+      textVi:
+        "Camera global shutter độ phân giải cao, ống kính phù hợp khoảng cách làm việc và kích thước sản phẩm; hỗ trợ trigger đồng bộ với PLC để chụp đúng thời điểm sản phẩm ở vị trí cần căn chỉnh.",
+      textEn:
+        "High-resolution global-shutter cameras with optics matched to working distance and product size, supporting PLC-synchronized triggering to capture exactly when the product reaches the alignment station.",
+    },
+    {
+      titleVi: "AI Vision Engine",
+      titleEn: "AI vision engine",
+      textVi:
+        "Mô-đun phần mềm dùng deep learning để phát hiện mark, định vị sub-pixel và theo dõi ổn định qua nhiều chu kỳ sản xuất. Có giao diện cấu hình để người dùng thiết lập mẫu mark, vùng quan tâm và thông số giới hạn.",
+      textEn:
+        "Software module using deep learning to detect marks, perform sub-pixel localization, and maintain stable tracking across many production cycles. A configuration UI lets users define mark templates, ROIs, and tolerance thresholds.",
+    },
+    {
+      titleVi: "Bộ xử lý công nghiệp (Edge/IPC)",
+      titleEn: "Industrial edge/IPC",
+      textVi:
+        "Thiết bị tính toán công nghiệp chịu được môi trường nhà máy, chạy mô hình AI theo thời gian thực và giao tiếp với PLC/robot qua TCP/IP, Modbus, OPC-UA hoặc giao thức tùy chỉnh.",
+      textEn:
+        "Rugged industrial computing unit that runs AI models in real time and communicates with PLCs/robots over TCP/IP, Modbus, OPC-UA, or custom protocols.",
+    },
+    {
+      titleVi: "Lớp tích hợp tự động hóa",
+      titleEn: "Automation integration layer",
+      textVi:
+        "Thư viện và dịch vụ tích hợp để gửi tọa độ hiệu chỉnh (X, Y, θ) đến robot arm, máy CNC, máy in hoặc các trạm tự động khác; hỗ trợ logging và giám sát trạng thái để dễ dàng bảo trì.",
+      textEn:
+        "Integration libraries and services to send correction coordinates (X, Y, θ) to robot arms, CNC machines, printers, and other stations, with logging and status monitoring for easier maintenance.",
+    },
+  ],
+  resourcesTitleVi: "Tài nguyên & mở rộng",
+  resourcesTitleEn: "Resources & extensions",
+  solutions: [
+    { labelVi: "Giải pháp AI cho nhà máy", labelEn: "AI solutions for factories", href: "/#services" },
+    { labelVi: "Sản phẩm AI Alignment", labelEn: "AI Alignment product", href: "/products" },
+  ],
+  downloads: [],
+  productVideos: [],
+  sampleVehicleInfo: undefined,
+  contactTitleVi: "Bạn muốn demo AI Alignment?",
+  contactTitleEn: "Want an AI Alignment demo?",
+  contactTextVi: "Chúng tôi có thể mô phỏng trực tiếp bài toán alignment trên dây chuyền của bạn hoặc trên bộ demo chuẩn của iVista Tech.",
+  contactTextEn: "We can demonstrate the alignment use case directly on your line or on iVista Tech's standard demo rig.",
+  contactCtaVi: "Liên hệ tư vấn",
+  contactCtaEn: "Contact us",
+  exploreTitleVi: "Khám phá thêm giải pháp AI khác",
+  exploreTitleEn: "Explore other AI solutions",
+  exploreTechs: [
+    {
+      titleVi: "Giám sát video thông minh & Trợ lý dự đoán mối đe dọa",
+      titleEn: "Intelligent Video Surveillance & Threat Prediction Assistant",
+      href: "/product-details/intelligent-video-surveillance",
+      textVi: "Ứng dụng AI thị giác máy cho giám sát video, nhận dạng face/plate và tìm kiếm lịch sử trong môi trường đăng kiểm, an ninh.",
+      textEn:
+        "Apply AI computer vision to video surveillance, face/plate recognition, and history search in inspection and security environments.",
+    },
+    {
+      titleVi: "Bodycam thông minh cho lực lượng hiện trường",
+      titleEn: "Smart Bodycam for Field Forces",
+      href: "/product-details/bodycam-smart-recorder",
+      textVi: "Thiết bị bodycam kết hợp nền tảng AI và quản lý bằng chứng số, phù hợp cho lực lượng hiện trường và đăng kiểm.",
+      textEn:
+        "Body-worn camera solution with AI and digital evidence management, tailored for field forces and inspection scenarios.",
+    },
+  ],
+};
+
 export const PRODUCT_DETAILS: Record<ProductSlug, ProductDetailContent> = {
   "intelligent-video-surveillance": INTELLIGENT_VIDEO_SURVEILLANCE,
   "bodycam-smart-recorder": BODYCAM_SMART_RECORDER,
+  "ai-alignment": AI_ALIGNMENT,
 };
 
 export function getProductDetail(slug: string): ProductDetailContent | undefined {

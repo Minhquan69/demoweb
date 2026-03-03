@@ -47,7 +47,18 @@
 /*  01. Theme default CSS
 /*----------------------------------------*/
 /*-- Google Font --*/
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Jost:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Force Inter for all text (kept icon fonts) */
+html {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body,
+body *:not(i):not(.flaticon):not(.fas):not(.far):not(.fab) {
+  font-family: inherit !important;
+}
+
 /*-- Common Style --*/
 *, *::after, *::before {
   box-sizing: border-box;
@@ -59,7 +70,7 @@ body {
   font-size: 14px;
   line-height: 1.75;
   font-weight: 400;
-  font-family: "Jost", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #4c4d56;
   outline: none;
   visibility: visible;
@@ -74,7 +85,7 @@ body[dir="rtl"] {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Barlow", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #0e0e0e;
   font-weight: 700;
   margin-top: 0;
@@ -7498,6 +7509,19 @@ textarea:-ms-input-placeholder {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* AI Alignment image pair: đặt kích thước hiển thị ~388x337px */
+.alignment-pair {
+  text-align: center;
+}
+
+.alignment-pair img.img-fluid {
+  width: 388px !important;
+  height: 337px !important;
+  max-width: 100%;
+  object-fit: cover;
+  display: inline-block;
 }
 
 .single-blog .blog-image .top-meta {

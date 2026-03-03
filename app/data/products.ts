@@ -17,6 +17,16 @@ export const PRODUCTS = [
       "Duty-grade body-worn camera: 4G/LTE streaming, secure storage, live view to command center, face/plate recognition and shift management for field officers.",
     img: "Product/bodycam1.jpg",
   },
+  {
+    slug: "ai-alignment",
+    titleVi: "AI Alignment cho nhà máy",
+    titleEn: "AI Alignment for Smart Factories",
+    shortVi:
+      "Giải pháp thị giác máy dùng AI để định vị chính xác điểm mark (fiducial) trên sản phẩm, cung cấp tọa độ X, Y, θ cho robot, CNC, máy in và hệ thống tự động trong nhà máy.",
+    shortEn:
+      "AI-powered vision solution for accurately locating fiducial marks on products, providing X, Y, θ coordinates to robots, CNC machines, printers, and other automation systems in the factory.",
+    img: "Product/Alignment1.jpg",
+  },
 ] as const;
 
 export type ProductSlug = (typeof PRODUCTS)[number]["slug"];

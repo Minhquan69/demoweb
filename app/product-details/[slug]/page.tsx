@@ -105,6 +105,27 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           </p>
                         </div>
                       )}
+                      {slug === "ai-visual-inspection" && (
+                        <div className="mb-4">
+                          <video
+                            src={`/assets/videos/products/AIVisualInspection/AI Visual Inspection1.mp4`}
+                            controls
+                            playsInline
+                            className="w-100 rounded mb-3"
+                          >
+                            <span data-lang="vi">Trình duyệt không hỗ trợ video.</span>
+                            <span data-lang="en">Your browser does not support the video tag.</span>
+                          </video>
+                          <p className="mb-0">
+                            <span data-lang="vi">
+                              Video minh họa giải pháp AI Visual Inspection trong hệ thống kiểm tra sản phẩm tự động. Camera công nghiệp thu nhận hình ảnh từng sản phẩm khi di chuyển trên băng chuyền tốc độ cao. Hệ thống AI thị giác máy phân tích hình ảnh theo thời gian thực, phát hiện các lỗi bề mặt như trầy xước, nứt vỡ, sai màu, loang màu, in mờ, sai ký tự hoặc thiếu linh kiện. Khi phát hiện lỗi, giao diện quản lý tự động đánh dấu PASS cho sản phẩm đạt chuẩn và FAIL cho sản phẩm lỗi. Hệ thống kích hoạt cơ cấu loại bỏ tự động, tách sản phẩm lỗi ra khỏi dây chuyền trong khi các sản phẩm đạt chuẩn tiếp tục di chuyển bình thường. Toàn bộ dữ liệu kiểm tra được lưu trữ, có thể truy xuất hình ảnh để kiểm chứng, và hiển thị trên dashboard thống kê để doanh nghiệp theo dõi tỷ lệ lỗi, phân tích nguyên nhân và tối ưu quy trình sản xuất.
+                            </span>
+                            <span data-lang="en">
+                              The video demonstrates the AI Visual Inspection solution in an automated product quality control system. Industrial cameras capture images of each product as it moves on a high-speed conveyor. The AI vision system analyzes images in real time, detecting surface defects such as scratches, cracks, color variations, color bleeding, faded printing, character misalignment, or missing components. When defects are detected, the management interface automatically marks PASS for conforming products and FAIL for defective ones. The system activates an automatic rejection mechanism, removes defective products from the line while good products continue normally. All inspection data is stored and retrievable for verification, displayed on an analytics dashboard to help enterprises monitor defect rates, analyze root causes, and optimize production processes.
+                            </span>
+                          </p>
+                        </div>
+                      )}
                       {content.benefits.map((b, i) => (
                         <div key={i} className="mb-4">
                           <h5 className="text-primary mb-2">
@@ -302,6 +323,122 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                             </span>
                           </p>
                         </div>
+                      </div>
+                    )}
+                    {slug === "ai-visual-inspection" && (
+                      <div className="blog-details-text">
+                        {/* Media demo AI Visual Inspection – ảnh xen kẽ với các đoạn mô tả */}
+                        <div className="row g-4 mb-4">
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/AIVisualInspection6.jpg"
+                              alt="Pass & Fail Detection"
+                              className="img-fluid rounded"
+                            />
+                          </div>
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/AIVisualInspection5.jpg"
+                              alt="Pass & Fail Detection"
+                              className="img-fluid rounded"
+                            />
+                          </div>
+                        </div>
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Hệ thống AI Visual Inspection tự động phát hiện và phân loại từng sản phẩm trên dây chuyền. Sản phẩm đạt chuẩn được đánh dấu PASS (màu xanh), sản phẩm lỗi được đánh dấu FAIL (màu đỏ). Dựa trên quyết định này, hệ thống tự động kích hoạt cơ cấu loại bỏ để tách sản phẩm lỗi ra khỏi dây chuyền.
+                          </span>
+                          <span data-lang="en">
+                            The AI Visual Inspection system automatically detects and classifies each product on the line. Conforming products are marked PASS (green), defective ones marked FAIL (red). Based on this decision, the system automatically activates the rejection mechanism to remove defective products from the line.
+                          </span>
+                        </p>
+
+                        <div className="row g-4 mb-4">
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/AIVisualInspection1.png"
+                              alt="System Overview"
+                              className="img-fluid rounded mb-3"
+                            />
+                          </div>
+                          <div className="col-md-6">
+                            <img
+                              src="/assets/images/Product/AIVisualInspection2.jpg"
+                              alt="Production Line"
+                              className="img-fluid rounded mb-3"
+                            />
+                          </div>
+                        </div>
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Tổng quan hệ thống kiểm tra, từ dây chuyền sản xuất tới các camera công nghiệp và Edge AI processor. Hình ảnh cho thấy các sản phẩm đạt chuẩn tiếp tục di chuyển trên dây chuyền, trong khi sản phẩm lỗi được loại bỏ tự động tại vị trí kiểm tra.
+                          </span>
+                          <span data-lang="en">
+                            System overview from production conveyor to industrial cameras and Edge AI processor. Images show conforming products continuing on the line while defective products are automatically rejected at the inspection station.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/AIVisualInspection3.jpg"
+                          alt="Defect Detection"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Khả năng phát hiện lỗi chi tiết. Hệ thống AI nhận diện các khuyết tật bề mặt như trầy xước, nứt vỡ, sai màu, loang màu, in mờ, sai ký tự hoặc thiếu linh kiện. Mỗi lỗi được xác định vị trí chính xác trên sản phẩm để hỗ trợ phân tích nguyên nhân.
+                          </span>
+                          <span data-lang="en">
+                            Detailed defect detection capability. The AI system identifies surface defects such as scratches, cracks, color mismatches, color bleeding, faded printing, character errors, or missing components. Each defect is precisely localized on the product for root cause analysis.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/AIVisualInspection4.jpg"
+                          alt="Automatic Rejection"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Cơ cấu loại bỏ sản phẩm lỗi tự động. Khi AI phát hiện lỗi, tín hiệu được gửi tới PLC để kích hoạt các xylanh khí nén hoặc cơ cấu cơ khí khác, đẩy sản phẩm lỗi ra khỏi dây chuyền chính. Toàn bộ quá trình diễn ra tự động và nhanh chóng, không ảnh hưởng tới hiệu suất dây chuyền.
+                          </span>
+                          <span data-lang="en">
+                            Automatic defective product rejection mechanism. When AI detects a defect, a signal is sent to the PLC to activate pneumatic cylinders or other mechanical systems, ejecting the defective product from the main line. The entire process is automatic and fast, without impacting line throughput.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/AIVisualInspection7.jpg"
+                          alt="Dashboard Analytics"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-4">
+                          <span data-lang="vi">
+                            Dashboard thống kê & phân tích lỗi. Giao diện web hiển thị dữ liệu kiểm tra theo thời gian thực, thống kê tỷ lệ lỗi theo loại, theo ca sản xuất, theo thời gian. Doanh nghiệp có thể truy xuất hình ảnh của sản phẩm lỗi để kiểm chứng độ chính xác, phân tích nguyên nhân và tối ưu quy trình.
+                          </span>
+                          <span data-lang="en">
+                            Dashboard for statistics and defect analysis. The web interface displays real-time inspection data, defect rate statistics by type, production shift, and time. Enterprises can retrieve images of defective products for verification, analyze root causes, and optimize processes.
+                          </span>
+                        </p>
+
+                        <img
+                          src="/assets/images/Product/AIVisualInspection8.jpg"
+                          alt="AI vs Manual Comparison"
+                          className="img-fluid rounded mb-4"
+                        />
+
+                        <p className="mb-0">
+                          <span data-lang="vi">
+                            So sánh giữa kiểm tra bằng AI tự động và kiểm tra thủ công bằng con người. Kiểm tra AI đạt độ chính xác cao hơn, không chịu ảnh hưởng của mệt mỏi hay sai sót con người, và có thể xử lý tốc độ cao bằng với dây chuyền công nghiệp. Kiểm tra AI chuẩn hóa quy trình, giảm chi phí nhân công, và tăng độ tin cậy của sản phẩm đến khách hàng.
+                          </span>
+                          <span data-lang="en">
+                            Comparison between AI automated inspection and manual human inspection. AI inspection achieves higher accuracy, is not affected by fatigue or human error, and processes at high speeds matching industrial conveyor rates. AI inspection standardizes procedures, reduces labor costs, and increases product reliability delivered to customers.
+                          </span>
+                        </p>
                       </div>
                     )}
                     {content.productVideos && content.productVideos.length > 0 && (
@@ -528,7 +665,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           <span data-lang="vi">{content.contactTextVi}</span>
                           <span data-lang="en">{content.contactTextEn}</span>
                         </p>
-                        <Link className="btn btn-primary mt-2" href="/contact">
+                        <Link className="btn btn-primary mt-2 d-block" href="/contact" style={{ width: 'fit-content', margin: '1rem 0' }}>
                           <span data-lang="vi">{content.contactCtaVi}</span>
                           <span data-lang="en">{content.contactCtaEn}</span>
                         </Link>

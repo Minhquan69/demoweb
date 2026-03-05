@@ -27,6 +27,16 @@ export const PRODUCTS = [
       "AI-powered vision solution for accurately locating fiducial marks on products, providing X, Y, θ coordinates to robots, CNC machines, printers, and other automation systems in the factory.",
     img: "Product/Alignment1.jpg",
   },
+  {
+    slug: "ai-visual-inspection",
+    titleVi: "AI Visual Inspection - Kiểm tra ngoại quan tự động",
+    titleEn: "AI Visual Inspection - Automated Quality Control",
+    shortVi:
+      "Giải pháp thị giác máy với AI để phát hiện lỗi ngoại quan theo thời gian thực, tự động loại sản phẩm lỗi khỏi dây chuyền, chuẩn hóa chất lượng và tối ưu hiệu suất sản xuất.",
+    shortEn:
+      "AI-powered vision solution for real-time surface defect detection, automatic rejection of defective products, quality standardization, and manufacturing optimization.",
+    img: "Product/AIVisualInspection5.jpg",
+  },
 ] as const;
 
 export type ProductSlug = (typeof PRODUCTS)[number]["slug"];

@@ -504,10 +504,201 @@ const AI_ALIGNMENT: ProductDetailContent = {
   ],
 };
 
+const AI_VISUAL_INSPECTION: ProductDetailContent = {
+  slug: "ai-visual-inspection",
+  titleVi: "AI Visual Inspection - Kiểm tra ngoại quan tự động",
+  titleEn: "AI Visual Inspection - Automated Quality Control",
+  heroImg: "Product/VisualInspection1.jpg",
+  whatIsTitleVi: "Kiểm tra ngoại quan tự động bằng AI là gì?",
+  whatIsTitleEn: "What is AI-Powered Automated Quality Inspection?",
+  whatIsTextVi:
+    "AI Visual Inspection là giải pháp kiểm tra ngoại quan sản phẩm bằng trí tuệ nhân tạo và thị giác máy. Giải pháp này được thiết kế để giải quyết vấn đề kiểm tra chất lượng tiêu tốn thời gian, nhân lực và kém chính xác trong các nhà máy sản xuất hiện đại. Hệ thống sử dụng camera công nghiệp độ phân giải cao, đồng bộ với dây chuyền tốc độ cao, để thu nhận hình ảnh từng sản phẩm tại vị trí kiểm tra chính xác. AI thị giác máy phân tích hình ảnh theo thời gian thực, tự động phát hiện các khuyết tật bề mặt như trầy xước, nứt vỡ, sai màu, loang màu, in mờ, sai ký tự hoặc thiếu linh kiện. Khi phát hiện lỗi, giao diện quản lý tự động đánh dấu PASS cho sản phẩm đạt chuẩn, FAIL cho sản phẩm lỗi, đồng thời gửi tín hiệu tới hệ thống PLC để kích hoạt cơ cấu loại bỏ tự động, tách sản phẩm lỗi ra khỏi dây chuyền. Sản phẩm đạt chuẩn tiếp tục di chuyển bình thường. Toàn bộ dữ liệu kiểm tra được lưu trữ có độ tin cậy cao, có thể truy xuất hình ảnh để kiểm chứng, và hiển thị trên dashboard thống kê theo thời gian thực, giúp doanh nghiệp theo dõi chất lượng, phân tích nguyên nhân lỗi và tối ưu quy trình sản xuất. AI Visual Inspection không chỉ tăng độ chính xác kiểm tra mà còn giảm đáng kể tỷ lệ lỗi lọt, hạ thấp chi phí nhân công, chuẩn hóa quy trình, và hướng tới nhà máy thông minh.",
+  whatIsTextEn:
+    "AI Visual Inspection is an automated quality control solution powered by artificial intelligence and machine vision technology. It addresses time-consuming, labor-intensive, and error-prone manual inspection in modern manufacturing factories. The system uses high-resolution industrial cameras synchronized with high-speed conveyors to capture images of each product at precise inspection stations. AI vision analysis processes images in real time, automatically detecting surface defects such as scratches, cracks, color mismatches, color bleeding, faded printing, character errors, or missing components. Upon defect detection, the management interface automatically marks PASS for conforming products and FAIL for defective ones, while sending a signal to the PLC system to activate an automatic rejection mechanism that removes defective products from the line. Conforming products continue normally. All inspection data is stored with high reliability, images can be retrieved for verification, and real-time statistics are displayed on a dashboard, helping enterprises monitor quality, analyze root causes, and optimize production processes. AI Visual Inspection not only increases inspection accuracy but also significantly reduces defect escape rate, lowers labor costs, standardizes procedures, and advances toward intelligent manufacturing.",
+  benefitsTitleVi: "Lợi ích chính của AI Visual Inspection",
+  benefitsTitleEn: "Key benefits of AI Visual Inspection",
+  benefits: [
+    {
+      titleVi: "Độ chính xác vượt trội",
+      titleEn: "Superior accuracy",
+      textVi:
+        "Phát hiện được cả những khuyết tật rất nhỏ mà mắt người khó nhận biết (dưới 0.5mm), bao gồm trầy xước siêu nhẹ, nứt micro, loang màu nhẹ, in mờ, sai ký tự, hoặc thiếu linh kiện. Độ chính xác không chịu ảnh hưởng của chất lượng ánh sáng hay tình trạng mệt mỏi của người kiểm tra.",
+      textEn:
+        "Detects even microscopic defects (under 0.5mm) that human eyes would miss, including hairline scratches, micro-cracks, subtle color variations, faded printing, character errors, or missing components. Accuracy is unaffected by lighting conditions or inspector fatigue.",
+    },
+    {
+      titleVi: "Xử lý thời gian thực & hiệu suất cao",
+      titleEn: "Real-time processing & high throughput",
+      textVi:
+        "Hoạt động ổn định trong môi trường dây chuyền tốc độ cao (lên tới 200 sản phẩm/phút). Thời gian xử lý mỗi sản phẩm thường dưới 100ms, cho phép kiểm tra không dừng máy. Kết quả được ra quyết định tức thì (PASS/FAIL) để kích hoạt cơ cấu loại bỏ mà không ảnh hưởng đến hiệu suất dây chuyền.",
+      textEn:
+        "Operates stably on high-speed production lines (up to 200 products/minute). Processing time per product is typically under 100ms, enabling non-stop inspection. Results are decided instantly (PASS/FAIL) to trigger rejection mechanisms without impacting line throughput.",
+    },
+    {
+      titleVi: "Thích nghi nhanh chóng",
+      titleEn: "Quick adaptation & flexibility",
+      textVi:
+        "Có thể huấn luyện lại hoặc điều chỉnh trong vài giờ khi thay đổi mẫu sản phẩm, loại lỗi cần phát hiện, hoặc tiêu chuẩn kiểm tra. Không cần thay đổi phần cứng (camera, ảnh sáng, xử lý), chỉ cần cập nhật mô hình AI. Hỗ trợ nhiều loại sản phẩm trên cùng một dây chuyền.",
+      textEn:
+        "Can be retrained or adjusted in hours when changing product models, defect types to detect, or inspection standards. No need to modify hardware (cameras, lighting, processing) – only AI models need updating. Supports multiple product types on the same line.",
+    },
+    {
+      titleVi: "Phát hiện bất thường & ngoài dữ liệu",
+      titleEn: "Anomaly & novelty detection",
+      textVi:
+        "Cơ chế anomaly detection giúp phát hiện các loại lỗi chưa từng xuất hiện trong dữ liệu huấn luyện, giảm rủi ro bỏ sót khuyết tật mới. Hữu ích khi xuất hiện lỗi do thay đổi nguyên liệu, mỏi máy móc, hoặc sai lệch quy trình.",
+      textEn:
+        "Anomaly detection identifies defects not seen in training data, reducing the risk of missing novel defects. Useful when new failure modes emerge due to material changes, machine wear, or process deviations.",
+    },
+    {
+      titleVi: "Giảm chi phí nhân công & chuẩn hóa",
+      titleEn: "Labor cost reduction & standardization",
+      textVi:
+        "Loại bỏ sự phụ thuộc vào kỹ năng hoặc kinh nghiệm của từng cán bộ kiểm tra. Quy trình kiểm tra chuẩn hóa dù thay đổi người vận hành. Giảm chi phí nhân công, đặc biệt trên dây chuyền tốc độ cao nơi kiểm tra thủ công không khả thi.",
+      textEn:
+        "Eliminates dependence on inspector skill or experience. Inspection procedures remain standardized regardless of personnel changes. Reduces labor costs, especially on high-speed lines where manual inspection is infeasible.",
+    },
+    {
+      titleVi: "Dữ liệu toàn diện & truy xuất dễ",
+      titleEn: "Comprehensive data & easy retrieval",
+      textVi:
+        "Mọi sản phẩm kiểm tra đều được lưu trữ hình ảnh, kết quả (PASS/FAIL), loại lỗi, vị trí lỗi, thời gian kiểm tra. Dữ liệu này hỗ trợ phân tích nguyên nhân, theo dõi xu hướng chất lượng, và tối ưu quy trình. Có thể truy xuất lại hình ảnh của bất kỳ sản phẩm nào để kiểm chứng độ chính xác hoặc xử lý khiếu nại khách hàng.",
+      textEn:
+        "Every inspected product is stored with images, results (PASS/FAIL), defect types, defect locations, and timestamps. This data supports root cause analysis, quality trend tracking, and process optimization. Any product's images can be retrieved for accuracy verification or customer complaint handling.",
+    },
+  ],
+  applicationsTitleVi: "Bài toán thực tế & nguyên lý hoạt động",
+  applicationsTitleEn: "Real-world challenges & operating principle",
+  applications: [
+    {
+      titleVi: "Thách thức kiểm tra chất lượng trong sản xuất",
+      titleEn: "Quality inspection challenges in manufacturing",
+      textVi:
+        "Trong dây chuyền sản xuất hiện đại, việc kiểm tra thủ công bằng mắt người gặp nhiều hạn chế:\n• Tốc độ: Khó theo kịp dây chuyền tốc độ cao (trên 100 sản phẩm/phút), dẫn đến kiểm tra không toàn diện hoặc tạo nút thắt.\n• Chính xác: Dễ bỏ sót khuyết tật nhỏ (dưới 0.5mm), đặc biệt khi mệt mỏi hoặc ánh sáng kém. Con người không thể duy trì mức độ chú ý như máy móc.\n• Độ chuẩn hóa: Sự khác biệt giữa các ca trực, nhân viên, hoặc thậm chí cùng một người ở thời gian khác nhau. Tiêu chuẩn PASS/FAIL có thể thay đổi theo chủ quan.\n• Chi phí: Cần nhiều cán bộ kiểm tra chuyên dụng, chi phí nhân công cao, đặc biệt trên dây chuyền 24/7. Tốc độ kiểm tra chậm làm giảm hiệu suất dây chuyền.",
+      textEn:
+        "Manual visual inspection in modern production lines faces many limitations:\n• Speed: Difficult to keep pace with high-speed lines (over 100 products/minute), resulting in incomplete inspection or bottlenecks.\n• Accuracy: Easy to miss small defects (under 0.5mm), especially when fatigued or under poor lighting. Humans cannot maintain machine-level attention.\n• Standardization: Inconsistencies between shifts, staff, or even the same person at different times. PASS/FAIL criteria may be subjective and vary.\n• Cost: Requires dedicated inspection personnel, high labor costs especially on 24/7 lines. Slow inspection speed reduces line throughput.",
+    },
+    {
+      titleVi: "Nguyên lý & quy trình hoạt động",
+      titleEn: "Operating principle & workflow",
+      textVi:
+        "AI Visual Inspection hoạt động theo quy trình sau:\n1. Thu nhận hình ảnh: Camera công nghiệp (global shutter, độ phân giải cao) được đồng bộ với PLC và dây chuyền. Khi sản phẩm đi qua vị trí kiểm tra, camera tự động chụp hình ảnh từ các góc nhất định (từ 1-4 góc tùy theo loại sản phẩm).\n2. Tiền xử lý: Hình ảnh được chuyển đổi về định dạng chuẩn (kích thước, định dạng màu), chuẩn hóa ánh sáng, và trích xuất các vùng quan tâm (ROI).\n3. Phân tích AI: Mô hình Deep Learning học từ hàng nghìn hình ảnh sản phẩm tốt và lỗi. Mô hình thực hiện:\n   - Classification: Quyết định PASS/FAIL cho toàn bộ sản phẩm.\n   - Detection: Xác định vị trí chính xác của các khuyết tật (tọa độ x, y, loại lỗi).\n   - Segmentation: Phân tách vùng lỗi khỏi phần tốt để tính toán diện tích, độ nghiêm trọng.\n   - Anomaly Detection: Phát hiện các loại lỗi bất thường chưa từng thấy.\n4. Ra quyết định & tác động: Kết quả PASS/FAIL được gửi tới PLC trong vòng dưới 50ms. Nếu FAIL, hệ thống gửi tín hiệu đến cơ cấu loại bỏ (xylanh khí nén, rôle từ, hoặc cơ cấu cơ khí khác) để đẩy sản phẩm lỗi ra khỏi dây chuyền. Sản phẩm PASS tiếp tục di chuyển.\n5. Lưu trữ & phân tích: Hình ảnh gốc, kết quả, thông tin lỗi (loại, vị trí, mức độ) được lưu vào cơ sở dữ liệu. Dashboard hiển thị thống kê theo thời gian, ca trực, loại lỗi, giúp nhập nhằng phân tích nguyên nhân và tối ưu quy trình.",
+      textEn:
+        "AI Visual Inspection operates through the following workflow:\n1. Image Capture: Industrial cameras (global shutter, high resolution) are synchronized with PLC and conveyor. When a product reaches the inspection station, cameras automatically capture images from defined angles (1-4 angles depending on product type).\n2. Preprocessing: Images are converted to standard formats (size, color space), lighting is normalized, and regions of interest (ROI) are extracted.\n3. AI Analysis: A Deep Learning model trained on thousands of good and defective product images performs:\n   - Classification: Decides PASS/FAIL for the entire product.\n   - Detection: Pinpoints exact defect locations (x, y coordinates, defect type).\n   - Segmentation: Isolates defect regions to calculate area and severity.\n   - Anomaly Detection: Flags unusual defects not seen before.\n4. Decision & Action: Results are sent to the PLC in under 50ms. If FAIL, the system signals the rejection mechanism (pneumatic cylinders, solenoid relays, or mechanical systems) to eject the defective product. PASS products continue normally.\n5. Storage & Analysis: Original images, results, and defect info are stored in the database. Real-time dashboards show statistics by time, shift, and defect type, enabling root cause analysis and process optimization.",
+    },
+    {
+      titleVi: "Loại sản phẩm & lỗi có thể phát hiện",
+      titleEn: "Product types & detectable defects",
+      textVi:
+        "AI Visual Inspection phù hợp cho:\n• Linh kiện điện tử (PCB, SMT): Phát hiện solder joints lỏng, vết焊 ngoài, chi tiết BGA lỗi, linh kiện bị bỏ quên, vị trí linh kiện sai, in lỗi.\n• Sản phẩm cơ khí chính xác: Phát hiện trầy xước bề mặt, vết vân, nứt, vết ăn mòn, lỗi gia công (góc cạnh không nhọn hoặc kém), kích thước ngoài công sai.\n• Nhựa ép & khuôn: Phát hiện lỗi báo (burr), độ bóng không đều, vết teo, độ dày không đạt, in lỗi, màu không đúng.\n• Bao bì & in ấn: Phát hiện in mờ, sai ký tự, trật vị in, chất lượng khúc giấy, lỗi cắt, in bộp.\n• Màn hình & thiết bị điện tử: Phát hiện pixel chết, vết bẩn, trầy mặt kính, lỗi backlight, in ấn bộ tề.",
+      textEn:
+        "AI Visual Inspection is suitable for:\n• Electronic components (PCB, SMT): Detects loose solder joints, solder splashes, faulty BGA, missing components, misplaced parts, printing errors.\n• Precision mechanical parts: Detects surface scratches, marks, cracks, corrosion, machining errors (poor edge finish), dimensional deviations.\n• Injection-molded plastics: Detects burrs, uneven finish, sink marks, thickness variations, print errors, color mismatches.\n• Packaging & printing: Detects faded printing, character errors, print misalignment, paper wrinkle defects, cutting errors, print bleed.\n• Displays & electronics: Detects dead pixels, smudges, screen scratches, backlight defects, misaligned printing.",
+    },
+    {
+      titleVi: "Lợi ích & ROI cho doanh nghiệp",
+      titleEn: "Business benefits & ROI",
+      textVi:
+        "• Giảm tỷ lệ lỗi lọt (defect escape rate): Từ 2-5% (kiểm tra thủ công) xuống 0.01-0.1% (AI), tùy loại sản phẩm.\n• Tăng hiệu suất dây chuyền: Kiểm tra không dừng, không tạo nút thắt, cho phép tăng tốc độ sản xuất hoặc giáp vào dây chuyền dài hơn.\n• Giảm chi phí nhân công: Loại bỏ 1-3 cán bộ kiểm tra per shift, giảm 30-50% chi phí kiểm tra, đặc biệt trên dây chuyền 24/7.\n• Chuẩn hóa & truy xuất: Tiêu chuẩn kiểm tra nhất quán, không chịu ảnh hưởng con người. Dữ liệu toàn diện hỗ trợ bảo hành và xử lý khiếu nại.\n• Tối ưu quy trình: Dữ liệu lỗi chi tiết giúp phát hiện xu hướng, phân tích nguyên nhân sâu, cải tiến quy trình sản xuất dài hạn.\n• Tăng uy tín thương hiệu: Giảm tỷ lệ sản phẩm lỗi đến khách hàng, tăng độ tin cậy và hài lòng.\nROI thường đạt trong 1-2 năm, sau đó lợi nhuận tăng liên tục.",
+      textEn:
+        "• Reduce defect escape rate: From 2-5% (manual inspection) to 0.01-0.1% (AI), depending on product type.\n• Increase line throughput: Non-stop inspection without bottlenecks, allows faster production or longer lines.\n• Cut labor costs: Eliminate 1-3 inspection personnel per shift, reduce inspection costs by 30-50%, especially on 24/7 lines.\n• Standardization & traceability: Consistent standards unaffected by human factors. Comprehensive data supports warranty and complaint handling.\n• Process optimization: Detailed defect data helps identify trends, perform root cause analysis, and drive long-term manufacturing improvements.\n• Enhance brand reputation: Fewer defective products reach customers, increasing reliability and satisfaction.\nROI typically achieved within 1-2 years, with continuous profit growth afterward.",
+    },
+  ],
+  equippedTitleVi: "Kiến trúc & thành phần hệ thống",
+  equippedTitleEn: "System architecture & components",
+  equippedIntroVi:
+    "AI Visual Inspection là hệ thống toàn diện, bao gồm phần cứng (camera, ảnh sáng, xử lý) và phần mềm (AI engine, dashboard). Có thể triển khai như station độc lập hoặc tích hợp trực tiếp vào dây chuyền, kết nối với PLC hiện có qua các giao thức công nghiệp tiêu chuẩn.",
+  equippedIntroEn:
+    "AI Visual Inspection is a comprehensive system including hardware (cameras, lighting, processing) and software (AI engine, dashboard). Can be deployed as a standalone station or integrated directly into production lines, interfacing with existing PLCs via standard industrial protocols.",
+  equippedProducts: [
+    {
+      titleVi: "Hệ thống camera công nghiệp",
+      titleEn: "Industrial camera system",
+      textVi:
+        "Global shutter cameras (5-50MP) với ống kính và bộ lọc quang học tối ưu cho từng loại sản phẩm. Đồng bộ PLC qua GPIO hoặc Ethernet trigger, chụp tại đúng thời điểm sản phẩm ở vị trí kiểm tra. Hỗ trợ chụp từ 1-4 góc.",
+      textEn:
+        "Global-shutter cameras (5-50MP) with lenses and optical filters optimized for each product type. PLC-synchronized via GPIO or Ethernet trigger to capture exactly when products are at the inspection station. Supports 1-4 angle captures.",
+    },
+    {
+      titleVi: "Hệ thống chiếu sáng chuyên dụng",
+      titleEn: "Dedicated lighting system",
+      textVi:
+        "Kết hợp đèn LED công nghiệp (vòng, nền, cạnh, backlighting) với bộ điều khiển sáng thế hệ mới. Thiết kế tối ưu phần trăm tương phản, giảm bóng đổ, khắc phục phản xạ. Tự động điều chỉnh cường độ theo thời gian để bù đắp suy giảm LED.",
+      textEn:
+        "Combines industrial LED lights (ring, backlight, side, backlighting) with modern illumination controllers. Optimizes contrast percentage, minimizes shadows, eliminates reflections. Auto-adjusts intensity over time to compensate for LED degradation.",
+    },
+    {
+      titleVi: "AI Vision Engine & Deep Learning Models",
+      titleEn: "AI Vision Engine & Deep Learning Models",
+      textVi:
+        "Mô-đun phần mềm AI chuyên biệt cho kiểm tra chất lượng. Mô hình deep learning (CNN, R-CNN, hoặc Transformer) được huấn luyện trên dữ liệu thực của từng dây chuyền. Thực hiện Classification, Detection, Segmentation, và Anomaly Detection. Có giao diện cấu hình dễ sử dụng để thiết lập ROI, threshold, loại lỗi cần phát hiện, và tùy chỉnh mô hình mà không cần viết code.",
+      textEn:
+        "Specialized AI software module for quality inspection. Deep learning models (CNN, R-CNN, or Transformer) trained on real production data for each line. Performs classification, detection, segmentation, and anomaly detection. User-friendly configuration interface for setting ROI, thresholds, defect types, and model customization without coding.",
+    },
+    {
+      titleVi: "Bộ xử lý công nghiệp (Edge AI / IPC)",
+      titleEn: "Industrial processor (Edge AI / IPC)",
+      textVi:
+        "GPU Edge AI hoặc Industrial PC chịu được môi trường nhà máy (nhiệt độ -10~40°C, độ ẩm 10-95%, bụi, rung). Xử lý hình ảnh và suy luận AI với độ trễ dưới 50ms. Kết nối PLC qua TCP/IP, Modbus TCP, OPC-UA, hoặc giao thức tùy chỉnh. Hỗ trợ lưu trữ dữ liệu cục bộ (SSD) và sao lưu to the cloud.",
+      textEn:
+        "GPU-based Edge AI or industrial-grade computer rated for factory environments (temperature -10~40°C, humidity 10-95%, dust, vibration). Processes images and runs AI inference with under 50ms latency. Connects to PLCs via TCP/IP, Modbus TCP, OPC-UA, or custom protocols. Supports local storage (SSD) and cloud backup.",
+    },
+    {
+      titleVi: "Hệ thống loại bỏ tự động (Rejection)",
+      titleEn: "Automatic rejection system",
+      textVi:
+        "Cơ cấu loại bỏ sản phẩm lỗi khỏi dây chuyền. Thường gồm: xylanh khí nén, solenoid valve, hoặc cơ cấu cơ khí đẩy sản phẩm sang khay chứa lỗi. Hoạt động dựa trên tín hiệu từ PLC. Phổ biến cho các dây chuyền tốc độ cao.",
+      textEn:
+        "System to eject defective products from the main line. Typically includes pneumatic cylinders, solenoid valves, or mechanical pusher mechanisms to divert products to a defect container. Operates on PLC signals. Common on high-speed lines.",
+    },
+    {
+      titleVi: "Dashboard & ML Monitoring Platform",
+      titleEn: "Dashboard & ML Monitoring Platform",
+      textVi:
+        "Giao diện web/mobile để giám sát thời gian thực, xem kết quả PASS/FAIL từng sản phẩm, truy xuất hình ảnh, và phân tích dữ liệu. Hiển thị:\n- Thống kê theo thời gian (hourly, daily, weekly, monthly)\n- Phân loại lỗi & biểu đồ xu hướng\n- Heatmap loại lỗi (vị trí & tần suất trên sản phẩm)\n- Cảnh báo khi tỷ lệ lỗi vượt ngưỡng\n- Export báo cáo (Excel, PDF)\n- Quản lý user & quyền truy cập.\nHỗ trợ on-premise, cloud (AWS, Azure), hoặc hybrid.",
+      textEn:
+        "Web/mobile interface for real-time monitoring, viewing PASS/FAIL results for each product, retrieving images, and analyzing data. Displays:\n- Time-series statistics (hourly, daily, weekly, monthly)\n- Defect categorization & trend charts\n- Heatmaps showing defect types by location and frequency\n- Alerts when defect rate exceeds thresholds\n- Report exports (Excel, PDF)\n- User management & access control.\nSupports on-premise, cloud (AWS, Azure), or hybrid deployment.",
+    },
+  ],
+  resourcesTitleVi: "Tài nguyên & liên kết",
+  resourcesTitleEn: "Resources & related links",
+  solutions: [
+    { labelVi: "Giải pháp kiểm tra chất lượng tự động", labelEn: "Automated quality inspection solutions", href: "/#services" },
+    { labelVi: "Sản phẩm AI Visual Inspection", labelEn: "AI Visual Inspection product", href: "/products" },
+  ],
+  downloads: [],
+  productVideos: [],
+  sampleVehicleInfo: undefined,
+  contactTitleVi: "Bạn cần demo AI Visual Inspection?",
+  contactTitleEn: "Want an AI Visual Inspection demo?",
+  contactTextVi: "Chúng tôi có thể mô phỏng trực tiếp bài toán kiểm tra chất lượng trên dây chuyền của bạn, hoặc demo trên bộ demo chuẩn của iVista Tech với các loại sản phẩm điển hình (PCB, cơ khí, nhựa, bao bì, điện tử).",
+  contactCtaVi: "Liên hệ để xem demo",
+  contactCtaEn: "Contact for demo",
+  contactTextEn: "We can demonstrate AI Visual Inspection directly on your production line, or demo our standard inspection rig with typical product types (PCB, mechanical, plastic, packaging, electronics).",
+  exploreTitleVi: "Khám phá thêm giải pháp AI & Automation khác",
+  exploreTitleEn: "Explore other AI & automation solutions",
+  exploreTechs: [
+    {
+      titleVi: "AI Alignment - Định vị điểm mark cho nhà máy",
+      titleEn: "AI Alignment - Fiducial Alignment for Factories",
+      href: "/product-details/ai-alignment",
+      textVi: "Giải pháp AI thị giác máy để xác định vị trí chính xác các điểm mark trên sản phẩm, cung cấp tọa độ hiệu chỉnh (X, Y, θ) cho robot, CNC, máy in hoặc tự động hóa khác.",
+      textEn: "AI vision solution for precise fiducial mark localization, providing correction coordinates (X, Y, θ) to robots, CNC machines, printers, and other automation systems.",
+    },
+    {
+      titleVi: "Bodycam thông minh cho lực lượng hiện trường",
+      titleEn: "Smart Bodycam for Field Forces",
+      href: "/product-details/bodycam-smart-recorder",
+      textVi: "Thiết bị camera đeo kết hợp AI nhận dạng khuôn mặt/biển số và quản lý bằng chứng số, phù hợp cho cảnh sát, đăng kiểm, thanh tra, lực lượng phản ứng nhanh.",
+      textEn: "Body-worn camera with AI face/plate recognition and digital evidence management for police, inspectors, enforcement agencies, and field response teams.",
+    },
+  ],
+};
+
 export const PRODUCT_DETAILS: Record<ProductSlug, ProductDetailContent> = {
   "intelligent-video-surveillance": INTELLIGENT_VIDEO_SURVEILLANCE,
   "bodycam-smart-recorder": BODYCAM_SMART_RECORDER,
   "ai-alignment": AI_ALIGNMENT,
+  "ai-visual-inspection": AI_VISUAL_INSPECTION,
 };
 
 export function getProductDetail(slug: string): ProductDetailContent | undefined {

@@ -30,8 +30,7 @@ export default function ContactPage() {
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Gửi email cho chúng tôi</span><span data-lang="en">Drop us a line</span></h5>
-                    <p>info@techwix-theme.com</p>
-                    <p>mail@techwix-tech.com</p>
+                    <p><a href="mailto:ivistatech@gmail.com">ivistatech@gmail.com</a></p>
                   </div>
                 </div>
               </div>

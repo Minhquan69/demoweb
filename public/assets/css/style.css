@@ -7227,6 +7227,11 @@ textarea:-ms-input-placeholder {
   flex-direction: column;
 }
 
+.choose-us-item-02 .choose-us-img {
+  display: flex;
+  justify-content: center;
+}
+
 .choose-us-item-02 .choose-us-img img {
   transition: all 0.3s linear;
 }

@@ -236,7 +236,7 @@ export default function AboutPage() {
                         <span data-lang="vi">Gọi để được tư vấn </span>
                         <span data-lang="en">Call to ask any question </span>
                       </p>
-                      <h3 className="number">0123-456-7890</h3>
+                      <h3 className="number">0983-835-686</h3>
                     </div>
                   </div>
                 </div>

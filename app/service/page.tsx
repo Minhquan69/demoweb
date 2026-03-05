@@ -59,7 +59,7 @@ export default function ServicePage() {
                   </div>
                   <div className="cta-text">
                     <p><span data-lang="vi">Gọi cho chúng tôi để được tư vấn</span><span data-lang="en">Call Us For Any inquiry</span></p>
-                    <h3 className="number"><a href="tel:+84983835686" className="text-white text-decoration-none">+84 983 835 686</a></h3>
+                    <h3 className="number"><a href="tel:0983835686" className="text-white text-decoration-none">0983 835 686</a></h3>
                   </div>
                 </div>
               </div>

@@ -2691,6 +2691,45 @@ textarea:-ms-input-placeholder {
   border-radius: 35px;
 }
 
+/* Hero Carousel Specific Styles */
+.techwix-hero-section-05 .hero-carousel-active {
+  width: 100%;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .row {
+  width: 100%;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .hero-content {
+  max-width: 100%;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .swiper-pagination {
+  bottom: -50px;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+}
+
+.techwix-hero-section-05 .hero-carousel-active .swiper-pagination-bullet-active {
+  background-color: #086ad8;
+}
+
+@media only screen and (max-width: 991px) {
+  .techwix-hero-section-05 .hero-carousel-active {
+    margin-bottom: 60px;
+  }
+}
+
+
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content {
   max-width: 710px;
   margin: 0 auto;

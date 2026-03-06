@@ -354,9 +354,26 @@
 
 
 
-    /*--    
+    /*--
+        Hero Carousel Active
+    -----------------------------------*/
+    var swiper = new Swiper(".hero-carousel-active", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".hero-carousel-active .swiper-pagination",
+            clickable: true,
+        },
+    });
+
+    /*--
       Progress Bar
-  -----------------------------------*/  
+  -----------------------------------*/
 
     if($('.progress-line').length) {
         $('.progress-line').appear(function(){

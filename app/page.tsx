@@ -1,40 +1,90 @@
-import React from "react";
 import Link from "next/link";
+
+// Product data
+const products = [
+  {
+    id: 1,
+    nameVi: "Face Recognition",
+    nameEn: "Face Recognition",
+    descriptionVi: "Nhận diện khuôn mặt chính xác từ video và hình ảnh, ứng dụng cho kiểm soát ra vào và an ninh.",
+    descriptionEn: "Accurate face recognition from video and images for access control and security applications.",
+    image: "/assets/images/ser-icon13.png"
+  },
+  {
+    id: 2,
+    nameVi: "Plate Recognition",
+    nameEn: "Plate Recognition",
+    descriptionVi: "Nhận dạng biển số xe tự động, tích hợp bãi xe và giao thông thông minh.",
+    descriptionEn: "Automatic license plate recognition for parking and smart traffic management.",
+    image: "/assets/images/ser-icon14.png"
+  },
+  {
+    id: 3,
+    nameVi: "Abnormal Behavior Detection",
+    nameEn: "Abnormal Behavior Detection",
+    descriptionVi: "Phát hiện hành vi bất thường trong video giám sát, cảnh báo an toàn theo thời gian thực.",
+    descriptionEn: "Detect abnormal behavior in surveillance video with real-time safety alerts.",
+    image: "/assets/images/ser-icon15.png"
+  },
+  {
+    id: 4,
+    nameVi: "Hệ thống giám sát an ninh tập trung",
+    nameEn: "Centralized Security Surveillance",
+    descriptionVi: "Quản lý và giám sát tập trung nhiều camera, tích hợp AI phân tích và báo động.",
+    descriptionEn: "Centralized management and monitoring of multiple cameras with AI analysis and alerts.",
+    image: "/assets/images/ser-icon16.png"
+  },
+  {
+    id: 5,
+    nameVi: "Hệ thống Bodycam",
+    nameEn: "Bodycam System",
+    descriptionVi: "Giải pháp camera đeo người kết hợp AI ghi hình và phân tích phục vụ an ninh, thực thi pháp luật.",
+    descriptionEn: "Wearable camera solution with AI recording and analysis for security and law enforcement.",
+    image: "/assets/images/ser-icon17.png"
+  }
+];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
+      {/* Hero - Product Carousel */}
       <div id="hero" className="section techwix-hero-section-05">
         <div className="techwix-hero-wrap" style={{ backgroundImage: "url(/assets/images/bg/hero-bg5.jpg)" }}>
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-lg-6">
-                <div className="hero-content">
-                  <h3 className="sub-title" data-aos-delay="600" data-aos="fade-up">
-                    <span data-lang="vi">Đồng hành cùng doanh nghiệp trong hành trình ứng dụng AI</span>
-                    <span data-lang="en">Partnering with enterprises on their AI journey</span>
-                  </h3>
-                  <h2 className="title" data-aos="fade-up" data-aos-delay="800">
-                    <span data-lang="vi">Nền tảng <span>AI</span> cho doanh nghiệp vận hành thông minh.</span>
-                    <span data-lang="en"><span>AI</span> Platform for Smart Enterprise Operations.</span>
-                  </h2>
-                  <p data-aos="fade-up" data-aos-delay="900">
-                    <span data-lang="vi">Chúng tôi thiết kế, xây dựng và triển khai các giải pháp AI sẵn sàng sản xuất cho doanh nghiệp Việt Nam.</span>
-                    <span data-lang="en">We design, build, and deploy production-ready AI solutions for Vietnamese enterprises.</span>
-                  </p>
-                  <div className="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                    <a className="btn btn-outline style-02" href="#about"><span data-lang="vi">Xem thêm</span><span data-lang="en">Read More</span></a>
-                    <Link className="btn" href="/contact"><span data-lang="vi">Liên hệ tư vấn</span><span data-lang="en">Contact Us</span></Link>
-                  </div>
+              <div className="swiper-container hero-carousel-active" style={{ width: "100%" }}>
+                <div className="swiper-wrapper">
+                  {products.map((product) => (
+                    <div key={product.id} className="swiper-slide">
+                      <div className="row align-items-center">
+                        <div className="col-lg-6">
+                          <div className="hero-content">
+                            <h2 className="title" data-aos="fade-up" data-aos-delay="800">
+                              <span data-lang="vi">{product.nameVi}</span>
+                              <span data-lang="en">{product.nameEn}</span>
+                            </h2>
+                            <p data-aos="fade-up" data-aos-delay="900">
+                              <span data-lang="vi">{product.descriptionVi}</span>
+                              <span data-lang="en">{product.descriptionEn}</span>
+                            </p>
+                            <div className="hero-btn" data-aos="fade-up" data-aos-delay="1000">
+                              <a className="btn btn-outline style-02" href="#about"><span data-lang="vi">Xem thêm</span><span data-lang="en">Read More</span></a>
+                              <Link className="btn" href="/contact"><span data-lang="vi">Liên hệ tư vấn</span><span data-lang="en">Contact Us</span></Link>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-lg-6">
+                          <div className="hero-images">
+                            <div className="images">
+                              <img src={product.image} alt={product.nameEn} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="hero-images">
-                  <div className="images">
-                    <img src="/assets/images/hero-img.png" alt="" />
-                  </div>
-                </div>
+                <div className="swiper-pagination"></div>
               </div>
             </div>
           </div>

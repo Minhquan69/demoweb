@@ -90,8 +90,18 @@ export default function HomePage() {
                           <img src="/assets/images/about-icon1.png" alt="" />
                         </div>
                         <div className="about-text">
-                          <h3 className="title"><span data-lang="vi">Computer Vision</span><span data-lang="en">Computer Vision</span></h3>
-                          <p><span data-lang="vi">Nhận diện hình ảnh, video và hành vi để tự động hóa quy trình nghiệp vụ.</span><span data-lang="en">Image, video, and behavior recognition to automate business processes.</span></p>
+                          <h3 className="title">
+                            <a className="popup-video" href="https://youtu.be/BDFZrcMv80g?si=WP1uy-EXG9VOz0nC">
+                              <span data-lang="vi">Computer Vision</span>
+                              <span data-lang="en">Computer Vision</span>
+                            </a>
+                          </h3>
+                          <p>
+                            <a className="popup-video" href="https://youtu.be/BDFZrcMv80g?si=WP1uy-EXG9VOz0nC">
+                              <span data-lang="vi">Nhận diện hình ảnh, video và hành vi để tự động hóa quy trình nghiệp vụ.</span>
+                              <span data-lang="en">Image, video, and behavior recognition to automate business processes.</span>
+                            </a>
+                          </p>
                         </div>
                       </div>
                       <div className="about-list-item">
@@ -332,7 +342,9 @@ export default function HomePage() {
                         <h4 className="sub-title">Computer Vision</h4>
                         <h3 className="title"><Link href="/service"><span data-lang="vi">Thị giác máy tính: nhận diện hình ảnh, video và hành vi để tự động hóa quy trình nghiệp vụ.</span><span data-lang="en">Computer vision: image, video and behavior recognition to automate business processes.</span></Link></h3>
                       </div>
-                      <a className="play-btn popup-video" href="https://www.youtube.com/embed/qjbZrnSsq1c?autoplay=1"><i className="fas fa-play"></i></a>
+                      <a className="play-btn popup-video" href="https://youtu.be/BDFZrcMv80g?si=WP1uy-EXG9VOz0nC">
+                        <i className="fas fa-play"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -348,7 +360,9 @@ export default function HomePage() {
                             <h4 className="sub-title">LLM &amp; AI Agents</h4>
                             <h3 className="title"><Link href="/service"><span data-lang="vi">Mô hình ngôn ngữ lớn và tác nhân AI cho chatbot, phân tích văn bản và tự động hóa tri thức.</span><span data-lang="en">Large language models and AI agents for chatbots, text analysis and knowledge automation.</span></Link></h3>
                           </div>
-                          <a className="play-btn popup-video" href="https://www.youtube.com/embed/qjbZrnSsq1c?autoplay=1"><i className="fas fa-play"></i></a>
+                          <a className="play-btn popup-video" href="https://www.youtube.com/watch?v=6VBrt6myShY">
+                            <i className="fas fa-play"></i>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -362,7 +376,9 @@ export default function HomePage() {
                             <h4 className="sub-title"><span data-lang="vi">Nhận dạng giọng nói</span><span data-lang="en">Speech Recognition</span></h4>
                             <h3 className="title"><Link href="/service"><span data-lang="vi">Chuyển giọng nói thành văn bản và điều khiển bằng giọng nói cho ứng dụng doanh nghiệp.</span><span data-lang="en">Speech-to-text and voice control for enterprise applications.</span></Link></h3>
                           </div>
-                          <a className="play-btn popup-video" href="https://www.youtube.com/embed/qjbZrnSsq1c?autoplay=1"><i className="fas fa-play"></i></a>
+                          <a className="play-btn popup-video" href="https://www.youtube.com/watch?v=vLLYakdD0Kk">
+                            <i className="fas fa-play"></i>
+                          </a>
                         </div>
                       </div>
                     </div>

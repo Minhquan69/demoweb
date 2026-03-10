@@ -209,7 +209,10 @@
 		// youtube.com/watch?v=VIDEO_ID
 		if (!id) { m = url.match(/(?:v=)([a-zA-Z0-9_-]+)/); if (m) id = m[1]; }
 		if (!id) { m = url.match(/(?:embed\/)([a-zA-Z0-9_-]+)/); if (m) id = m[1]; }
-		return id ? 'https://www.youtube.com/embed/' + id + '?autoplay=1' : url;
+		if (!id) return url;
+		var origin = '';
+		try { origin = '&origin=' + encodeURIComponent(window.location.origin); } catch (e) {}
+		return 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&modestbranding=1&playsinline=1' + origin;
 	}
 	$('.popup-video').each(function() {
 		this.href = getYoutubeEmbedUrl(this.href);

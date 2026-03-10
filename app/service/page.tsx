@@ -105,7 +105,7 @@ export default function ServicePage() {
             <div className="brand-active">
               <div className="swiper-container">
                 <div className="swiper-wrapper">
-                  {[1, 2, 3, 4].map((n, i) => (
+                  {[1, 2, 3, 4, 5].map((n, i) => (
                     <div key={i} className="swiper-slide single-brand">
                       <img src={`/assets/images/brand/brand-${n}.png`} alt="Brand" />
                     </div>

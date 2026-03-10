@@ -82,6 +82,66 @@ function initLanguageSwitcher() {
     });
 }
 
+function getInitialTheme() {
+    try {
+        var saved = localStorage.getItem('selectedTheme');
+        if (saved === 'light' || saved === 'dark') return saved;
+    } catch (e) { }
+    try {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+    } catch (e) { }
+    return 'light';
+}
+
+function applyTheme(theme) {
+    if (theme !== 'light' && theme !== 'dark') theme = 'light';
+    try {
+        localStorage.setItem('selectedTheme', theme);
+    } catch (e) { }
+    document.documentElement.setAttribute('data-theme', theme);
+
+    document.querySelectorAll('.theme-btn').forEach(function (btn) {
+        btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        btn.classList.toggle('is-dark', theme === 'dark');
+    });
+
+    // Swap logo variants based on theme:
+    // light  -> use *_1 versions (logo_1, logo-white_1, logo-2_1, logo-3_1)
+    // dark   -> use base versions without _1 suffix
+    try {
+        // Match all site logo variants under /assets/images/logo*
+        var logoSelectors = [
+            'img[src*=\"/assets/images/logo\"]'
+        ];
+        document.querySelectorAll(logoSelectors.join(',')).forEach(function (img) {
+            var src = img.getAttribute('src') || '';
+            if (!src) return;
+            var hasSuffix = src.indexOf('_1.') !== -1;
+            if (theme === 'dark') {
+                if (hasSuffix) {
+                    img.setAttribute('src', src.replace('_1.', '.'));
+                }
+            } else {
+                if (!hasSuffix) {
+                    img.setAttribute('src', src.replace(/(\.[a-zA-Z0-9]+)$/, '_1$1'));
+                }
+            }
+        });
+    } catch (e) { }
+}
+
+function initThemeToggle() {
+    applyTheme(getInitialTheme());
+    document.querySelectorAll('.theme-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+    });
+}
+
 function setActiveMenu() {
     function getLocationKey() {
         var path = window.location.pathname || '/';
@@ -162,6 +222,7 @@ function initLayout() {
         loadFragment('site-footer', '/footer.html')
     ]).then(function () {
         initLanguageSwitcher();
+        initThemeToggle();
         setActiveMenu();
         // Khi Next.js chuyển trang (client-side), form có thể được render sau.
         // Quan sát DOM để cập nhật lại placeholder cho các field mới xuất hiện.

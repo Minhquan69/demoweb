@@ -58,7 +58,7 @@ export const TEAM: TeamMember[] = [
     name: "Kiều Thanh Bình",
     degreeVi: "Đại học",
     degreeEn: "Bachelor",
-    avatar: "avatar_default.jpg",
+    avatar: "KieuThanhBinh.jpg",
   },
   {
     name: "Ngô Viết Dũng",

@@ -49,6 +49,410 @@
 /*-- Google Font --*/
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+/* ===========================
+   Theme (Light/Dark)
+   =========================== */
+:root {
+  --twx-bg: #ffffff;
+  --twx-surface: #ffffff;
+  --twx-surface-2: #f6f9ff;
+  --twx-text: #0f172a;
+  --twx-muted: #64748b;
+  --twx-border: rgba(15, 23, 42, 0.12);
+  --twx-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.06);
+  --twx-primary: #086ad8;
+  --twx-primary-2: #42b9ff;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --twx-bg: #0b1220;
+  --twx-surface: #0f1a2e;
+  --twx-surface-2: #111f38;
+  --twx-text: #e5e7eb;
+  --twx-muted: rgba(229, 231, 235, 0.86);
+  --twx-border: rgba(229, 231, 235, 0.14);
+  --twx-shadow: 0px 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+html[data-theme="dark"] body {
+  background: var(--twx-bg);
+  color: var(--twx-text);
+}
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6 {
+  color: #ffffff;
+}
+html[data-theme="dark"] p,
+html[data-theme="dark"] .text {
+  color: var(--twx-muted);
+}
+/* Global readability in dark mode */
+html[data-theme="dark"] body,
+html[data-theme="dark"] .main-wrapper {
+  color: var(--twx-text);
+}
+html[data-theme="dark"] p,
+html[data-theme="dark"] li,
+html[data-theme="dark"] span,
+html[data-theme="dark"] small,
+html[data-theme="dark"] label,
+html[data-theme="dark"] .text,
+html[data-theme="dark"] .designation,
+html[data-theme="dark"] .widget-info ul li .info-text,
+html[data-theme="dark"] .widget-link .link li a,
+html[data-theme="dark"] .blog-content .text {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] a:hover {
+  color: #93c5fd;
+}
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select {
+  background: rgba(15, 26, 46, 0.6);
+  color: var(--twx-text);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: rgba(229, 231, 235, 0.72);
+}
+html[data-theme="dark"] .main-wrapper p,
+html[data-theme="dark"] .main-wrapper .text,
+html[data-theme="dark"] .about-content p,
+html[data-theme="dark"] .about-text p,
+html[data-theme="dark"] .about-list-item p,
+html[data-theme="dark"] .about-list-item-03 p,
+html[data-theme="dark"] .service-content p,
+html[data-theme="dark"] .choose-us-content p,
+html[data-theme="dark"] .skill-left .text,
+html[data-theme="dark"] .skill-right .text,
+html[data-theme="dark"] .testimonial-content p,
+html[data-theme="dark"] .single-testimonial-02 .testimonial-content p,
+html[data-theme="dark"] .blog-content .text,
+html[data-theme="dark"] .single-blog .text {
+  color: var(--twx-muted);
+}
+
+/* Increase readability for secondary text & links in dark */
+html[data-theme="dark"] .widget-link .link li a,
+html[data-theme="dark"] .footer-section .widget-info ul li .info-text,
+html[data-theme="dark"] .footer-section .widget-info ul li .info-text a {
+  color: rgba(229, 231, 235, 0.88);
+}
+html[data-theme="dark"] .choose-us-item-02 .choose-us-content p,
+html[data-theme="dark"] .service-item-04 .service-content p,
+html[data-theme="dark"] .single-blog .blog-content .text {
+  color: rgba(229, 231, 235, 0.86);
+}
+html[data-theme="dark"] a {
+  color: inherit;
+}
+
+/* Header theme toggle button */
+.header-theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-right: 14px;
+}
+.theme-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid var(--twx-border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #0f172a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.theme-btn:hover {
+  transform: translateY(-1px);
+}
+.theme-btn .theme-icon-sun,
+.theme-btn .theme-icon-moon {
+  font-size: 16px;
+  line-height: 1;
+}
+.theme-btn .theme-icon-sun {
+  display: none;
+}
+.theme-btn.is-dark {
+  background: rgba(15, 26, 46, 0.7);
+  color: #e5e7eb;
+}
+.theme-btn.is-dark .theme-icon-moon {
+  display: none;
+}
+.theme-btn.is-dark .theme-icon-sun {
+  display: inline-block;
+}
+
+/* Dark mode surfaces (common sections/cards) */
+html[data-theme="dark"] .offcanvas,
+html[data-theme="dark"] .search-wrap .search-inner,
+html[data-theme="dark"] .techwix-footer-section,
+html[data-theme="dark"] .footer-section,
+html[data-theme="dark"] .footer-widget {
+  background: var(--twx-surface);
+  color: var(--twx-text);
+}
+
+html[data-theme="dark"] .section-title .sub-title {
+  color: rgba(147, 197, 253, 0.95);
+}
+html[data-theme="dark"] .section-title .title {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .single-blog,
+html[data-theme="dark"] .choose-us-item-02,
+html[data-theme="dark"] .service-item-04,
+html[data-theme="dark"] .single-team,
+html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content,
+html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content,
+html[data-theme="dark"] .techwix-cta-section-02 .cta-wrap {
+  background: var(--twx-surface);
+  box-shadow: var(--twx-shadow);
+  border-color: var(--twx-border);
+}
+
+html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content {
+  background: var(--twx-surface);
+}
+
+html[data-theme="dark"] .choose-us-item-02 .choose-us-content .title a,
+html[data-theme="dark"] .single-blog .blog-content .title a,
+html[data-theme="dark"] .service-item-04 .service-content .title a {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .techwix-about-section-07,
+html[data-theme="dark"] .techwix-skill-section-02,
+html[data-theme="dark"] .techwix-blog-grid-section,
+html[data-theme="dark"] .techwix-blog-section,
+html[data-theme="dark"] .techwix-service-section-05,
+html[data-theme="dark"] .techwix-choose-us-section {
+  background: var(--twx-bg);
+}
+
+/* About page "choose-us-bg3.jpg": dim background image in dark mode */
+html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"] {
+  position: relative;
+}
+html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(8, 106, 216, 0.18) 0%, rgba(11, 18, 32, 0) 55%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.78) 0%, rgba(11, 18, 32, 0.92) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"] > .container {
+  position: relative;
+  z-index: 1;
+}
+
+html[data-theme="dark"] .techwix-team-section-03,
+html[data-theme="dark"] .techwix-team-section-04 {
+  background: var(--twx-bg);
+}
+
+/* Dark hero text panel */
+html[data-theme="dark"] .techwix-hero-section-05 .techwix-hero-wrap .hero-content {
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.62) 0%, rgba(2, 6, 23, 0.38) 60%, rgba(2, 6, 23, 0.22) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+/* Header: dark */
+html[data-theme="dark"] .header-section {
+  background: rgba(11, 18, 32, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.10);
+}
+html[data-theme="dark"] .header-menu .main-menu li a,
+html[data-theme="dark"] .header-meta .header-search .search-btn,
+html[data-theme="dark"] .header-section-05 .header-social ul li a {
+  color: #e5e7eb;
+}
+html[data-theme="dark"] .header-menu .main-menu li:hover > a,
+html[data-theme="dark"] .header-menu .main-menu li.active-menu > a {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .header-section-05 .header-language-switcher .lang-btn {
+  color: rgba(229, 231, 235, 0.8);
+}
+html[data-theme="dark"] .header-section-05 .header-language-switcher .lang-btn.active {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .header-section-05 .header-logo a p {
+  color: rgba(229, 231, 235, 0.92);
+}
+
+/* Service section: dark */
+html[data-theme="dark"] .techwix-service-section-05::before {
+  opacity: 0.35;
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-item-04 {
+  background: var(--twx-bg);
+  border: 1px solid var(--twx-bg);
+  box-shadow: none;
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-item-04 .service-content .title,
+html[data-theme="dark"] .techwix-service-section-05 .service-item-04 .service-content .title a {
+  color: #ffffff;
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-item-04 .service-content .title a:hover {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-item-04 .service-content p {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-wrap {
+  background: transparent;
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-wrap.section-padding-02 {
+  background: var(--twx-bg);
+}
+html[data-theme="dark"] .techwix-service-section-05 .service-content-wrap {
+  background: var(--twx-bg);
+}
+/* Service section (dark): remove all borders inside */
+html[data-theme="dark"] .techwix-service-section-05 .service-wrap,
+html[data-theme="dark"] .techwix-service-section-05 .service-wrap * {
+  border-color: var(--twx-bg) !important;
+  outline: 0;
+}
+/* Keep the outermost border color */
+html[data-theme="dark"] .techwix-service-section-05 .service-wrap {
+  border-color: var(--twx-border) !important;
+}
+html[data-theme="dark"] .techwix-service-section-05 .text-center.mt-5 .btn {
+  border: 1px solid var(--twx-bg);
+  color: #e5e7eb;
+}
+html[data-theme="dark"] .techwix-service-section-05 .text-center.mt-5 .btn:hover {
+  color: #ffffff;
+}
+
+/* Testimonial section: dark */
+html[data-theme="dark"] .techwix-testimonial-section-02,
+html[data-theme="dark"] .techwix-testimonial-section-03 {
+  background-color: var(--twx-bg) !important;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02.bg-cover,
+html[data-theme="dark"] .techwix-testimonial-section-03.bg-cover {
+  background-image: none !important;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02.bg-cover::before,
+html[data-theme="dark"] .techwix-testimonial-section-03.bg-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1200px 600px at 50% 0%, rgba(8, 106, 216, 0.22) 0%, rgba(11, 18, 32, 0.0) 55%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.92) 0%, rgba(11, 18, 32, 0.98) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02.bg-cover,
+html[data-theme="dark"] .techwix-testimonial-section-03.bg-cover {
+  position: relative;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02.bg-cover > .container,
+html[data-theme="dark"] .techwix-testimonial-section-03.bg-cover > .container {
+  position: relative;
+  z-index: 1;
+}
+html[data-theme="dark"] #testimonial .text-center.mt-5 .btn {
+  border-color: rgba(147, 197, 253, 0.35);
+  color: #e5e7eb;
+}
+html[data-theme="dark"] #testimonial .text-center.mt-5 .btn:hover {
+  color: #ffffff;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02 .single-testimonial-02,
+html[data-theme="dark"] .techwix-testimonial-section-03 .single-testimonial-02 {
+  background: var(--twx-surface);
+  box-shadow: var(--twx-shadow);
+  border: 1px solid var(--twx-border);
+}
+html[data-theme="dark"] .techwix-testimonial-section-02 .single-testimonial-02 .testimonial-content p,
+html[data-theme="dark"] .techwix-testimonial-section-03 .single-testimonial-02 .testimonial-content p {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .techwix-testimonial-section-02 .single-testimonial-02 .testimonial-content .name,
+html[data-theme="dark"] .techwix-testimonial-section-03 .single-testimonial-02 .testimonial-content .name {
+  color: #ffffff;
+}
+html[data-theme="dark"] .techwix-testimonial-section-02 .single-testimonial-02 .testimonial-content .designation,
+html[data-theme="dark"] .techwix-testimonial-section-03 .single-testimonial-02 .testimonial-content .designation {
+  color: rgba(229, 231, 235, 0.72);
+}
+html[data-theme="dark"] .testimonial-02-active .swiper-pagination .swiper-pagination-bullet::after {
+  border-color: rgba(229, 231, 235, 0.45);
+}
+html[data-theme="dark"] .testimonial-02-active .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #93c5fd;
+}
+
+/* Footer: dark */
+html[data-theme="dark"] .footer-section {
+  background: #070d19;
+}
+html[data-theme="dark"] .footer-section.footer-section-03 {
+  background-image: none !important;
+  position: relative;
+}
+html[data-theme="dark"] .footer-section.footer-section-03::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(1000px 500px at 20% 0%, rgba(8, 106, 216, 0.18) 0%, rgba(7, 13, 25, 0.0) 55%),
+    linear-gradient(180deg, rgba(7, 13, 25, 0.92) 0%, rgba(7, 13, 25, 0.98) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .footer-section.footer-section-03 > .container,
+html[data-theme="dark"] .footer-section.footer-section-03 .footer-copyright-area > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer: make child blocks match parent background */
+html[data-theme="dark"] .footer-widget,
+html[data-theme="dark"] .footer-widget-about,
+html[data-theme="dark"] .widget-link,
+html[data-theme="dark"] .widget-info {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+html[data-theme="dark"] .footer-widget .footer-widget-title {
+  color: #ffffff;
+}
+html[data-theme="dark"] .footer-widget-about p,
+html[data-theme="dark"] .footer-section .widget-link .link li a,
+html[data-theme="dark"] .footer-section .widget-info ul li .info-text,
+html[data-theme="dark"] .footer-section .widget-info ul li .info-text a,
+html[data-theme="dark"] .copyright-text p {
+  color: rgba(229, 231, 235, 0.78);
+}
+html[data-theme="dark"] .footer-section .widget-link .link li a:hover {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .footer-copyright-area {
+  border-top-color: rgba(229, 231, 235, 0.12);
+}
+
 /* Force Inter for all text (kept icon fonts) */
 html {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -6680,10 +7084,39 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-contact-section .contact-wrap .contact-form {
-  background: #f8f8f8;
+  background: transparent;
   border-radius: 10px;
   overflow: hidden;
   margin-left: 110px;
+}
+
+/* Contact section: dark mode align backgrounds with parent (no extra wrapper box) */
+html[data-theme="dark"] .techwix-contact-section .contact-wrap {
+  background: transparent;
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-info .section-title .title::before {
+  background: linear-gradient(180deg, #38bdf8 0%, #6366f1 100%);
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-info ul li .contact-info-item .contact-info-icon i {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-info ul li .contact-info-item .contact-info-text .title {
+  color: #ffffff;
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-info ul li .contact-info-item .contact-info-text p {
+  color: var(--twx-muted);
+}
+/* In dark mode, keep outer contact-form transparent, card styles on inner wrap */
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form {
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap {
+  background: var(--twx-surface);
+  border-radius: 10px;
+  box-shadow: var(--twx-shadow);
+  border: 1px solid var(--twx-border);
 }
 
 @media only screen and (max-width: 1399px) {
@@ -6799,6 +7232,14 @@ textarea:-ms-input-placeholder {
   resize: none;
 }
 
+/* Contact form fields: unify background in dark mode */
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form textarea {
+  background: rgba(15, 26, 46, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: var(--twx-text);
+}
+
 .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form textarea::-webkit-input-placeholder {
   opacity: 0.95;
   font-size: 14px;
@@ -6875,6 +7316,19 @@ textarea:-ms-input-placeholder {
   padding: 50px 80px 75px;
   border-radius: 5px;
   margin-top: 30px;
+}
+
+/* Contact info cards: dark background */
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info {
+  background: var(--twx-bg);
+  border: 1px solid var(--twx-border);
+}
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content .title {
+  color: #ffffff;
+}
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p,
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p a {
+  color: var(--twx-muted);
 }
 
 @media only screen and (max-width: 1199px) {
@@ -7720,7 +8174,7 @@ textarea:-ms-input-placeholder {
 .techwix-blog-grid-section .single-blog .blog-image a img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 

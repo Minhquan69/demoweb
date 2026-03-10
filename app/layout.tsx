@@ -12,6 +12,21 @@ export const metadata = {
 const layoutLinks = (
   <>
     <link rel="shortcut icon" type="image/x-icon" href="/assets/images/favicon_1.png" />
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          (function () {
+            try {
+              var t = localStorage.getItem('selectedTheme');
+              if (t !== 'light' && t !== 'dark') {
+                t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+              }
+              document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+          })();
+        `,
+      }}
+    />
     <link rel="stylesheet" href="/assets/css/plugins/all.min.css" />
     <link rel="stylesheet" href="/assets/css/plugins/flaticon.css" />
     <link rel="stylesheet" href="/assets/css/plugins/bootstrap.min.css" />

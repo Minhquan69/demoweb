@@ -369,6 +369,10 @@
             el: ".hero-carousel-active .swiper-pagination",
             clickable: true,
         },
+        navigation: {
+            nextEl: ".hero-carousel-active .hero-carousel-btn-next",
+            prevEl: ".hero-carousel-active .hero-carousel-btn-prev",
+        },
     });
 
     /*--

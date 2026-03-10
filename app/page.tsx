@@ -1,48 +1,5 @@
 import Link from "next/link";
-
-// Product data
-const products = [
-  {
-    id: 1,
-    nameVi: "Face Recognition",
-    nameEn: "Face Recognition",
-    descriptionVi: "Nhận diện khuôn mặt chính xác từ video và hình ảnh, ứng dụng cho kiểm soát ra vào và an ninh.",
-    descriptionEn: "Accurate face recognition from video and images for access control and security applications.",
-    image: "/assets/images/ser-icon13.png"
-  },
-  {
-    id: 2,
-    nameVi: "Plate Recognition",
-    nameEn: "Plate Recognition",
-    descriptionVi: "Nhận dạng biển số xe tự động, tích hợp bãi xe và giao thông thông minh.",
-    descriptionEn: "Automatic license plate recognition for parking and smart traffic management.",
-    image: "/assets/images/ser-icon14.png"
-  },
-  {
-    id: 3,
-    nameVi: "Abnormal Behavior Detection",
-    nameEn: "Abnormal Behavior Detection",
-    descriptionVi: "Phát hiện hành vi bất thường trong video giám sát, cảnh báo an toàn theo thời gian thực.",
-    descriptionEn: "Detect abnormal behavior in surveillance video with real-time safety alerts.",
-    image: "/assets/images/ser-icon15.png"
-  },
-  {
-    id: 4,
-    nameVi: "Hệ thống giám sát an ninh tập trung",
-    nameEn: "Centralized Security Surveillance",
-    descriptionVi: "Quản lý và giám sát tập trung nhiều camera, tích hợp AI phân tích và báo động.",
-    descriptionEn: "Centralized management and monitoring of multiple cameras with AI analysis and alerts.",
-    image: "/assets/images/ser-icon16.png"
-  },
-  {
-    id: 5,
-    nameVi: "Hệ thống Bodycam",
-    nameEn: "Bodycam System",
-    descriptionVi: "Giải pháp camera đeo người kết hợp AI ghi hình và phân tích phục vụ an ninh, thực thi pháp luật.",
-    descriptionEn: "Wearable camera solution with AI recording and analysis for security and law enforcement.",
-    image: "/assets/images/ser-icon17.png"
-  }
-];
+import { PRODUCTS } from "./data/products";
 
 export default function HomePage() {
   return (
@@ -54,29 +11,35 @@ export default function HomePage() {
             <div className="row align-items-center">
               <div className="swiper-container hero-carousel-active" style={{ width: "100%" }}>
                 <div className="swiper-wrapper">
-                  {products.map((product) => (
-                    <div key={product.id} className="swiper-slide">
+                  {PRODUCTS.map((product) => (
+                    <div key={product.slug} className="swiper-slide">
                       <div className="row align-items-center">
                         <div className="col-lg-6">
                           <div className="hero-content">
                             <h2 className="title" data-aos="fade-up" data-aos-delay="800">
-                              <span data-lang="vi">{product.nameVi}</span>
-                              <span data-lang="en">{product.nameEn}</span>
+                              <span data-lang="vi">{product.titleVi}</span>
+                              <span data-lang="en">{product.titleEn}</span>
                             </h2>
                             <p data-aos="fade-up" data-aos-delay="900">
-                              <span data-lang="vi">{product.descriptionVi}</span>
-                              <span data-lang="en">{product.descriptionEn}</span>
+                              <span data-lang="vi">{product.shortVi}</span>
+                              <span data-lang="en">{product.shortEn}</span>
                             </p>
                             <div className="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                              <a className="btn btn-outline style-02" href="#about"><span data-lang="vi">Xem thêm</span><span data-lang="en">Read More</span></a>
-                              <Link className="btn" href="/contact"><span data-lang="vi">Liên hệ tư vấn</span><span data-lang="en">Contact Us</span></Link>
+                              <Link className="btn" href={`/product-details/${product.slug}`}>
+                                <span data-lang="vi">Xem sản phẩm</span>
+                                <span data-lang="en">View Product</span>
+                              </Link>
                             </div>
                           </div>
                         </div>
                         <div className="col-lg-6">
                           <div className="hero-images">
                             <div className="images">
-                              <img src={product.image} alt={product.nameEn} />
+                              {(((product as any).heroImgs as string[] | undefined) ?? [((product as any).heroImg ?? product.img) as string, product.img]).slice(0, 2).map((src, idx) => (
+                                <div key={`${product.slug}-${idx}`} className="image-item">
+                                  <img src={`/assets/images/${src}`} alt={product.titleEn} />
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </div>
@@ -84,6 +47,8 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
+                <div className="swiper-button-prev hero-carousel-btn-prev" aria-label="Previous slide"></div>
+                <div className="swiper-button-next hero-carousel-btn-next" aria-label="Next slide"></div>
                 <div className="swiper-pagination"></div>
               </div>
             </div>

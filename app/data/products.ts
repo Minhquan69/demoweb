@@ -6,6 +6,7 @@ export const PRODUCTS = [
     shortVi: "Giải pháp đăng kiểm (body cam): LiveView, xem lại video, xuất báo cáo, tìm kiếm lịch sử nhận dạng face/plate.",
     shortEn: "Vehicle inspection solution (body cam): LiveView, playback, export & reports, face/plate recognition history search.",
     img: "Product/dangkiem-1724071272803999041132.jpg",
+    heroImgs: ["Product/dangkiem-1724071272803999041132.jpg", "Product/liveview_dangkiem.png"],
   },
   {
     slug: "bodycam-smart-recorder",
@@ -16,6 +17,8 @@ export const PRODUCTS = [
     shortEn:
       "Duty-grade body-worn camera: 4G/LTE streaming, secure storage, live view to command center, face/plate recognition and shift management for field officers.",
     img: "Product/bodycam1.jpg",
+    heroImg: "ser-icon17.png",
+    heroImgs: ["Product/bodycam1.jpg", "Product/bodycam2.jpg"],
   },
   {
     slug: "ai-alignment",
@@ -26,6 +29,7 @@ export const PRODUCTS = [
     shortEn:
       "AI-powered vision solution for accurately locating fiducial marks on products, providing X, Y, θ coordinates to robots, CNC machines, printers, and other automation systems in the factory.",
     img: "Product/Alignment1.jpg",
+    heroImgs: ["Product/Alignment1.jpg", "Product/Alignment2.jpg"],
   },
   {
     slug: "ai-visual-inspection",
@@ -35,7 +39,8 @@ export const PRODUCTS = [
       "Giải pháp thị giác máy với AI để phát hiện lỗi ngoại quan theo thời gian thực, tự động loại sản phẩm lỗi khỏi dây chuyền, chuẩn hóa chất lượng và tối ưu hiệu suất sản xuất.",
     shortEn:
       "AI-powered vision solution for real-time surface defect detection, automatic rejection of defective products, quality standardization, and manufacturing optimization.",
-    img: "Product/AIVisualInspection5.jpg",
+    img: "Product/AIVisualInspection1.png",
+    heroImgs: ["Product/AIVisualInspection1 - hero.png", "Product/Alignment3 - hero.png"],
   },
 ] as const;
 

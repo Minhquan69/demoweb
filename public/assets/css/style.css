@@ -2686,9 +2686,30 @@ textarea:-ms-input-placeholder {
   background-size: cover;
   position: relative;
   overflow: hidden;
-  padding-top: 60px;
-  padding-bottom: 100px;
+  padding-top: 32px;
+  padding-bottom: 52px;
   border-radius: 35px;
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content {
+  position: relative;
+  display: inline-block;
+  padding: 20px 30px;
+  border-radius: 24px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .title {
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.7);
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Hero Carousel Specific Styles */
@@ -2698,7 +2719,7 @@ textarea:-ms-input-placeholder {
 
 .techwix-hero-section-05 .hero-carousel-active .swiper-slide {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
@@ -2746,10 +2767,10 @@ textarea:-ms-input-placeholder {
   transform: scale(1.05);
 }
 .techwix-hero-section-05 .hero-carousel-active .hero-carousel-btn-prev {
-  left: 20px;
+  left: 0px;
 }
 .techwix-hero-section-05 .hero-carousel-active .hero-carousel-btn-next {
-  right: 20px;
+  right: 0px;
 }
 @media only screen and (max-width: 767px) {
   .techwix-hero-section-05 .hero-carousel-active .hero-carousel-btn-prev,
@@ -2827,6 +2848,27 @@ textarea:-ms-input-placeholder {
   justify-content: center;
 }
 
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+  height: 100%;
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-cta {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-cta .hero-cta-btn {
+  min-width: 240px;
+  height: 60px;
+  line-height: 56px;
+  padding: 0 42px;
+}
+
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
   margin-top: 0;
   min-width: 220px;
@@ -2871,8 +2913,8 @@ textarea:-ms-input-placeholder {
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images .image-item {
-  width: 300px;
-  height: 380px;
+  width: 340px;
+  height: 420px;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -2897,6 +2939,25 @@ textarea:-ms-input-placeholder {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images .image-item {
     width: 100%;
     height: 260px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 769px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images .image-item {
+    width: 100%;
+    max-width: 320px;
+    height: 260px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 16px;
   }
 }
 
@@ -2942,6 +3003,19 @@ textarea:-ms-input-placeholder {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
     text-align: center;
     margin-top: 60px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .container .row .col-lg-6:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -6247,6 +6321,17 @@ textarea:-ms-input-placeholder {
   margin: 45px auto 0;
 }
 
+.brand-active .swiper-container,
+.brand-active .swiper-wrapper,
+.brand-active .swiper-slide.single-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-active .swiper-slide.single-brand {
+  justify-content: center;
+}
+
 .techwix-brand-section-02 .brand-wrapper {
   border-top: 1px solid #e1e1e1;
   padding-top: 20px;
@@ -7602,6 +7687,11 @@ textarea:-ms-input-placeholder {
 
 .techwix-team-section-03 .team-wrap .single-team .team-img a img {
   width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0 auto;
 }
 
 /*--

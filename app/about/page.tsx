@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PageBanner from "../components/PageBanner";
+import { HOME_TEAM } from "../data/team";
 
 export default function AboutPage() {
   return (
@@ -285,15 +286,30 @@ export default function AboutPage() {
             <div className="team-content-wrap">
               <div className="swiper-container team-active">
                 <div className="swiper-wrapper">
-                  {["Andrew Max Fetcher", "Arnold human", "Mike Holder", "Joakim Ken"].map((name, i) => (
+                  {HOME_TEAM.map((member, i) => (
                     <div key={i} className="swiper-slide">
                       <div className="single-team">
                         <div className="team-img">
-                          <Link href="/team"><img src={`/assets/images/team/team-${i + 1}.jpg`} alt="" /></Link>
+                          <Link href="/team">
+                            <img src={`/assets/images/team/members/${member.avatar}`} alt={member.name} />
+                          </Link>
                         </div>
                         <div className="team-content">
-                          <h3 className="name"><Link href="/team">{name.replace(" ", " \n")}</Link></h3>
-                          <span className="designation">iVista Tech</span>
+                          <h3 className="name">
+                            <Link href="/team">
+                              {member.name.split(" ").length > 1 ? (
+                                <>
+                                  {member.name.split(" ")[0]} <br /> {member.name.split(" ").slice(1).join(" ")}
+                                </>
+                              ) : (
+                                member.name
+                              )}
+                            </Link>
+                          </h3>
+                          <span className="designation">
+                            <span data-lang="vi">{member.degreeVi}</span>
+                            <span data-lang="en">{member.degreeEn}</span>
+                          </span>
                           <div className="team-social">
                             <ul className="social">
                               <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>

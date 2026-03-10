@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PRODUCTS } from "./data/products";
+import { HOME_TEAM } from "./data/team";
 
 export default function HomePage() {
   return (
@@ -13,35 +14,37 @@ export default function HomePage() {
                 <div className="swiper-wrapper">
                   {PRODUCTS.map((product) => (
                     <div key={product.slug} className="swiper-slide">
-                      <div className="row align-items-center">
-                        <div className="col-lg-6">
-                          <div className="hero-content">
-                            <h2 className="title" data-aos="fade-up" data-aos-delay="800">
-                              <span data-lang="vi">{product.titleVi}</span>
-                              <span data-lang="en">{product.titleEn}</span>
-                            </h2>
-                            <p data-aos="fade-up" data-aos-delay="900">
-                              <span data-lang="vi">{product.shortVi}</span>
-                              <span data-lang="en">{product.shortEn}</span>
-                            </p>
-                            <div className="hero-btn" data-aos="fade-up" data-aos-delay="1000">
-                              <Link className="btn" href={`/product-details/${product.slug}`}>
-                                <span data-lang="vi">Xem sản phẩm</span>
-                                <span data-lang="en">View Product</span>
-                              </Link>
+                      <div className="hero-slide-inner">
+                        <div className="row align-items-center">
+                          <div className="col-lg-6">
+                            <div className="hero-content">
+                              <h2 className="title" data-aos="fade-up" data-aos-delay="800">
+                                <span data-lang="vi">{product.titleVi}</span>
+                                <span data-lang="en">{product.titleEn}</span>
+                              </h2>
+                              <p data-aos="fade-up" data-aos-delay="900">
+                                <span data-lang="vi">{product.shortVi}</span>
+                                <span data-lang="en">{product.shortEn}</span>
+                              </p>
+                            </div>
+                          </div>
+                          <div className="col-lg-6">
+                            <div className="hero-images">
+                              <div className="images">
+                                {(((product as any).heroImgs as string[] | undefined) ?? [((product as any).heroImg ?? product.img) as string, product.img]).slice(0, 2).map((src, idx) => (
+                                  <div key={`${product.slug}-${idx}`} className="image-item">
+                                    <img src={`/assets/images/${src}`} alt={product.titleEn} />
+                                  </div>
+                                ))}
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div className="col-lg-6">
-                          <div className="hero-images">
-                            <div className="images">
-                              {(((product as any).heroImgs as string[] | undefined) ?? [((product as any).heroImg ?? product.img) as string, product.img]).slice(0, 2).map((src, idx) => (
-                                <div key={`${product.slug}-${idx}`} className="image-item">
-                                  <img src={`/assets/images/${src}`} alt={product.titleEn} />
-                                </div>
-                              ))}
-                            </div>
-                          </div>
+                        <div className="hero-slide-cta text-center" data-aos="fade-up" data-aos-delay="1100">
+                          <Link className="btn hero-cta-btn" href={`/product-details/${product.slug}`}>
+                            <span data-lang="vi">Xem sản phẩm</span>
+                            <span data-lang="en">View Product</span>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -437,81 +440,64 @@ export default function HomePage() {
         <div className="container">
           <div className="team-wrap">
             <div className="section-title text-center">
-              <h3 className="sub-title"><span data-lang="vi">Đội ngũ</span><span data-lang="en">Our Team</span></h3>
-              <h2 className="title"><span data-lang="vi">Gặp gỡ đội ngũ chuyên gia</span><span data-lang="en">Meet Our Expert Team</span></h2>
+              <h3 className="sub-title">
+                <span data-lang="vi">Đội ngũ</span>
+                <span data-lang="en">Our Team</span>
+              </h3>
+              <h2 className="title">
+                <span data-lang="vi">Gặp gỡ đội ngũ chuyên gia</span>
+                <span data-lang="en">Meet Our Expert Team</span>
+              </h2>
             </div>
             <div className="row">
-              <div className="col-lg-3 col-sm-6">
-                <div className="single-team">
-                  <div className="team-img">
-                    <Link href="/team"><img src="/assets/images/team/team-1.jpg" alt="" /></Link>
-                  </div>
-                  <div className="team-content">
-                    <h3 className="name"><Link href="/team">Andrew <br /> Max Fetcher</Link></h3>
-                    <span className="designation"><span data-lang="vi">iVista Tech</span><span data-lang="en">iVista Tech</span></span>
-                    <div className="team-social">
-                      <ul className="social">
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                      </ul>
+              {HOME_TEAM.map((member, i) => (
+                <div key={i} className="col-lg-3 col-sm-6">
+                  <div className="single-team">
+                    <div className="team-img">
+                      <Link href="/team">
+                        <img src={`/assets/images/team/members/${member.avatar}`} alt={member.name} />
+                      </Link>
+                    </div>
+                    <div className="team-content">
+                      <h3 className="name">
+                        <Link href="/team">
+                          {member.name.split(" ").length > 1 ? (
+                            <>
+                              {member.name.split(" ")[0]} <br /> {member.name.split(" ").slice(1).join(" ")}
+                            </>
+                          ) : (
+                            member.name
+                          )}
+                        </Link>
+                      </h3>
+                      <span className="designation">
+                        <span data-lang="vi">{member.degreeVi}</span>
+                        <span data-lang="en">{member.degreeEn}</span>
+                      </span>
+                      <div className="team-social">
+                        <ul className="social">
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-facebook-f"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i className="fab fa-linkedin-in"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="single-team">
-                  <div className="team-img">
-                    <Link href="/team"><img src="/assets/images/team/team-2.jpg" alt="" /></Link>
-                  </div>
-                  <div className="team-content">
-                    <h3 className="name"><Link href="/team">Arnold <br /> Human</Link></h3>
-                    <span className="designation"><span data-lang="vi">iVista Tech</span><span data-lang="en">iVista Tech</span></span>
-                    <div className="team-social">
-                      <ul className="social">
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="single-team">
-                  <div className="team-img">
-                    <Link href="/team"><img src="/assets/images/team/team-3.jpg" alt="" /></Link>
-                  </div>
-                  <div className="team-content">
-                    <h3 className="name"><Link href="/team">Mike <br /> Holder</Link></h3>
-                    <span className="designation"><span data-lang="vi">iVista Tech</span><span data-lang="en">iVista Tech</span></span>
-                    <div className="team-social">
-                      <ul className="social">
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-sm-6">
-                <div className="single-team">
-                  <div className="team-img">
-                    <Link href="/team"><img src="/assets/images/team/team-4.jpg" alt="" /></Link>
-                  </div>
-                  <div className="team-content">
-                    <h3 className="name"><Link href="/team">Joakim <br /> Ken</Link></h3>
-                    <span className="designation"><span data-lang="vi">iVista Tech</span><span data-lang="en">iVista Tech</span></span>
-                    <div className="team-social">
-                      <ul className="social">
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="text-center mt-5">
-              <Link className="btn" href="/team"><span data-lang="vi">Xem toàn bộ đội ngũ</span><span data-lang="en">View Full Team</span></Link>
+              <Link className="btn" href="/team">
+                <span data-lang="vi">Xem toàn bộ đội ngũ</span>
+                <span data-lang="en">View Full Team</span>
+              </Link>
             </div>
           </div>
         </div>

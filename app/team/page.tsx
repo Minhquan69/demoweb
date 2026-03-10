@@ -1,17 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PageBanner from "../components/PageBanner";
-
-const TEAM = [
-  { name: "Andrew Max Fetcher", img: "team-1.jpg" },
-  { name: "Arnold human", img: "team-2.jpg" },
-  { name: "Mike Holder", img: "team-3.jpg" },
-  { name: "Joakim Ken", img: "team-4.jpg" },
-  { name: "Michael Frater", img: "team-1.jpg" },
-  { name: "Kevin Perry", img: "team-2.jpg" },
-  { name: "Michael Frater", img: "team-3.jpg" },
-  { name: "Steven Smith", img: "team-4.jpg" },
-];
+import { SORTED_TEAM } from "../data/team";
 
 export default function TeamPage() {
   return (
@@ -24,15 +14,28 @@ export default function TeamPage() {
         <div className="container">
           <div className="team-wrap">
             <div className="row">
-              {TEAM.map((member, i) => (
+              {SORTED_TEAM.map((member, i) => (
                 <div key={i} className="col-lg-3 col-sm-6">
                   <div className="single-team">
                     <div className="team-img">
-                      <Link href="/team"><img src={`/assets/images/team/${member.img}`} alt="" /></Link>
+                      <Link href="/team"><img src={`/assets/images/team/members/${member.avatar}`} alt={member.name} /></Link>
                     </div>
                     <div className="team-content">
-                      <h3 className="name"><Link href="/team">{member.name.split(" ").length > 1 ? <>{member.name.split(" ")[0]} <br /> {member.name.split(" ").slice(1).join(" ")}</> : member.name}</Link></h3>
-                      <span className="designation">iVista Tech</span>
+                      <h3 className="name">
+                        <Link href="/team">
+                          {member.name.split(" ").length > 1 ? (
+                            <>
+                              {member.name.split(" ")[0]} <br /> {member.name.split(" ").slice(1).join(" ")}
+                            </>
+                          ) : (
+                            member.name
+                          )}
+                        </Link>
+                      </h3>
+                      <span className="designation">
+                        <span data-lang="vi">{member.degreeVi}</span>
+                        <span data-lang="en">{member.degreeEn}</span>
+                      </span>
                       <div className="team-social">
                         <ul className="social">
                           <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>

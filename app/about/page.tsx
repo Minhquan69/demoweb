@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PageBanner from "../components/PageBanner";
-import { HOME_TEAM } from "../data/team";
+import { SORTED_TEAM } from "../data/team";
 
 export default function AboutPage() {
   return (
@@ -254,12 +254,15 @@ export default function AboutPage() {
                   </p>
                   <div className="counter-bar">
                     {[
-                      { title: "IT Managment", width: 80 },
-                      { title: "Data Security", width: 95 },
-                      { title: "Information Technology", width: 80 },
+                      { titleVi: "Quản trị IT", titleEn: "IT Management", width: 80 },
+                      { titleVi: "Bảo mật dữ liệu", titleEn: "Data Security", width: 95 },
+                      { titleVi: "Công nghệ thông tin", titleEn: "Information Technology", width: 80 },
                     ].map((s, i) => (
                       <div key={i} className="skill-item">
-                        <span className="title">{s.title}</span>
+                        <span className="title">
+                          <span data-lang="vi">{s.titleVi}</span>
+                          <span data-lang="en">{s.titleEn}</span>
+                        </span>
                         <div className="skill-bar">
                           <div className="bar-inner">
                             <div className="bar progress-line color-1" data-width={s.width}>
@@ -280,13 +283,19 @@ export default function AboutPage() {
         <div className="container">
           <div className="team-wrap">
             <div className="section-title text-center">
-              <h3 className="sub-title">Our expert team </h3>
-              <h2 className="title white"> We have world expert team</h2>
+              <h3 className="sub-title">
+                <span data-lang="vi">Đội ngũ chuyên gia</span>
+                <span data-lang="en">Our expert team</span>
+              </h3>
+              <h2 className="title white">
+                <span data-lang="vi">Chúng tôi quy tụ đội ngũ chuyên gia hàng đầu</span>
+                <span data-lang="en">We have world expert team</span>
+              </h2>
             </div>
             <div className="team-content-wrap">
               <div className="swiper-container team-active">
                 <div className="swiper-wrapper">
-                  {HOME_TEAM.map((member, i) => (
+                  {SORTED_TEAM.map((member, i) => (
                     <div key={i} className="swiper-slide">
                       <div className="single-team">
                         <div className="team-img">
@@ -333,8 +342,14 @@ export default function AboutPage() {
         <div className="container">
           <div className="testimonial-wrap-02">
             <div className="section-title text-center">
-              <h3 className="sub-title">Testimonial</h3>
-              <h2 className="title">20k+ satisfied clients worldwide</h2>
+              <h3 className="sub-title">
+                <span data-lang="vi">Khách hàng nói gì</span>
+                <span data-lang="en">Testimonial</span>
+              </h3>
+              <h2 className="title">
+                <span data-lang="vi">20.000+ khách hàng hài lòng trên toàn thế giới</span>
+                <span data-lang="en">20k+ satisfied clients worldwide</span>
+              </h2>
             </div>
             <div className="testimonial-content-wrap-02">
               <div className="swiper-container testimonial-02-active">
@@ -347,7 +362,14 @@ export default function AboutPage() {
                         </div>
                         <div className="testimonial-content">
                           <img src="/assets/images/testi-icon.png" alt="" />
-                          <p>Accelerate innovation with world-class tech teams Beyond more stoic this along goodness hey this this wow manatee </p>
+                          <p>
+                            <span data-lang="vi">
+                              Đẩy nhanh đổi mới với đội ngũ công nghệ đẳng cấp. Chúng tôi đồng hành triển khai giải pháp thực tiễn, tối ưu hiệu quả và vận hành bền vững.
+                            </span>
+                            <span data-lang="en">
+                              Accelerate innovation with world-class tech teams. We partner end-to-end to deliver practical solutions and long-term operations.
+                            </span>
+                          </p>
                           <span className="name">{name} </span>
                           <span className="designation"> / iVista Tech</span>
                         </div>
@@ -367,7 +389,7 @@ export default function AboutPage() {
             <div className="brand-active">
               <div className="swiper-container">
                 <div className="swiper-wrapper">
-                  {[1, 2, 3, 4, 5, 2].map((n, i) => (
+                  {[1, 2, 3, 4].map((n, i) => (
                     <div key={i} className="swiper-slide single-brand">
                       <img src={`/assets/images/brand/brand-${n}.png`} alt="Brand" />
                     </div>
@@ -387,7 +409,10 @@ export default function AboutPage() {
                   <div className="cta-icon">
                     <img src="/assets/images/cta-icon2.png" alt="" />
                   </div>
-                  <p>We&apos;re Delivering the best customer Experience</p>
+                  <p>
+                    <span data-lang="vi">Chúng tôi mang đến trải nghiệm khách hàng tốt nhất</span>
+                    <span data-lang="en">We&apos;re Delivering the best customer Experience</span>
+                  </p>
                 </div>
               </div>
               <div className="col-xl-3 col-lg-4">

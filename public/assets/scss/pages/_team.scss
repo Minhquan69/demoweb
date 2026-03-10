@@ -169,7 +169,28 @@
                     
                     & img {
                         width: 100%;
+                        height: 360px;
+                        object-fit: cover;
+                        object-position: center;
+                        display: block;
                     }
+                }
+            }
+        }
+    }
+}
+
+/* Team slider (about) avatar full-width */
+.techwix-team-section-02 {
+    & .single-team {
+        & .team-img {
+            & a {
+                & img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    object-position: center;
+                    display: block;
                 }
             }
         }

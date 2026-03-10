@@ -363,6 +363,20 @@
     }
 }
 
+/* Spacing between "Lý do chọn chúng tôi" items */
+.techwix-choose-us-section {
+    & .choose-us-content-wrap {
+        & .row {
+            --bs-gutter-x: 24px;
+            --bs-gutter-y: 24px;
+        }
+        & .choose-us-item-02 {
+            margin-top: 0;
+            height: 100%;
+        }
+    }
+}
+
 // Choose Us Page Style
 
 .techwix-choose-us-section-03 {

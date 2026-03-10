@@ -522,12 +522,6 @@ export default function HomePage() {
                   <div className="swiper-slide single-brand">
                     <img src="/assets/images/brand/brand-4.png" alt="Brand" />
                   </div>
-                  <div className="swiper-slide single-brand">
-                    <img src="/assets/images/brand/brand-5.png" alt="Brand" />
-                  </div>
-                  <div className="swiper-slide single-brand">
-                    <img src="/assets/images/brand/brand-2.png" alt="Brand" />
-                  </div>
                 </div>
               </div>
             </div>

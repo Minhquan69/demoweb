@@ -84,6 +84,8 @@ body[dir="rtl"] {
   text-align: right;
 }
 
+/* Note: keep Bootstrap default row gutter globally */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #0e0e0e;
@@ -2685,7 +2687,7 @@ textarea:-ms-input-placeholder {
   background-position: center center;
   background-size: cover;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding-top: 32px;
   padding-bottom: 52px;
   border-radius: 35px;
@@ -2725,6 +2727,11 @@ textarea:-ms-input-placeholder {
 
 .techwix-hero-section-05 .hero-carousel-active .row {
   width: 100%;
+}
+
+/* Hero only: disable Bootstrap row horizontal gutter */
+.techwix-hero-section-05 .row {
+  --bs-gutter-x: 0;
 }
 
 .techwix-hero-section-05 .hero-carousel-active .hero-content {
@@ -2942,25 +2949,6 @@ textarea:-ms-input-placeholder {
   }
 }
 
-@media only screen and (min-width: 576px) and (max-width: 769px) {
-  .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
-    flex-direction: column;
-    max-width: 100%;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-sizing: border-box;
-  }
-  .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images .image-item {
-    width: 100%;
-    max-width: 320px;
-    height: 260px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 16px;
-  }
-}
-
 @-webkit-keyframes up-down {
   0% {
     transform: translateY(30px);
@@ -3003,19 +2991,6 @@ textarea:-ms-input-placeholder {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
     text-align: center;
     margin-top: 60px;
-  }
-  .techwix-hero-section-05 .techwix-hero-wrap .container .row .col-lg-6:first-child {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .techwix-hero-section-05 .techwix-hero-wrap .hero-content {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
   }
 }
 
@@ -7691,7 +7666,15 @@ textarea:-ms-input-placeholder {
   object-fit: cover;
   object-position: center;
   display: block;
-  margin: 0 auto;
+}
+
+/* Team slider (about) avatar full-width */
+.techwix-team-section-02 .single-team .team-img a img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 /*--

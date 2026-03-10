@@ -796,6 +796,11 @@
             }
         }
 
+        /* Hero only: disable Bootstrap row horizontal gutter */
+        & .row {
+            --bs-gutter-x: 0;
+        }
+
         & .hero-content {
             max-width: 710px;
             margin-left: auto;
@@ -966,13 +971,15 @@
                 justify-content: center;
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
             }
             & .hero-content {
                 margin-left: auto;
                 margin-right: auto;
                 text-align: center;
-                width: 100%;
-                max-width: 100%;
+                width: auto;
+                max-width: 920px;
+                display: inline-block;
             }
         }
     }
@@ -980,6 +987,9 @@
         & .techwix-hero-wrap {
     
             & .hero-content {
+                display: inline-block;
+                max-width: calc(100% - 24px);
+                box-sizing: border-box;
         
                 & .title {
                     font-size: 40px;
@@ -990,6 +1000,14 @@
                     font-size: 18px;
                 }
             }
+            & .hero-images {
+                display: flex;
+                justify-content: center;
+            }
+            & .hero-images .images {
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     }
     @media #{$small-mobile} {
@@ -997,6 +1015,8 @@
         & .techwix-hero-wrap {
     
             & .hero-content {
+                max-width: calc(100% - 20px);
+                padding: 16px 18px;
         
                 & .title {
                     font-size: 36px;

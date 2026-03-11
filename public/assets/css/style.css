@@ -411,20 +411,34 @@ html[data-theme="dark"] .header-section {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.10);
 }
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li > a,
 html[data-theme="dark"] .header-menu .main-menu li a,
 html[data-theme="dark"] .header-meta .header-search .search-btn,
 html[data-theme="dark"] .header-section-05 .header-social ul li a {
   color: #e5e7eb;
 }
+/* Hover/active: luôn xanh #086ad8 khi nền tối, không bị rule khác đè */
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li:hover > a,
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li.active-menu > a,
 html[data-theme="dark"] .header-menu .main-menu li:hover > a,
 html[data-theme="dark"] .header-menu .main-menu li.active-menu > a {
-  color: #93c5fd;
+  color: #086ad8 !important;
+}
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li:hover > a span,
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li.active-menu > a span,
+html[data-theme="dark"] .header-menu .main-menu li:hover > a span,
+html[data-theme="dark"] .header-menu .main-menu li.active-menu > a span {
+  color: inherit !important;
+}
+html[data-theme="dark"] .header-section-05 .header-menu .main-menu li:hover > .menu-icon::after,
+html[data-theme="dark"] .header-menu .main-menu li:hover > .menu-icon::after {
+  color: #086ad8 !important;
 }
 html[data-theme="dark"] .header-section-05 .header-language-switcher .lang-btn {
   color: rgba(229, 231, 235, 0.8);
 }
 html[data-theme="dark"] .header-section-05 .header-language-switcher .lang-btn.active {
-  color: #93c5fd;
+  color: #086ad8 !important;
 }
 html[data-theme="dark"] .header-section-05 .header-logo a p {
   color: rgba(229, 231, 235, 0.92);

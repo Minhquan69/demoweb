@@ -41,7 +41,7 @@ export default function HomePage() {
                           </div>
                         </div>
                         <div className="hero-slide-cta text-center" data-aos="fade-up" data-aos-delay="1100">
-                          <Link className="btn hero-cta-btn" href={`/product-details/${product.slug}`}>
+                          <Link className="btn hero-cta-btn" href={`/product-details/${product.slug}`} prefetch={false}>
                             <span data-lang="vi">Xem sản phẩm</span>
                             <span data-lang="en">View Product</span>
                           </Link>

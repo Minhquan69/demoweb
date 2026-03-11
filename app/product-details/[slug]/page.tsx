@@ -167,6 +167,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/Alignment1.jpg"
                           alt="AI Alignment demo 1"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -205,6 +206,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/Alignment2.jpg"
                           alt="AI Alignment demo 2"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -222,6 +224,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/Alignment3.jpg"
                           alt="AI Alignment demo 3"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -239,6 +242,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/Alignment4.jpg"
                           alt="AI Alignment demo 4"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -258,6 +262,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/Alignment5.jpg"
                               alt="AI Alignment demo 5"
                               className="img-fluid rounded"
+                              loading="lazy"
                             />
                           </div>
                           <div className="col-md-6">
@@ -265,6 +270,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/Alignment6.jpg"
                               alt="AI Alignment demo 6"
                               className="img-fluid rounded"
+                              loading="lazy"
                             />
                           </div>
                         </div>
@@ -289,6 +295,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                             src="/assets/images/Product/bodycam2.jpg"
                             alt="Các tư thế đeo bodycam trên vai và ngực"
                             className="img-fluid rounded mb-3"
+                            loading="lazy"
                           />
                           <p className="mb-0">
                             <span data-lang="vi">
@@ -309,6 +316,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                             src="/assets/images/Product/bodycam3.jpg"
                             alt="Dock sạc và trạm nạp dữ liệu cho bodycam"
                             className="img-fluid rounded mb-3"
+                            loading="lazy"
                           />
                           <p className="mb-0">
                             <span data-lang="vi">
@@ -334,6 +342,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/AIVisualInspection6.jpg"
                               alt="Pass & Fail Detection"
                               className="img-fluid rounded"
+                              loading="lazy"
                             />
                           </div>
                           <div className="col-md-6">
@@ -341,6 +350,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/AIVisualInspection5.jpg"
                               alt="Pass & Fail Detection"
                               className="img-fluid rounded"
+                              loading="lazy"
                             />
                           </div>
                         </div>
@@ -360,6 +370,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/AIVisualInspection1.png"
                               alt="System Overview"
                               className="img-fluid rounded mb-3"
+                              loading="lazy"
                             />
                           </div>
                           <div className="col-md-6">
@@ -367,6 +378,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/AIVisualInspection2.jpg"
                               alt="Production Line"
                               className="img-fluid rounded mb-3"
+                              loading="lazy"
                             />
                           </div>
                         </div>
@@ -384,6 +396,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/AIVisualInspection3.jpg"
                           alt="Defect Detection"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -399,6 +412,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/AIVisualInspection4.jpg"
                           alt="Automatic Rejection"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -414,6 +428,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/AIVisualInspection7.jpg"
                           alt="Dashboard Analytics"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-4">
@@ -429,6 +444,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                           src="/assets/images/Product/AIVisualInspection8.jpg"
                           alt="AI vs Manual Comparison"
                           className="img-fluid rounded mb-4"
+                          loading="lazy"
                         />
 
                         <p className="mb-0">
@@ -511,6 +527,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/bodycam4.jpg"
                               alt="Giao diện phần mềm quản lý video từ bodycam"
                               className="img-fluid rounded mb-3"
+                              loading="lazy"
                             />
                             <p className="mb-0">
                               <span data-lang="vi">
@@ -530,6 +547,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
                               src="/assets/images/Product/bodycam5.jpg"
                               alt="Triển khai bodycam tại cơ quan nhà nước"
                               className="img-fluid rounded mb-3"
+                              loading="lazy"
                             />
                             <p className="mb-0">
                               <span data-lang="vi">
@@ -760,7 +778,7 @@ export default async function ProductDetailsSlugPage({ params }: Props) {
               <div className="col-xl-9 col-lg-8">
                 <div className="cta-content">
                   <div className="cta-icon">
-                    <img src="/assets/images/cta-icon2.png" alt="" />
+                    <img src="/assets/images/cta-icon2.png" alt="" loading="lazy" />
                   </div>
                   <p>
                     <span data-lang="vi">Chúng tôi mang đến trải nghiệm khách hàng tốt nhất</span>

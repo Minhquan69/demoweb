@@ -18,13 +18,13 @@ export default function ProductsPage() {
                 <div key={p.slug} className="col-lg-4 col-md-6">
                   <div className="single-blog">
                     <div className="blog-image">
-                      <Link href={`/product-details/${p.slug}`}>
+                      <Link href={`/product-details/${p.slug}`} prefetch={false}>
                         <img src={`/assets/images/${p.img}`} alt="" />
                       </Link>
                     </div>
                     <div className="blog-content">
                       <h3 className="title">
-                        <Link href={`/product-details/${p.slug}`}>
+                        <Link href={`/product-details/${p.slug}`} prefetch={false}>
                           <span data-lang="vi">{p.titleVi}</span><span data-lang="en">{p.titleEn}</span>
                         </Link>
                       </h3>
@@ -32,7 +32,7 @@ export default function ProductsPage() {
                         <span data-lang="vi">{p.shortVi}</span><span data-lang="en">{p.shortEn}</span>
                       </p>
                       <div className="blog-btn">
-                        <Link className="blog-btn-link" href={`/product-details/${p.slug}`}>
+                        <Link className="blog-btn-link" href={`/product-details/${p.slug}`} prefetch={false}>
                           <span data-lang="vi">Xem chi tiết</span><span data-lang="en">Read Full</span> <i className="fas fa-long-arrow-alt-right"></i>
                         </Link>
                       </div>

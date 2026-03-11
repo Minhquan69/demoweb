@@ -252,7 +252,7 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="text-center mt-4">
+            <div className="text-center mt-5">
               <Link className="btn" href="/choose-us"><span data-lang="vi">Tại sao chọn chúng tôi</span><span data-lang="en">Why Choose Us</span></Link>
             </div>
           </div>
@@ -326,14 +326,14 @@ export default function HomePage() {
       <div id="solutions" className="section techwix-solution-section section-padding">
         <div className="container">
           <div className="solution-wrap">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up">
               <h3 className="sub-title"><span data-lang="vi">Chúng tôi mang đến sự xuất sắc</span><span data-lang="en">We Deliver Excellence</span></h3>
               <h2 className="title"><span data-lang="vi">Giải pháp cho các bài toán AI phổ biến</span><span data-lang="en">Solutions To Common AI Problems</span></h2>
             </div>
             <div className="solution-content-wrap">
               <div className="row">
                 <div className="col-lg-7">
-                  <div className="solution-item solution-item-big">
+                  <div className="solution-item solution-item-big" data-aos="fade-right" data-aos-delay="100">
                     <div className="solution-img">
                       <Link href="/service"><img src="/assets/images/solution-1.jpg" alt="" /></Link>
                     </div>
@@ -351,7 +351,7 @@ export default function HomePage() {
                 <div className="col-lg-5">
                   <div className="row">
                     <div className="col-lg-12">
-                      <div className="solution-item solution-item-sm">
+                      <div className="solution-item solution-item-sm" data-aos="fade-left" data-aos-delay="150">
                         <div className="solution-img">
                           <Link href="/service"><img src="/assets/images/solution-img2.jpg" alt="" /></Link>
                         </div>
@@ -367,7 +367,7 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="col-lg-12">
-                      <div className="solution-item solution-item-sm">
+                      <div className="solution-item solution-item-sm" data-aos="fade-left" data-aos-delay="250">
                         <div className="solution-img">
                           <Link href="/service"><img src="/assets/images/solution-img3.jpg" alt="" /></Link>
                         </div>

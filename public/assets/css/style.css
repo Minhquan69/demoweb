@@ -245,6 +245,39 @@ html[data-theme="dark"] .techwix-choose-us-section {
   background: var(--twx-bg);
 }
 
+/* Skill section "skill-bg.jpg": add dark overlay + readable text */
+html[data-theme="dark"] .techwix-skill-section-02[style*="skill-bg.jpg"] {
+  position: relative;
+}
+html[data-theme="dark"] .techwix-skill-section-02[style*="skill-bg.jpg"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 600px at 50% 0%, rgba(8, 106, 216, 0.18) 0%, rgba(11, 18, 32, 0) 55%),
+    linear-gradient(180deg, rgba(11, 18, 32, 0.78) 0%, rgba(11, 18, 32, 0.92) 100%);
+  pointer-events: none;
+}
+html[data-theme="dark"] .techwix-skill-section-02[style*="skill-bg.jpg"] > .container {
+  position: relative;
+  z-index: 1;
+}
+html[data-theme="dark"] .techwix-skill-section-02 .skill-left .section-title .title,
+html[data-theme="dark"] .techwix-skill-section-02 .skill-left .experience-wrap .experience-text,
+html[data-theme="dark"] .techwix-skill-section-02 .skill-left .experience-wrap .experience-text p,
+html[data-theme="dark"] .techwix-skill-section-02 .skill-right .counter-bar .skill-item .title {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+html[data-theme="dark"] .techwix-skill-section-02 .skill-left .experience-wrap .experience-text .learn-more {
+  color: #86b7ff !important;
+}
+html[data-theme="dark"] .techwix-skill-section-02 .skill-right .counter-bar .skill-item .skill-bar .bar-inner {
+  background: rgba(255, 255, 255, 0.18);
+}
+html[data-theme="dark"] .techwix-skill-section-02 .skill-right .counter-bar .skill-item .skill-bar .bar-inner .progress-line .skill-percent {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 /* About page "choose-us-bg3.jpg": dim background image in dark mode */
 html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"] {
   position: relative;

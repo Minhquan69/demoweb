@@ -402,6 +402,10 @@
             window.setTimeout(function () { observeProgressLines(document); }, 50);
             window.setTimeout(function () { observeProgressLines(document); }, 250);
             window.setTimeout(function () { observeProgressLines(document); }, 800);
+
+            // Re-init Swiper instances for new route DOM (Next.js client navigation)
+            window.setTimeout(function () { if (window.__twxInitSwipers) window.__twxInitSwipers(); }, 50);
+            window.setTimeout(function () { if (window.__twxInitSwipers) window.__twxInitSwipers(); }, 250);
         }
 
         // watch for client-side navigation / dynamic content
@@ -444,150 +448,117 @@
   
  
     /*--
-        Case Study Active
-	-----------------------------------*/
-  var swiper = new Swiper('.case-study-active', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    pagination: {
-        el: ".case-study-active .swiper-pagination",
-        clickable: true,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      992: {
-        slidesPerView: 2,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-    }
-  });
-
-
-  /*--
-        Testimonial Active
-	-----------------------------------*/
-    var swiper = new Swiper('.testimonial-active', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,        
-    });
-
-    /*--    
-        Testimonial Two Active
+        Swiper (SPA-safe): init per page DOM
+        Next.js App Router swaps page content without full reload, so we need to (re)init Swiper
+        for containers that appear after navigation (/choose-us, /products, ...).
     -----------------------------------*/
-    var swiper = new Swiper(".testimonial-02-active", {
-        slidesPerView: 2,
-        spaceBetween: 130,
-        loop: true,
-        pagination: {
-            el: ".testimonial-02-active .swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          576: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 1,
-          },
-          992: {
-            slidesPerView: 1,
-          },
-          1400: {
-            slidesPerView: 2,
-          },
-        },
-    });
-  
+    (function () {
+        function initOne(el, options) {
+            try {
+                if (!el) return;
+                // Swiper attaches instance to element as `el.swiper`
+                if (el.swiper) return;
+                // eslint-disable-next-line no-new
+                new Swiper(el, options);
+            } catch (e) { }
+        }
 
-    /*--    
-        Brand Active
-    -----------------------------------*/
-    var swiper = new Swiper(".brand-active .swiper-container", {
-        slidesPerView: 5,
-        spaceBetween: 30,
-        loop: true,
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          576: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          992: {
-            slidesPerView: 5,
-          },
-        },
-    });
+        function initSwipers() {
+            try {
+                // Case study
+                document.querySelectorAll('.case-study-active').forEach(function (el) {
+                    var paginationEl = el.querySelector('.swiper-pagination');
+                    initOne(el, {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                        loop: true,
+                        pagination: paginationEl ? { el: paginationEl, clickable: true } : undefined,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            576: { slidesPerView: 1 },
+                            768: { slidesPerView: 1 },
+                            992: { slidesPerView: 2 },
+                            1200: { slidesPerView: 3 },
+                        }
+                    });
+                });
 
-    /*--    
-        Testimonial Two Active
-    -----------------------------------*/
-    var swiper = new Swiper(".team-active", {
-        slidesPerView: 4,
-        loop: true,
-        pagination: {
-            el: ".team-active .swiper-pagination",
-            clickable: true,
-        },
-        breakpoints: {
-          0: {
-            slidesPerView: 1,
-          },
-          576: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          992: {
-            slidesPerView: 4,
-          },
-        },
-    });
+                // Testimonial 1
+                document.querySelectorAll('.testimonial-active').forEach(function (el) {
+                    initOne(el, { slidesPerView: 1, spaceBetween: 30, loop: true });
+                });
 
+                // Testimonial 2
+                document.querySelectorAll('.testimonial-02-active').forEach(function (el) {
+                    var paginationEl = el.querySelector('.swiper-pagination');
+                    initOne(el, {
+                        slidesPerView: 2,
+                        spaceBetween: 130,
+                        loop: true,
+                        pagination: paginationEl ? { el: paginationEl, clickable: true } : undefined,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            576: { slidesPerView: 1, spaceBetween: 20 },
+                            768: { slidesPerView: 1 },
+                            992: { slidesPerView: 1 },
+                            1400: { slidesPerView: 2 },
+                        }
+                    });
+                });
 
+                // Brand
+                document.querySelectorAll('.brand-active .swiper-container').forEach(function (el) {
+                    initOne(el, {
+                        slidesPerView: 5,
+                        spaceBetween: 30,
+                        loop: true,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            576: { slidesPerView: 2, spaceBetween: 20 },
+                            768: { slidesPerView: 3 },
+                            992: { slidesPerView: 5 },
+                        }
+                    });
+                });
 
-    /*--
-        Hero Carousel Active
-    -----------------------------------*/
-    var swiper = new Swiper(".hero-carousel-active", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".hero-carousel-active .swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".hero-carousel-active .hero-carousel-btn-next",
-            prevEl: ".hero-carousel-active .hero-carousel-btn-prev",
-        },
-    });
+                // Team
+                document.querySelectorAll('.team-active').forEach(function (el) {
+                    var paginationEl = el.querySelector('.swiper-pagination');
+                    initOne(el, {
+                        slidesPerView: 4,
+                        loop: true,
+                        pagination: paginationEl ? { el: paginationEl, clickable: true } : undefined,
+                        breakpoints: {
+                            0: { slidesPerView: 1 },
+                            576: { slidesPerView: 2 },
+                            768: { slidesPerView: 3 },
+                            992: { slidesPerView: 4 },
+                        }
+                    });
+                });
+
+                // Hero carousel
+                document.querySelectorAll('.hero-carousel-active').forEach(function (el) {
+                    var paginationEl = el.querySelector('.swiper-pagination');
+                    var nextEl = el.querySelector('.hero-carousel-btn-next');
+                    var prevEl = el.querySelector('.hero-carousel-btn-prev');
+                    initOne(el, {
+                        slidesPerView: 1,
+                        spaceBetween: 30,
+                        loop: true,
+                        autoplay: { delay: 5000, disableOnInteraction: false },
+                        pagination: paginationEl ? { el: paginationEl, clickable: true } : undefined,
+                        navigation: (nextEl && prevEl) ? { nextEl: nextEl, prevEl: prevEl } : undefined,
+                    });
+                });
+            } catch (e) { }
+        }
+
+        // expose + init now
+        try { window.__twxInitSwipers = initSwipers; } catch (e) { }
+        initSwipers();
+    })();
 
     /*--
       Progress Bar

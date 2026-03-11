@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import PageBanner from "../components/PageBanner";
-import { SORTED_TEAM } from "../data/team";
+import { TEAM_PAGE } from "../data/team";
 
 export default function TeamPage() {
   return (
@@ -14,7 +14,7 @@ export default function TeamPage() {
         <div className="container">
           <div className="team-wrap">
             <div className="row">
-              {SORTED_TEAM.map((member, i) => (
+              {TEAM_PAGE.map((member, i) => (
                 <div key={i} className="col-lg-3 col-sm-6">
                   <div className="single-team">
                     <div className="team-img">

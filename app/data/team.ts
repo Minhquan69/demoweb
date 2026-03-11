@@ -83,6 +83,12 @@ export const TEAM: TeamMember[] = [
     avatar: "DaoMinhQuan.jpg",
   },
   {
+    name: "Vũ Hà Phương",
+    degreeVi: "Đại học",
+    degreeEn: "Bachelor",
+    avatar: "avatar_default.jpg",
+  },
+  {
     name: "Đỗ Ngọc Linh",
     degreeVi: "Đại học",
     degreeEn: "Bachelor",
@@ -122,6 +128,32 @@ export const SORTED_TEAM: TeamMember[] = [...TEAM].sort((a, b) => {
   if (da !== db) return da - db;
   return a.name.localeCompare(b.name, "vi");
 });
+
+// Thứ tự hiển thị trên trang /team (full team page)
+const TEAM_PAGE_ORDER = [
+  "Đỗ Văn Tuấn",            // Tuấn
+  "Phan Thành Toàn",       // Toàn
+  "Tô Việt Anh",           // Việt Anh
+  "Trần Văn Vượng",        // Vượng
+  "Nguyễn Thị Ngọc",       // Ngọc
+  "Nguyễn Thành Nam",      // Thành Nam
+  "Nguyễn Danh Tuyên",     // Tuyên
+  "Bùi Đoàn Quang Hưng",   // Hưng
+  "Kiều Thanh Bình",       // Bình
+  "Ngô Viết Dũng",         // Dũng
+  "Trần Hà Vinh",          // Vinh
+  "Nguyễn Văn Nam",        // Văn Nam
+  "Vũ Hà Phương",          // Phương
+  "Đỗ Ngọc Linh",          // Linh
+  "Đào Minh Quân",         // Quân
+  "Đỗ Hoàng Long",         // Long
+  "Vũ Hồng Ngân",          // Ngân
+  "Phạm Nguyễn Thanh Tùng",// Thanh Tùng
+] as const;
+
+export const TEAM_PAGE: TeamMember[] = TEAM_PAGE_ORDER.map((name) =>
+  TEAM.find((m) => m.name === name),
+).filter((m): m is TeamMember => !!m);
 
 const HOME_TEAM_ORDER = [
   "Đỗ Văn Tuấn",

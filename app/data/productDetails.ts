@@ -508,7 +508,7 @@ const AI_VISUAL_INSPECTION: ProductDetailContent = {
   slug: "ai-visual-inspection",
   titleVi: "AI Visual Inspection - Kiểm tra ngoại quan tự động",
   titleEn: "AI Visual Inspection - Automated Quality Control",
-  heroImg: "Product/VisualInspection1.jpg",
+  heroImg: "Product/AIVisualInspection1.png",
   whatIsTitleVi: "Kiểm tra ngoại quan tự động bằng AI là gì?",
   whatIsTitleEn: "What is AI-Powered Automated Quality Inspection?",
   whatIsTextVi:

@@ -220,8 +220,7 @@ html[data-theme="dark"] .choose-us-item-02,
 html[data-theme="dark"] .service-item-04,
 html[data-theme="dark"] .single-team,
 html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content,
-html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content,
-html[data-theme="dark"] .techwix-cta-section-02 .cta-wrap {
+html[data-theme="dark"] .techwix-blog-grid-section .single-blog .blog-content {
   background: var(--twx-surface);
   box-shadow: var(--twx-shadow);
   border-color: var(--twx-border);
@@ -261,6 +260,137 @@ html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"]::
 html[data-theme="dark"] .techwix-choose-us-section[style*="choose-us-bg3.jpg"] > .container {
   position: relative;
   z-index: 1;
+}
+
+/* Product detail page (blog-details): background, text, buttons, tags */
+html[data-theme="dark"] .blog-details-section {
+  background: var(--twx-bg);
+}
+html[data-theme="dark"] .blog-details-section .blog-details-post {
+  background: var(--twx-surface);
+  border-radius: 10px;
+  box-shadow: var(--twx-shadow);
+  border: 1px solid var(--twx-border);
+  overflow: hidden;
+}
+@media only screen and (max-width: 767px) {
+  html[data-theme="dark"] .blog-details-section .blog-details-post {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .title,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .h5,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content h4,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h4,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h5,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h6 {
+  color: #086ad8;
+}
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .text,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content p,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text p,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text li {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text .text-muted {
+  color: rgba(229, 231, 235, 0.7);
+}
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text .text-primary,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h5.text-primary {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text a,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text .list-unstyled li a {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text a:hover {
+  color: #bfdbfe;
+}
+/* Quote / blockquote */
+html[data-theme="dark"] .blog-details-section .blog-quote .blockquote p {
+  color: var(--twx-text);
+}
+html[data-theme="dark"] .blog-details-section .blog-quote::after {
+  background: #3b82f6;
+}
+html[data-theme="dark"] .blog-details-section .blog-quote .btn.btn-primary {
+  color: #f9fafb;
+}
+/* Tag buttons (tabs) on product detail */
+html[data-theme="dark"] .blog-details-section .sidebar-tag li a,
+html[data-theme="dark"] .blog-details-section .blog-sidebar .sidebar-tag li a {
+  background: var(--twx-surface);
+  color: var(--twx-text);
+  border: 1px solid var(--twx-border);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-tag li a:hover,
+html[data-theme="dark"] .blog-details-section .blog-sidebar .sidebar-tag li a:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+html[data-theme="dark"] .blog-details-section .blog-details-tag-share {
+  border-top-color: var(--twx-border);
+}
+html[data-theme="dark"] .blog-details-section .blog-details-tag-share .blog-details-tag .sidebar-widget .label {
+  color: var(--twx-text);
+}
+/* Sidebar: categories, tags */
+html[data-theme="dark"] .blog-details-section .blog-sidebar {
+  background: transparent;
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title .title {
+  color: #086ad8;
+}
+html[data-theme="dark"] .blog-details-section .blog-sidebar .sidebar-widget {
+  background: var(--twx-surface);
+  border: 1px solid var(--twx-border);
+  border-radius: 10px;
+  box-shadow: var(--twx-shadow);
+  padding: 22px 18px;
+}
+html[data-theme="dark"] .blog-details-section .blog-sidebar .sidebar-widget + .sidebar-widget {
+  margin-top: 18px;
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title {
+  margin-bottom: 16px;
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .search-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]) {
+  background: rgba(15, 26, 46, 0.6);
+  color: var(--twx-text);
+  border: 1px solid rgba(148, 163, 184, 0.55);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .search-form input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"])::placeholder {
+  color: rgba(229, 231, 235, 0.72);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .search-form button {
+  color: rgba(229, 231, 235, 0.9);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .search-form button:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .category .cate-item a {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .category .cate-item a:hover {
+  color: #93c5fd;
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .category .cate-item .post-count {
+  background: var(--twx-surface);
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .blog-details-section .sidebar-widget .category .cate-item a:hover .post-count {
+  background: #2563eb;
+  color: #ffffff;
+}
+/* Social share icons on detail page */
+html[data-theme="dark"] .blog-details-section .blog-details-share .social-share li a {
+  color: var(--twx-muted);
+}
+html[data-theme="dark"] .blog-details-section .blog-details-share .social-share li a:hover {
+  color: #93c5fd;
 }
 
 html[data-theme="dark"] .techwix-team-section-03,
@@ -1022,6 +1152,36 @@ textarea:-ms-input-placeholder {
   width: 100%;
   left: 0;
   right: auto;
+}
+
+/* Dark mode buttons: clearer colors */
+html[data-theme="dark"] .btn {
+  background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+  border-color: transparent;
+  color: #f9fafb;
+}
+html[data-theme="dark"] .btn::before,
+html[data-theme="dark"] .btn::after {
+  background: rgba(15, 23, 42, 0.9);
+}
+html[data-theme="dark"] .btn:hover {
+  color: #f9fafb;
+}
+
+html[data-theme="dark"] .btn.btn-white {
+  background: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  color: #e5e7eb;
+}
+/* CTA "Contact" button should stay like light mode */
+html[data-theme="dark"] .techwix-cta-section-02 .cta-wrap .cta-btn .btn.btn-white {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #0e0e0e;
+}
+html[data-theme="dark"] .btn.btn-white::before,
+html[data-theme="dark"] .btn.btn-white::after {
+  background: rgba(15, 23, 42, 0.9);
 }
 
 .btn-3 {
@@ -4197,7 +4357,10 @@ textarea:-ms-input-placeholder {
 /* Product details & Products list - responsive */
 @media only screen and (max-width: 991px) {
   .blog-details-section .blog-details-post {
-    padding-right: 0;
+    padding: 0 15px;
+  }
+  .blog-details-section .blog-details-wrap {
+    padding-bottom: 50px;
   }
   .blog-details-section .blog-sidebar {
     margin-top: 40px;
@@ -4206,6 +4369,16 @@ textarea:-ms-input-placeholder {
     max-width: 100%;
     height: auto;
   }
+}
+
+/* Product details: make videos fill nicely (avoid empty space) */
+.blog-details-section .blog-details-content video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  object-fit: cover;
 }
 @media only screen and (max-width: 767px) {
   .blog-details-section .blog-details-wrap .row {
@@ -4559,6 +4732,16 @@ textarea:-ms-input-placeholder {
   border-radius: 10px;
   padding: 55px 105px;
   margin-bottom: -90px;
+}
+/* Dark mode: keep CTA identical to light, but prevent footer from covering it */
+html[data-theme="dark"] .techwix-cta-section-02 {
+  position: relative;
+  z-index: 3;
+}
+html[data-theme="dark"] .footer-section,
+html[data-theme="dark"] .techwix-footer-section {
+  position: relative;
+  z-index: 1;
 }
 
 .techwix-cta-section-02 .cta-wrap .cta-content p {
@@ -8259,6 +8442,30 @@ html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact
   transform: translateX(-48%);
   margin-top: -40px;
 }
+html[data-theme="dark"] .single-blog .blog-content {
+  background: var(--twx-surface);
+  color: var(--twx-text);
+  border: 1px solid var(--twx-border);
+  box-shadow: var(--twx-shadow);
+}
+
+/* On product detail pages, keep the intro block inline like normal text */
+.blog-details-section .single-blog-post.single-blog .blog-content {
+  background: transparent;
+  width: 100%;
+  position: static;
+  transform: none;
+  margin-top: 0;
+  padding: 0 0 20px;
+  box-shadow: none;
+  border: 0;
+}
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content {
+  background: transparent;
+  color: inherit;
+  border: 0;
+  box-shadow: none;
+}
 
 @media only screen and (max-width: 1199px) {
   .single-blog .blog-content {
@@ -9162,6 +9369,20 @@ html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact
   top: 0;
 }
 
+/* Product details: keep left/right columns aligned with Bootstrap grid */
+.blog-details-section .blog-sidebar {
+  margin-left: 0;
+  margin-top: 0;
+  top: 110px; /* offset below header */
+}
+
+@media only screen and (max-width: 991px) {
+  .blog-details-section .blog-sidebar {
+    position: static;
+    top: auto;
+  }
+}
+
 @media only screen and (max-width: 1199px) {
   .blog-sidebar {
     margin-left: 15px;
@@ -9450,10 +9671,11 @@ html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact
 /*----------------------------------------*/
 .blog-details-section .blog-details-wrap {
   margin-top: -40px;
+  padding-bottom: 40px;
 }
 
 .blog-details-post {
-  padding-right: 30px;
+  padding: 0 30px;
 }
 
 .blog-details-post .single-blog-post {
@@ -9479,6 +9701,36 @@ html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact
 .blog-details-post .single-blog-post.single-blog .blog-content .title {
   font-size: 36px;
   line-height: 30px;
+}
+
+/* Product details: headings/sections use blue in both themes */
+.blog-details-section .single-blog-post.single-blog .blog-content .title,
+.blog-details-section .single-blog-post.single-blog .blog-content .h5,
+.blog-details-section .single-blog-post.single-blog .blog-content h4,
+.blog-details-section .blog-details-content .blog-details-text h4,
+.blog-details-section .blog-details-content .blog-details-text h5,
+.blog-details-section .blog-details-content .blog-details-text h6,
+.blog-details-section .sidebar-widget .widget-title .title {
+  color: #086ad8;
+}
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .title,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .h5,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content h4,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h4,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h5,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h6,
+html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title .title {
+  color: #086ad8;
+}
+
+/* Ensure translated spans inside headings stay blue in dark mode */
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content .title span,
+html[data-theme="dark"] .blog-details-section .single-blog-post.single-blog .blog-content h4 span,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h4 span,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h5 span,
+html[data-theme="dark"] .blog-details-section .blog-details-content .blog-details-text h6 span,
+html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title .title span {
+  color: #086ad8 !important;
 }
 
 .blog-details-post .single-blog-post.single-blog .blog-content p {

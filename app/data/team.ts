@@ -1,5 +1,7 @@
 export type TeamMember = {
   name: string;
+  roleVi?: string;
+  roleEn?: string;
   degreeVi: string;
   degreeEn: string;
   avatar: string; // relative to /assets/images/team/members/
@@ -8,6 +10,8 @@ export type TeamMember = {
 export const TEAM: TeamMember[] = [
   {
     name: "Đỗ Văn Tuấn",
+    roleVi: "Giám đốc",
+    roleEn: "Director",
     degreeVi: "Tiến sĩ",
     degreeEn: "PhD",
     avatar: "DoVanTuan.jpg",
@@ -123,7 +127,7 @@ const HOME_TEAM_ORDER = [
   "Đỗ Văn Tuấn",
   "Tô Việt Anh",
   "Trần Văn Vượng",
-  "Nguyễn Danh Tuyên",
+  "Phan Thành Toàn",
 ] as const;
 
 export const HOME_TEAM: TeamMember[] = HOME_TEAM_ORDER.map((name) =>

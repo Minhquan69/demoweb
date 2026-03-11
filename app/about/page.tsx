@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div className="row">
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
-                  <span>354+</span>
+                  <span><span className="counter">354</span>+</span>
                     <p>
                       <span data-lang="vi">Dự án đã hoàn thành</span>
                       <span data-lang="en">Completed Projects</span>
@@ -95,7 +95,7 @@ export default function AboutPage() {
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
-                  <span>119+</span>
+                  <span><span className="counter">119</span>+</span>
                     <p>
                       <span data-lang="vi">Tự động hóa bằng robot</span>
                       <span data-lang="en">Robotic Automation</span>
@@ -104,7 +104,7 @@ export default function AboutPage() {
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
-                  <span>99%</span>
+                  <span><span className="counter">99</span>%</span>
                     <p>
                       <span data-lang="vi">Phân tích website</span>
                       <span data-lang="en">Website Analysis</span>
@@ -113,7 +113,7 @@ export default function AboutPage() {
               </div>
               <div className="col-lg-3 col-sm-6">
                 <div className="single-counter-02 text-center">
-                  <span>321+</span>
+                  <span><span className="counter">321</span>+</span>
                     <p>
                       <span data-lang="vi">Phiên hỗ trợ khách hàng</span>
                       <span data-lang="en">Client Support Sessions</span>

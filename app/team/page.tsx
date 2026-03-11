@@ -33,6 +33,13 @@ export default function TeamPage() {
                         </Link>
                       </h3>
                       <span className="designation">
+                        {member.roleVi != null && member.roleEn != null && (
+                          <>
+                            <span data-lang="vi">{member.roleVi}</span>
+                            <span data-lang="en">{member.roleEn}</span>
+                            <span className="d-block" />
+                          </>
+                        )}
                         <span data-lang="vi">{member.degreeVi}</span>
                         <span data-lang="en">{member.degreeEn}</span>
                       </span>

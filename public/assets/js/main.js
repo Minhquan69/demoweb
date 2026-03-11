@@ -221,14 +221,225 @@
 		type: 'iframe'
 	});
 
-  /*--    
-      Counter Up
-  -----------------------------------*/  
+    /*--
+        Counter (SPA-safe): animate when visible
+        Works for Home/About when navigating without full reload.
+    -----------------------------------*/
+    (function () {
+        // Ensure we only initialize once (Next.js app can keep scripts across routes)
+        try {
+            if (window.__twxAnimateInit === true) return;
+            window.__twxAnimateInit = true;
+        } catch (e) {}
 
-    $('.counter').counterUp({
-        delay: 10,
-        time: 1500,
-    });
+        function parseNumber(text) {
+            if (text == null) return null;
+            var t = String(text).trim().replace(/,/g, '');
+            if (t === '') return null;
+            var n = Number(t);
+            return Number.isFinite(n) ? n : null;
+        }
+
+        function isVisible(el) {
+            if (!el || !el.getBoundingClientRect) return false;
+            var r = el.getBoundingClientRect();
+            var vh = window.innerHeight || document.documentElement.clientHeight || 0;
+            if (!vh) return true;
+            // consider visible if at least 25% of element height is within viewport
+            var h = Math.max(1, r.height || 1);
+            var visiblePx = Math.min(r.bottom, vh) - Math.max(r.top, 0);
+            return visiblePx / h >= 0.25;
+        }
+
+        function animateCounter(el) {
+            if (!el || el.dataset.counterAnimated === '1') return;
+            var target = el.dataset.counterTarget ? parseNumber(el.dataset.counterTarget) : parseNumber(el.textContent);
+            if (target == null) return;
+
+            el.dataset.counterAnimated = '1';
+            el.dataset.counterTarget = String(target);
+            var duration = 1500;
+            var start = 0;
+            var startTime = null;
+
+            function step(ts) {
+                if (startTime == null) startTime = ts;
+                var p = Math.min(1, (ts - startTime) / duration);
+                // easeOutCubic
+                var eased = 1 - Math.pow(1 - p, 3);
+                var val = Math.round(start + (target - start) * eased);
+                el.textContent = String(val);
+                if (p < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    // đảm bảo luôn kết thúc đúng giá trị đích
+                    el.textContent = String(target);
+                }
+            }
+
+            el.textContent = '0';
+            requestAnimationFrame(step);
+        }
+
+        function observeCounters(root) {
+            var scope = root || document;
+            var counters = scope.querySelectorAll ? scope.querySelectorAll('.counter') : [];
+            if (!counters || counters.length === 0) return;
+
+            // Nếu đã từng animate nhưng hiện đang là 0 trong khi có target, khôi phục về target
+            counters.forEach(function (el) {
+                if (el.dataset && el.dataset.counterAnimated === '1' && el.dataset.counterTarget) {
+                    var current = parseNumber(el.textContent);
+                    var target = parseNumber(el.dataset.counterTarget);
+                    if (target != null && (current == null || current === 0)) {
+                        el.textContent = String(target);
+                    }
+                }
+            });
+
+            // If already visible (e.g. direct navigation), animate immediately
+            counters.forEach(function (el) {
+                if (el.dataset.counterAnimated === '1') return;
+                if (isVisible(el)) animateCounter(el);
+            });
+
+            // Use IntersectionObserver when available; otherwise fallback to scroll check
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateCounter(entry.target);
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                counters.forEach(function (el) {
+                    if (el.dataset.counterObserved === '1') return;
+                    el.dataset.counterObserved = '1';
+                    io.observe(el);
+                });
+            } else {
+                var onScroll = function () {
+                    var list = document.querySelectorAll('.counter');
+                    for (var i = 0; i < list.length; i++) {
+                        var el = list[i];
+                        if (el.dataset.counterAnimated === '1') continue;
+                        if (isVisible(el)) animateCounter(el);
+                    }
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll);
+                onScroll();
+            }
+        }
+
+        function animateProgressLine(el) {
+            if (!el || el.dataset.progressAnimated === '1') return;
+            var w = el.getAttribute('data-width');
+            if (w == null || w === '') return;
+            el.dataset.progressAnimated = '1';
+
+            // If not set, start from 0 for a visible "fill" animation
+            if (!el.style.width || el.style.width === '0px') {
+                el.style.width = '0%';
+            }
+            // allow layout flush
+            window.setTimeout(function () {
+                el.style.width = String(w) + '%';
+            }, 30);
+        }
+
+        function observeProgressLines(root) {
+            var scope = root || document;
+            var lines = scope.querySelectorAll ? scope.querySelectorAll('.progress-line[data-width]') : [];
+            if (!lines || lines.length === 0) return;
+
+            // immediate if visible
+            lines.forEach(function (el) {
+                if (el.dataset.progressAnimated === '1') return;
+                if (isVisible(el)) animateProgressLine(el);
+            });
+
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            animateProgressLine(entry.target);
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                lines.forEach(function (el) {
+                    if (el.dataset.progressObserved === '1') return;
+                    el.dataset.progressObserved = '1';
+                    io.observe(el);
+                });
+            } else {
+                var onScroll = function () {
+                    var list = document.querySelectorAll('.progress-line[data-width]');
+                    for (var i = 0; i < list.length; i++) {
+                        var el = list[i];
+                        if (el.dataset.progressAnimated === '1') continue;
+                        if (isVisible(el)) animateProgressLine(el);
+                    }
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', onScroll);
+                onScroll();
+            }
+        }
+
+        // initial
+        observeCounters(document);
+        observeProgressLines(document);
+
+        function scheduleRescan() {
+            window.setTimeout(function () { observeCounters(document); }, 50);
+            window.setTimeout(function () { observeCounters(document); }, 250);
+            window.setTimeout(function () { observeCounters(document); }, 800);
+            window.setTimeout(function () { observeProgressLines(document); }, 50);
+            window.setTimeout(function () { observeProgressLines(document); }, 250);
+            window.setTimeout(function () { observeProgressLines(document); }, 800);
+        }
+
+        // watch for client-side navigation / dynamic content
+        if ('MutationObserver' in window) {
+            var mo = new MutationObserver(function (mutations) {
+                for (var i = 0; i < mutations.length; i++) {
+                    var m = mutations[i];
+                    if (m.addedNodes && m.addedNodes.length) {
+                        for (var j = 0; j < m.addedNodes.length; j++) {
+                            var node = m.addedNodes[j];
+                            if (node && node.nodeType === 1) {
+                                observeCounters(node);
+                                observeProgressLines(node);
+                            }
+                        }
+                    }
+                }
+            });
+            mo.observe(document.body, { childList: true, subtree: true });
+        }
+
+        // also react to history navigation (Next.js client routing)
+        try {
+            window.addEventListener('popstate', scheduleRescan);
+            window.addEventListener('hashchange', scheduleRescan);
+            window.addEventListener('load', scheduleRescan);
+            var _pushState = history.pushState;
+            history.pushState = function () {
+                _pushState.apply(this, arguments);
+                scheduleRescan();
+            };
+            var _replaceState = history.replaceState;
+            history.replaceState = function () {
+                _replaceState.apply(this, arguments);
+                scheduleRescan();
+            };
+        } catch (e) {}
+    })();
 
   
  

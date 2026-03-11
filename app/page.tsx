@@ -63,14 +63,14 @@ export default function HomePage() {
       <div id="about" className="section techwix-about-section-05 section-padding">
         <div className="container">
           <div className="about-wrap">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up" data-aos-delay="100">
               <h3 className="sub-title"><span data-lang="vi">Về chúng tôi</span><span data-lang="en">About Us</span></h3>
               <h2 className="title"><span data-lang="vi">Công ty công nghệ AI tập trung vào triển khai giải pháp thị giác máy tính, LLM và dữ liệu cho doanh nghiệp.</span><span data-lang="en">AI technology company focused on deploying computer vision, LLM, and data solutions for enterprises.</span></h2>
             </div>
             <div className="about-content-wrap">
               <div className="row">
                 <div className="col-lg-6">
-                  <div className="about-img-wrap">
+                  <div className="about-img-wrap" data-aos="fade-right" data-aos-delay="200">
                     <div className="about-img about-img-big">
                       <img src="/assets/images/about-big3.jpg" alt="" />
                     </div>
@@ -81,7 +81,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="col-lg-6">
-                  <div className="about-content">
+                  <div className="about-content" data-aos="fade-left" data-aos-delay="200">
                     <p className="title"><span data-lang="vi">Đội ngũ nghiên cứu và kỹ sư AI chuyên sâu, hiểu bài toán thực tế và hệ thống hiện hữu của doanh nghiệp.</span><span data-lang="en">Deep expertise in AI research and engineering, understanding real-world business challenges and existing systems.</span></p>
                     <p className="text"><span data-lang="vi">Chúng tôi đồng hành từ giai đoạn tư vấn chiến lược dữ liệu, thiết kế mô hình máy học, xây dựng hạ tầng đến tích hợp vào quy trình vận hành. Mục tiêu là biến AI thành năng lực cốt lõi, chứ không chỉ là thử nghiệm.</span><span data-lang="en">We partner from data strategy consulting, machine learning model design, infrastructure building to integration into operational workflows. Our goal is to make AI a core capability, not just experimentation.</span></p>
                     <div className="about-list-item-wrap">
@@ -487,6 +487,13 @@ export default function HomePage() {
                         </Link>
                       </h3>
                       <span className="designation">
+                        {member.roleVi != null && member.roleEn != null && (
+                          <>
+                            <span data-lang="vi">{member.roleVi}</span>
+                            <span data-lang="en">{member.roleEn}</span>
+                            <span className="d-block" />
+                          </>
+                        )}
                         <span data-lang="vi">{member.degreeVi}</span>
                         <span data-lang="en">{member.degreeEn}</span>
                       </span>

@@ -106,16 +106,16 @@ export default function RootLayout({
                     <a href="/" data-bs-dismiss="offcanvas"><span data-lang="vi">Trang chủ</span><span data-lang="en">Home</span></a>
                   </li>
                   <li>
-                    <a href="/#about" data-bs-dismiss="offcanvas"><span data-lang="vi">Giới thiệu</span><span data-lang="en">About</span></a>
+                    <a href="/about" data-bs-dismiss="offcanvas"><span data-lang="vi">Giới thiệu</span><span data-lang="en">About</span></a>
                   </li>
                   <li>
-                    <a href="/#services" data-bs-dismiss="offcanvas"><span data-lang="vi">Dịch vụ</span><span data-lang="en">Services</span></a>
+                    <a href="/service" data-bs-dismiss="offcanvas"><span data-lang="vi">Dịch vụ</span><span data-lang="en">Services</span></a>
                   </li>
                   <li>
                     <a href="/products" data-bs-dismiss="offcanvas"><span data-lang="vi">Sản phẩm</span><span data-lang="en">Products</span></a>
                   </li>
                   <li>
-                    <a href="/#contact" data-bs-dismiss="offcanvas"><span data-lang="vi">Liên hệ</span><span data-lang="en">Contact</span></a>
+                    <a href="/contact" data-bs-dismiss="offcanvas"><span data-lang="vi">Liên hệ</span><span data-lang="en">Contact</span></a>
                   </li>
                 </ul>
               </div>

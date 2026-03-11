@@ -4,9 +4,37 @@
     /*--
         preloader
     -----------------------------------*/
-     $(window).on('load', function(event) {
-        $('#preloader').delay(500).fadeOut(500);
-    });
+    (function () {
+        function hidePreloader() {
+            var el = document.getElementById('preloader');
+            if (!el) return;
+            // mimic old behavior: delay 500ms then fade out 500ms
+            window.setTimeout(function () {
+                // stop blocking clicks immediately
+                el.style.pointerEvents = 'none';
+                el.style.transition = 'opacity 500ms ease';
+                el.style.opacity = '0';
+                window.setTimeout(function () {
+                    el.style.display = 'none';
+                }, 520);
+            }, 500);
+        }
+
+        if (document.readyState === 'complete') {
+            hidePreloader();
+        } else {
+            window.addEventListener('load', hidePreloader);
+        }
+
+        // hard fallback: never let preloader block UI
+        window.setTimeout(function () {
+            var el = document.getElementById('preloader');
+            if (!el) return;
+            el.style.pointerEvents = 'none';
+            el.style.opacity = '0';
+            el.style.display = 'none';
+        }, 3000);
+    })();
 
     /*--
         Header Sticky

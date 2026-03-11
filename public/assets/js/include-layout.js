@@ -170,6 +170,7 @@ function setActiveMenu() {
             var hash = u.hash || '';
 
             if (path === '/' || path === '') {
+                // Backward-compat: if user manually visits hash sections on Home
                 if (hash === '#about') return 'about';
                 if (hash === '#services') return 'services';
                 if (hash === '#solutions') return 'solutions';
@@ -224,12 +225,60 @@ function initLayout() {
         initLanguageSwitcher();
         initThemeToggle();
         setActiveMenu();
+
+        // Ensure offcanvas (mobile) menu links always navigate
+        try {
+            if (!window.__twxOffcanvasNavInit) {
+                window.__twxOffcanvasNavInit = true;
+                document.addEventListener('click', function (e) {
+                    var t = e.target;
+                    if (!t) return;
+                    var a = t.closest ? t.closest('.offcanvas-menu .main-menu a') : null;
+                    if (!a) return;
+                    var href = a.getAttribute('href') || '';
+                    if (!href || href === '#') return;
+
+                    // Close offcanvas if open
+                    try {
+                        var offcanvasEl = document.getElementById('offcanvasExample');
+                        if (offcanvasEl && window.bootstrap && window.bootstrap.Offcanvas) {
+                            var inst = window.bootstrap.Offcanvas.getInstance(offcanvasEl);
+                            if (inst) inst.hide();
+                        }
+                    } catch (e2) { }
+
+                    e.preventDefault();
+                    window.location.href = href;
+                }, true);
+            }
+        } catch (e) { }
         // Khi Next.js chuyển trang (client-side), form có thể được render sau.
         // Quan sát DOM để cập nhật lại placeholder cho các field mới xuất hiện.
         try {
-            var observer = new MutationObserver(function () {
-                var currentLang = document.documentElement.getAttribute('lang') || 'vi';
-                updateFormPlaceholders(currentLang);
+            var pending = null;
+            var observer = new MutationObserver(function (mutations) {
+                // Debounce + only react when inputs/textareas/selects are added
+                var shouldRun = false;
+                for (var i = 0; i < mutations.length; i++) {
+                    var m = mutations[i];
+                    if (!m.addedNodes || m.addedNodes.length === 0) continue;
+                    for (var j = 0; j < m.addedNodes.length; j++) {
+                        var n = m.addedNodes[j];
+                        if (!n || n.nodeType !== 1) continue;
+                        if (n.matches && (n.matches('input, textarea, select') || n.querySelector('input, textarea, select'))) {
+                            shouldRun = true;
+                            break;
+                        }
+                    }
+                    if (shouldRun) break;
+                }
+                if (!shouldRun) return;
+                if (pending) clearTimeout(pending);
+                pending = setTimeout(function () {
+                    pending = null;
+                    var currentLang = document.documentElement.getAttribute('lang') || 'vi';
+                    updateFormPlaceholders(currentLang);
+                }, 120);
             });
             observer.observe(document.body, { childList: true, subtree: true });
         } catch (e) {

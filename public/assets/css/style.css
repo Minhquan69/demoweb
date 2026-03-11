@@ -2614,6 +2614,15 @@ html[data-theme="dark"] .btn.btn-white::after {
   color: #086ad8;
 }
 
+/* Offcanvas menu: ensure nested spans follow hover/active color */
+.offcanvas-menu .main-menu li:hover > a span,
+.offcanvas-menu .main-menu li.active-menu > a span {
+  color: inherit !important;
+}
+.offcanvas-menu .main-menu li.active-menu > a {
+  color: #086ad8;
+}
+
 .offcanvas-menu .main-menu li.active > .menu-expand::after {
   height: 0;
 }

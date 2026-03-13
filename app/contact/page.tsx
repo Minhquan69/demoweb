@@ -1,7 +1,11 @@
 import React from "react";
 import PageBanner from "../components/PageBanner";
+import ContactForm from "./ContactForm";
 
 export default function ContactPage() {
+  const officeMapUrl =
+    "https://www.google.com/maps/search/?api=1&query=20.999644202677064%2C105.80320538518609";
+
   return (
     <>
       <PageBanner
@@ -15,7 +19,9 @@ export default function ContactPage() {
               <div className="col-lg-4 col-sm-6">
                 <div className="single-contact-info text-center">
                   <div className="info-icon">
-                    <img src="/assets/images/info-1.png" alt="" />
+                    <a href="tel:+84983835686" aria-label="Call us at +84 983 835 686">
+                      <img src="/assets/images/info-1.png" alt="" />
+                    </a>
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Gọi cho chúng tôi</span><span data-lang="en">Give us a call</span></h5>
@@ -26,7 +32,9 @@ export default function ContactPage() {
               <div className="col-lg-4 col-sm-6">
                 <div className="single-contact-info text-center">
                   <div className="info-icon">
-                    <img src="/assets/images/info-2.png" alt="" />
+                    <a href="mailto:ivistatech@gmail.com" aria-label="Email us at ivistatech@gmail.com">
+                      <img src="/assets/images/info-2.png" alt="" />
+                    </a>
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Gửi email cho chúng tôi</span><span data-lang="en">Drop us a line</span></h5>
@@ -37,13 +45,27 @@ export default function ContactPage() {
               <div className="col-lg-4 col-sm-6">
                 <div className="single-contact-info text-center">
                   <div className="info-icon">
-                    <img src="/assets/images/info-3.png" alt="" />
+                    <a
+                      href={officeMapUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open our office location in Google Maps"
+                    >
+                      <img src="/assets/images/info-3.png" alt="" />
+                    </a>
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Đến văn phòng chúng tôi</span><span data-lang="en">Visit our office</span></h5>
                     <p>
-                      <span data-lang="vi">Tòa nhà EZ, 8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam</span>
-                      <span data-lang="en">EZ Building, 8B Alley 172, Nguyen Tuan Street, Thanh Xuan Trung, Thanh Xuan, Hanoi, Vietnam</span>
+                      <a
+                        href={officeMapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Open our office location in Google Maps"
+                      >
+                        <span data-lang="vi">Tòa nhà EZ, 8B Ngõ 172 Đường Nguyễn Tuân, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam</span>
+                        <span data-lang="en">EZ Building, 8B Alley 172, Nguyen Tuan Street, Thanh Xuan Trung, Thanh Xuan, Hanoi, Vietnam</span>
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -66,35 +88,7 @@ export default function ContactPage() {
                       </span>
                       <h3 className="title"><span data-lang="vi">Chúng tôi có thể giúp gì cho bạn!</span><span data-lang="en">How May We Help You!</span></h3>
                     </div>
-                    <form action="#">
-                      <div className="row">
-                        <div className="col-sm-6">
-                          <div className="single-form">
-                            <input type="text" placeholder="" data-placeholder-vi="Họ tên *" data-placeholder-en="Name *" />
-                          </div>
-                        </div>
-                        <div className="col-sm-6">
-                          <div className="single-form">
-                            <input type="email" placeholder="" data-placeholder-vi="Email *" data-placeholder-en="Email *" />
-                          </div>
-                        </div>
-                        <div className="col-sm-12">
-                          <div className="single-form">
-                            <input type="text" placeholder="" data-placeholder-vi="Chủ đề *" data-placeholder-en="Subject *" />
-                          </div>
-                        </div>
-                        <div className="col-sm-12">
-                          <div className="single-form">
-                            <textarea placeholder="" data-placeholder-vi="Viết tin nhắn" data-placeholder-en="Write A Message"></textarea>
-                          </div>
-                        </div>
-                        <div className="col-sm-12">
-                          <div className="form-btn">
-                            <button className="btn" type="submit"><span data-lang="vi">Gửi tin nhắn</span><span data-lang="en">Send Message</span></button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
+                    <ContactForm />
                   </div>
                 </div>
               </div>

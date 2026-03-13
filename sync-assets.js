@@ -1,5 +1,5 @@
 /**
- * Sync assets from parent Techwix folder to next-app/public/assets
+ * Sync assets from parent iVista folder to next-app/public/assets
  * Run from next-app: node sync-assets.js
  */
 const fs = require("fs");

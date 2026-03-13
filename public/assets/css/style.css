@@ -7511,6 +7511,24 @@ html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .co
   font-weight: 400;
 }
 
+.techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form.has-error input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+.techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form.has-error textarea {
+  border-color: #ef4444;
+}
+.field-error-text {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #b91c1c;
+}
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form.has-error input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .single-form.has-error textarea {
+  border-color: rgba(248, 113, 113, 0.9);
+}
+html[data-theme="dark"] .field-error-text {
+  color: rgba(252, 165, 165, 0.95);
+}
+
 .techwix-contact-section .contact-wrap .contact-form .contact-form-wrap .form-btn {
   margin-top: 25px;
 }
@@ -7521,6 +7539,56 @@ html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .co
   height: 55px;
   line-height: 50px;
   margin-bottom: 10px;
+}
+
+.contact-human-check .human-check-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+.contact-human-check .human-check-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* Contact form submit status */
+.contact-form-status {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+  border: 1px solid #ebebeb;
+  background: #ffffff;
+  color: #333333;
+}
+.contact-form-status.is-success {
+  border-color: rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.08);
+  color: #166534;
+}
+.contact-form-status.is-error {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.08);
+  color: #7f1d1d;
+}
+html[data-theme="dark"] .contact-form-status {
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 26, 46, 0.6);
+  color: var(--twx-text);
+}
+html[data-theme="dark"] .contact-form-status.is-success {
+  border-color: rgba(34, 197, 94, 0.5);
+  background: rgba(34, 197, 94, 0.12);
+  color: rgba(187, 247, 208, 0.95);
+}
+html[data-theme="dark"] .contact-form-status.is-error {
+  border-color: rgba(239, 68, 68, 0.5);
+  background: rgba(239, 68, 68, 0.12);
+  color: rgba(254, 202, 202, 0.95);
 }
 
 @media only screen and (max-width: 575px) {
@@ -7557,6 +7625,36 @@ html[data-theme="dark"] .techwix-contact-section .contact-wrap .contact-form .co
   margin-top: 30px;
 }
 
+/* Equal height contact info cards on desktop */
+@media only screen and (min-width: 992px) {
+  .contact-info-section .contact-info-wrap .row > [class*="col-"] {
+    display: flex;
+  }
+  .contact-info-section .contact-info-wrap .single-contact-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+}
+
+/* Contact info icon: hover zoom + clickable */
+.contact-info-section .contact-info-wrap .single-contact-info .info-icon a {
+  display: inline-block;
+}
+.contact-info-section .contact-info-wrap .single-contact-info .info-icon img {
+  transform: translateZ(0);
+  transition: transform 0.2s ease;
+}
+.contact-info-section .contact-info-wrap .single-contact-info .info-icon a:hover img {
+  transform: scale(1.12);
+}
+.contact-info-section .contact-info-wrap .single-contact-info .info-icon a {
+  cursor: pointer;
+}
+.contact-info-section .contact-info-wrap .single-contact-info .info-content p a {
+  display: inline-block;
+}
+
 /* Contact info cards: dark background */
 html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info {
   background: var(--twx-bg);
@@ -7568,6 +7666,15 @@ html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact
 html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p,
 html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p a {
   color: var(--twx-muted);
+}
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p a {
+  transition: color 0.2s ease;
+}
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p a:hover {
+  color: var(--twx-primary);
+}
+html[data-theme="dark"] .contact-info-section .contact-info-wrap .single-contact-info .info-content p a:hover span {
+  color: var(--twx-primary);
 }
 
 @media only screen and (max-width: 1199px) {

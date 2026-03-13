@@ -154,6 +154,15 @@ html[data-theme="dark"] a {
   color: inherit;
 }
 
+/* Prevent horizontal overflow on mobile (layout shift / blank side) */
+html,
+body {
+  overflow-x: hidden;
+}
+.main-wrapper {
+  overflow-x: hidden;
+}
+
 /* Header theme toggle button */
 .header-theme-toggle {
   display: flex;
@@ -3465,6 +3474,22 @@ html[data-theme="dark"] .btn.btn-white::after {
   line-height: 36px;
   color: #ffffff;
   margin-top: 40px;
+}
+
+/* Hero text: safe CSS fade-up on load (no JS dependency) */
+@keyframes heroFadeUpSoft {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .title,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
+  animation: heroFadeUpSoft 0.7s ease-out both;
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn {
@@ -10453,6 +10478,14 @@ html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title .tit
   color: #ffffff;
   padding-right: 110px;
   margin-top: 20px;
+  text-align: left;
+}
+
+/* Ensure footer ecosystem text is fully left-aligned */
+.footer-widget-about,
+.footer-widget-about p,
+.footer-widget-about p span {
+  text-align: left;
 }
 
 @media only screen and (max-width: 1399px) {
@@ -10486,6 +10519,16 @@ html[data-theme="dark"] .blog-details-section .sidebar-widget .widget-title .tit
 
 .footer-social .social li a:hover {
   color: #086ad8;
+}
+
+/* Footer contact highlight text */
+.footer-section-03 .footer-widget .widget-info p {
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.footer-section-03 .footer-widget .widget-info p span {
+  color: inherit;
 }
 
 .footer-widget .footer-widget-title {

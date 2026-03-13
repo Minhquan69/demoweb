@@ -18,11 +18,11 @@ export default function HomePage() {
                         <div className="row align-items-center">
                           <div className="col-lg-6">
                             <div className="hero-content">
-                              <h2 className="title" data-aos="fade-up" data-aos-delay="800">
+                              <h2 className="title">
                                 <span data-lang="vi">{product.titleVi}</span>
                                 <span data-lang="en">{product.titleEn}</span>
                               </h2>
-                              <p data-aos="fade-up" data-aos-delay="900">
+                              <p>
                                 <span data-lang="vi">{product.shortVi}</span>
                                 <span data-lang="en">{product.shortEn}</span>
                               </p>
@@ -129,11 +129,11 @@ export default function HomePage() {
       <div id="services" className="section techwix-service-section-05">
         <div className="container">
           <div className="service-wrap section-padding-02">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up" data-aos-delay="100">
               <h3 className="sub-title"><span data-lang="vi">Dịch vụ của chúng tôi</span><span data-lang="en">Our Services</span></h3>
               <h2 className="title"><span data-lang="vi">Xây dựng mọi thứ bạn cần cho doanh nghiệp</span><span data-lang="en">Building everything you need for your business</span></h2>
             </div>
-            <div className="service-content-wrap">
+            <div className="service-content-wrap" data-aos="fade-up" data-aos-delay="200">
               <div className="row">
                 <div className="col-xl-3 col-sm-6">
                   <div className="service-item-04">
@@ -211,12 +211,18 @@ export default function HomePage() {
       </div>
 
       {/* Counter / Choose Us */}
-      <div id="choose-us" className="section techwix-counter-section-03" style={{ backgroundImage: "url(/assets/images/bg/counter-bg.jpg)" }}>
+      <div
+        id="choose-us"
+        className="section techwix-counter-section-03"
+        style={{ backgroundImage: "url(/assets/images/bg/counter-bg.jpg)" }}
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <div className="container">
           <div className="counter-wrap">
             <div className="row">
               <div className="col-lg-3 col-sm-6">
-                <div className="single-counter-02 text-center">
+                <div className="single-counter-02 text-center" data-aos="fade-right" data-aos-delay="150">
                   <span><span className="counter">354</span>+</span>
                   <p>
                     <span data-lang="vi">Dự án hoàn thành</span>
@@ -225,7 +231,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
-                <div className="single-counter-02 text-center">
+                <div className="single-counter-02 text-center" data-aos="fade-up" data-aos-delay="200">
                   <span><span className="counter">119</span>+</span>
                   <p>
                     <span data-lang="vi">Tự động hóa robot</span>
@@ -234,7 +240,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
-                <div className="single-counter-02 text-center">
+                <div className="single-counter-02 text-center" data-aos="fade-up" data-aos-delay="250">
                   <span><span className="counter">99</span>%</span>
                   <p>
                     <span data-lang="vi">Phân tích website</span>
@@ -243,7 +249,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="col-lg-3 col-sm-6">
-                <div className="single-counter-02 text-center">
+                <div className="single-counter-02 text-center" data-aos="fade-left" data-aos-delay="300">
                   <span><span className="counter">321</span>+</span>
                   <p>
                     <span data-lang="vi">Hỗ trợ khách hàng</span>
@@ -263,13 +269,13 @@ export default function HomePage() {
       <div className="section techwix-choose-us-section techwix-choose-us-section-03 section-padding">
         <div className="container">
           <div className="choose-us-wrap">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up" data-aos-delay="100">
               <h3 className="sub-title"><span data-lang="vi">LÝ DO CHỌN CHÚNG TÔI</span><span data-lang="en">REASON TO CHOOSE US</span></h3>
               <h2 className="title"><span data-lang="vi">Giải pháp công nghệ nổi bật cho doanh nghiệp</span><span data-lang="en">We provide truly prominent IT solutions.</span></h2>
             </div>
             <div className="choose-us-content-wrap">
               <div className="row">
-                <div className="col-xl-3 col-lg-4 col-md-6">
+                <div className="col-xl-3 col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="150">
                   <div className="choose-us-item-02">
                     <div className="choose-us-img">
                       <img src="/assets/images/ser-icon9.png" alt="" />
@@ -280,7 +286,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-4 col-md-6">
+                <div className="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                   <div className="choose-us-item-02">
                     <div className="choose-us-img">
                       <img src="/assets/images/counter-3.png" alt="" />
@@ -291,7 +297,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-4 col-md-6">
+                <div className="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
                   <div className="choose-us-item-02">
                     <div className="choose-us-img">
                       <img src="/assets/images/ser-icon10.png" alt="" />
@@ -302,7 +308,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="col-xl-3 col-lg-4 col-md-6">
+                <div className="col-xl-3 col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="300">
                   <div className="choose-us-item-02">
                     <div className="choose-us-img">
                       <img src="/assets/images/ser-icon12.png" alt="" />
@@ -391,17 +397,21 @@ export default function HomePage() {
       </div>
 
       {/* Testimonial */}
-      <div id="testimonial" className="section bg-cover techwix-testimonial-section-02 techwix-testimonial-section-03 section-padding" style={{ backgroundImage: "url(/assets/images/bg/testi-bg4.jpg)" }}>
+      <div
+        id="testimonial"
+        className="section bg-cover techwix-testimonial-section-02 techwix-testimonial-section-03 section-padding"
+        style={{ backgroundImage: "url(/assets/images/bg/testi-bg4.jpg)" }}
+      >
         <div className="container">
           <div className="testimonial-wrap-02">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up" data-aos-delay="100">
               <h3 className="sub-title"><span data-lang="vi">Đánh giá</span><span data-lang="en">Testimonial</span></h3>
               <h2 className="title"><span data-lang="vi">Hơn 20k khách hàng hài lòng trên toàn cầu</span><span data-lang="en">20k+ satisfied clients worldwide</span></h2>
             </div>
             <div className="testimonial-content-wrap-02">
               <div className="swiper-container testimonial-02-active">
                 <div className="swiper-wrapper">
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" data-aos="fade-right" data-aos-delay="150">
                     <div className="single-testimonial-02">
                       <div className="testimonial-thumb">
                         <img src="/assets/images/testi-3.jpg" alt="" />
@@ -414,7 +424,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" data-aos="fade-up" data-aos-delay="200">
                     <div className="single-testimonial-02">
                       <div className="testimonial-thumb">
                         <img src="/assets/images/testi-4.jpg" alt="" />
@@ -427,7 +437,7 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="swiper-slide">
+                  <div className="swiper-slide" data-aos="fade-left" data-aos-delay="250">
                     <div className="single-testimonial-02">
                       <div className="testimonial-thumb">
                         <img src="/assets/images/testi-3.jpg" alt="" />
@@ -455,7 +465,7 @@ export default function HomePage() {
       <div id="team" className="section techwix-team-section techwix-team-section-03 section-padding">
         <div className="container">
           <div className="team-wrap">
-            <div className="section-title text-center">
+            <div className="section-title text-center" data-aos="fade-up" data-aos-delay="100">
               <h3 className="sub-title">
                 <span data-lang="vi">Đội ngũ</span>
                 <span data-lang="en">Our Team</span>
@@ -467,7 +477,7 @@ export default function HomePage() {
             </div>
             <div className="row">
               {HOME_TEAM.map((member, i) => (
-                <div key={i} className="col-lg-3 col-sm-6">
+                <div key={i} className="col-lg-3 col-sm-6" data-aos={i % 2 === 0 ? "fade-right" : "fade-left"} data-aos-delay={150 + (i % 4) * 50}>
                   <div className="single-team">
                     <div className="team-img">
                       <Link href="/team">
@@ -529,7 +539,7 @@ export default function HomePage() {
       {/* Brand Logo */}
       <div className="section techwix-brand-section techwix-brand-section-03 techwix-brand-section-04 section-padding">
         <div className="container">
-          <div className="brand-wrapper text-center">
+          <div className="brand-wrapper text-center" data-aos="fade-up" data-aos-delay="100">
             <div className="brand-active">
               <div className="swiper-container">
                 <div className="swiper-wrapper">
@@ -560,14 +570,14 @@ export default function HomePage() {
         <div className="container">
           <div className="cta-wrap" style={{ backgroundImage: "url(/assets/images/bg/cta-bg2.jpg)" }}>
             <div className="row align-items-center">
-              <div className="col-lg-7">
+              <div className="col-lg-7" data-aos="fade-right" data-aos-delay="100">
                 <div className="cta-content">
                   <div className="section-title">
                     <h2 className="title white"><span data-lang="vi">Để yêu cầu thêm thông tin, vui lòng liên hệ với chúng tôi</span><span data-lang="en">To make requests for further information, contact us</span></h2>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-5">
+              <div className="col-lg-5" data-aos="fade-left" data-aos-delay="150">
                 <div className="cta-info text-center">
                   <div className="cta-icon">
                     <img src="/assets/images/cta-icon2.png" alt="" />

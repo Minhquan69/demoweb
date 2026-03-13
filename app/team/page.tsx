@@ -15,7 +15,12 @@ export default function TeamPage() {
           <div className="team-wrap">
             <div className="row">
               {TEAM_PAGE.map((member, i) => (
-                <div key={i} className="col-lg-3 col-sm-6">
+                <div
+                  key={i}
+                  className="col-lg-3 col-sm-6"
+                  data-aos={i % 2 === 0 ? "fade-right" : "fade-left"}
+                  data-aos-delay={150 + (i % 4) * 50}
+                >
                   <div className="single-team">
                     <div className="team-img">
                       <Link href="/team"><img src={`/assets/images/team/members/${member.avatar}`} alt={member.name} /></Link>

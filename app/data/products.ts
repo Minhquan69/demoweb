@@ -22,7 +22,7 @@ export const PRODUCTS = [
   },
   {
     slug: "ai-alignment",
-    titleVi: "AI Alignment cho nhà máy",
+    titleVi: "AI Alignment cho nhà máy thông minh",
     titleEn: "AI Alignment for Smart Factories",
     shortVi:
       "Giải pháp thị giác máy dùng AI để định vị chính xác điểm mark (fiducial) trên sản phẩm, cung cấp tọa độ X, Y, θ cho robot, CNC, máy in và hệ thống tự động trong nhà máy.",

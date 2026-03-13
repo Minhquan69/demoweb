@@ -10,16 +10,16 @@ export type TeamMember = {
 export const TEAM: TeamMember[] = [
   {
     name: "Đỗ Văn Tuấn",
-    roleVi: "Giám đốc",
-    roleEn: "Director",
+    roleVi: "Hợp tác",
+    roleEn: "Cooperate",
     degreeVi: "Tiến sĩ",
     degreeEn: "PhD",
     avatar: "DoVanTuan.jpg",
   },
   {
     name: "Tô Việt Anh",
-    degreeVi: "Đại học",
-    degreeEn: "Bachelor",
+    degreeVi: "Thạc sĩ",
+    degreeEn: "Master's",
     avatar: "ToVietAnh.jpg",
   },
   {
@@ -131,24 +131,24 @@ export const SORTED_TEAM: TeamMember[] = [...TEAM].sort((a, b) => {
 
 // Thứ tự hiển thị trên trang /team (full team page)
 const TEAM_PAGE_ORDER = [
-  "Đỗ Văn Tuấn",            // Tuấn
-  "Phan Thành Toàn",       // Toàn
-  "Tô Việt Anh",           // Việt Anh
-  "Trần Văn Vượng",        // Vượng
-  "Nguyễn Thị Ngọc",       // Ngọc
-  "Nguyễn Thành Nam",      // Thành Nam
-  "Nguyễn Danh Tuyên",     // Tuyên
-  "Bùi Đoàn Quang Hưng",   // Hưng
-  "Kiều Thanh Bình",       // Bình
-  "Ngô Viết Dũng",         // Dũng
-  "Trần Hà Vinh",          // Vinh
-  "Nguyễn Văn Nam",        // Văn Nam
-  "Vũ Hà Phương",          // Phương
-  "Đỗ Ngọc Linh",          // Linh
-  "Đào Minh Quân",         // Quân
-  "Đỗ Hoàng Long",         // Long
-  "Vũ Hồng Ngân",          // Ngân
-  "Phạm Nguyễn Thanh Tùng",// Thanh Tùng
+  "Phan Thành Toàn",
+  "Tô Việt Anh",
+  "Trần Văn Vượng",
+  "Nguyễn Danh Tuyên",
+  "Nguyễn Thành Nam",
+  "Đỗ Văn Tuấn",
+  "Nguyễn Thị Ngọc",
+  "Bùi Đoàn Quang Hưng",
+  "Kiều Thanh Bình",
+  "Ngô Viết Dũng",
+  "Trần Hà Vinh",
+  "Nguyễn Văn Nam",
+  "Vũ Hà Phương",
+  "Đỗ Ngọc Linh",
+  "Đào Minh Quân",
+  "Đỗ Hoàng Long",
+  "Vũ Hồng Ngân",
+  "Phạm Nguyễn Thanh Tùng",
 ] as const;
 
 export const TEAM_PAGE: TeamMember[] = TEAM_PAGE_ORDER.map((name) =>
@@ -156,10 +156,10 @@ export const TEAM_PAGE: TeamMember[] = TEAM_PAGE_ORDER.map((name) =>
 ).filter((m): m is TeamMember => !!m);
 
 const HOME_TEAM_ORDER = [
-  "Đỗ Văn Tuấn",
   "Tô Việt Anh",
-  "Trần Văn Vượng",
   "Phan Thành Toàn",
+  "Trần Văn Vượng",
+  "Nguyễn Danh Tuyên",
 ] as const;
 
 export const HOME_TEAM: TeamMember[] = HOME_TEAM_ORDER.map((name) =>

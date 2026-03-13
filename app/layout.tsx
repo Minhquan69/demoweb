@@ -57,7 +57,6 @@ const layoutLinks = (
       .experience-text p,
       .testimonial-content p,
       .single-testimonial-02 .testimonial-content p,
-      .footer-widget-about p,
       .blog-content .text,
       .single-blog .text { text-align: justify; }
     `}} />

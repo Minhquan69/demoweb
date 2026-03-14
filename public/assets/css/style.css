@@ -3503,7 +3503,7 @@ html[data-theme="dark"] .btn.btn-white::after {
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title span {
-  color: #086ad8;
+  color: #FF7300;
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
@@ -3716,6 +3716,16 @@ html[data-theme="dark"] .btn.btn-white::after {
   height: 60px;
   line-height: 56px;
   padding: 0 42px;
+  background: #FF7300;
+  color: #ffffff;
+  border-color: #FF7300;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-cta .hero-cta-btn:hover {
+  color: #ffffff;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-cta .hero-cta-btn::before,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-slide-cta .hero-cta-btn::after {
+  background: #e56800;
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-btn .btn {
@@ -3785,6 +3795,14 @@ html[data-theme="dark"] .btn.btn-white::after {
 .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
   position: relative;
 }
+
+/* 985px < width < 1400px: ảnh sản phẩm cách trái 10px, không dính cột chữ */
+@media only screen and (min-width: 985px) and (max-width: 1400px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
+    margin-left: 10px;
+  }
+}
+
 .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images::after {
   content: "";
   position: absolute;

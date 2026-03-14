@@ -1,7 +1,7 @@
-import React from "react";
 import Script from "next/script";
-import "./globals.css";
+import React from "react";
 import MenuHighlighter from "./components/MenuHighlighter";
+import "./globals.css";
 
 export const metadata = {
   title: "iVista Tech - Công ty Cổ phần iVista Tech",

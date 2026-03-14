@@ -1,54 +1,151 @@
 import Link from "next/link";
+import { HERO_SLIDES } from "./data/heroSlides";
 import { PRODUCTS } from "./data/products";
 import { HOME_TEAM } from "./data/team";
+
+function getHeroImages(index: number): string[] {
+  const p = PRODUCTS[index];
+  if (!p) return [PRODUCTS[0].img, PRODUCTS[0].img];
+  const raw = p as { heroImgs?: readonly string[]; heroImg?: string; img: string };
+  const imgs = raw.heroImgs ?? [raw.heroImg ?? p.img, p.img];
+  return [...imgs.slice(0, 2)];
+}
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero - Product Carousel */}
+      {/* Hero - 4 slides: Cover, iVào, Bodycam AI, Surveillance Center */}
       <div id="hero" className="section techwix-hero-section-05">
         <div className="techwix-hero-wrap" style={{ backgroundImage: "url(/assets/images/bg/hero-bg5.jpg)" }}>
           <div className="container">
             <div className="row align-items-center">
               <div className="swiper-container hero-carousel-active" style={{ width: "100%" }}>
                 <div className="swiper-wrapper">
-                  {PRODUCTS.map((product) => (
-                    <div key={product.slug} className="swiper-slide">
-                      <div className="hero-slide-inner">
-                        <div className="row align-items-center">
-                          <div className="col-lg-6">
-                            <div className="hero-content">
-                              <h2 className="title">
-                                <span data-lang="vi">{product.titleVi}</span>
-                                <span data-lang="en">{product.titleEn}</span>
-                              </h2>
-                              <p>
-                                <span data-lang="vi">{product.shortVi}</span>
-                                <span data-lang="en">{product.shortEn}</span>
-                              </p>
+                  {HERO_SLIDES.map((slide) => {
+                    const imgs = getHeroImages(slide.imageIndex);
+                    const productTitle = PRODUCTS[slide.imageIndex]?.titleEn ?? slide.titleEn;
+                    const isCover = "products" in slide && slide.products;
+                    return (
+                      <div key={slide.id} className={`swiper-slide hero-slide-${slide.id}`}>
+                        <div className="hero-slide-inner">
+                          <div className="row align-items-center">
+                            <div className="col-lg-6">
+                              <div className="hero-content-card">
+                                <div className="hero-content">
+                                  <h2 className="title">
+                                    <span data-lang="vi">{slide.titleVi}</span>
+                                    <span data-lang="en">{slide.titleEn}</span>
+                                  </h2>
+                                  <p className="hero-subline">
+                                    <span data-lang="vi">{slide.sublineVi}</span>
+                                    <span data-lang="en">{slide.sublineEn}</span>
+                                  </p>
+
+                                  {isCover && slide.products && (
+                                    <div className="hero-products hero-products-cards">
+                                      {slide.products.map((item, i) => (
+                                        <div key={i} className="hero-product-card">
+                                          <span className="hero-product-num">0{i + 1}</span>
+                                          <span className="hero-product-name">
+                                            <span data-lang="vi">{item.vi}</span>
+                                            <span data-lang="en">{item.en}</span>
+                                          </span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  )}
+
+                                  {"features" in slide && slide.features && (
+                                    <div className="hero-blocks">
+                                      <div className="hero-block">
+                                        <span className="hero-block-label" data-lang="vi">Tính năng</span>
+                                        <span className="hero-block-label" data-lang="en">Features</span>
+                                        <div className="hero-chips">
+                                          {slide.features.slice(0, 4).map((item, i) => (
+                                            <span key={i} className="hero-chip">
+                                              <span data-lang="vi">{item.vi}</span>
+                                              <span data-lang="en">{item.en}</span>
+                                            </span>
+                                          ))}
+                                        </div>
+                                      </div>
+                                      {"benefits" in slide && slide.benefits && (
+                                        <div className="hero-block">
+                                          <span className="hero-block-label" data-lang="vi">Lợi ích</span>
+                                          <span className="hero-block-label" data-lang="en">Benefits</span>
+                                          <div className="hero-chips">
+                                            {slide.benefits.slice(0, 4).map((item, i) => (
+                                              <span key={i} className="hero-chip hero-chip-alt">
+                                                <span data-lang="vi">{item.vi}</span>
+                                                <span data-lang="en">{item.en}</span>
+                                              </span>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      )}
+                                      {"tech" in slide && slide.tech && (
+                                        <div className="hero-block">
+                                          <span className="hero-block-label" data-lang="vi">Công nghệ</span>
+                                          <span className="hero-block-label" data-lang="en">Technology</span>
+                                          <div className="hero-chips">
+                                            {slide.tech.slice(0, 4).map((item, i) => (
+                                              <span key={i} className="hero-chip hero-chip-tech">
+                                                <span data-lang="vi">{item.vi}</span>
+                                                <span data-lang="en">{item.en}</span>
+                                              </span>
+                                            ))}
+                                          </div>
+                                        </div>
+                                      )}
+                                    </div>
+                                  )}
+
+                                  {("applications" in slide && slide.applications && slide.applications.length > 0) && (
+                                    <div className="hero-block hero-block-apps">
+                                      <span className="hero-block-label" data-lang="vi">Ứng dụng</span>
+                                      <span className="hero-block-label" data-lang="en">Applications</span>
+                                      <div className="hero-chips">
+                                        {slide.applications.slice(0, 6).map((item, i) => (
+                                          <span key={i} className="hero-chip hero-chip-app">
+                                            <span data-lang="vi">{item.vi}</span>
+                                            <span data-lang="en">{item.en}</span>
+                                          </span>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  )}
+
+                                  {"taglineVi" in slide && slide.taglineVi && (
+                                    <p className="hero-tagline">
+                                      <span data-lang="vi">{slide.taglineVi}</span>
+                                      <span data-lang="en">{(slide as { taglineEn: string }).taglineEn}</span>
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
                             </div>
-                          </div>
-                          <div className="col-lg-6">
-                            <div className="hero-images">
-                              <div className="images">
-                                {(((product as any).heroImgs as string[] | undefined) ?? [((product as any).heroImg ?? product.img) as string, product.img]).slice(0, 2).map((src, idx) => (
-                                  <div key={`${product.slug}-${idx}`} className="image-item">
-                                    <img src={`/assets/images/${src}`} alt={product.titleEn} />
-                                  </div>
-                                ))}
+                            <div className="col-lg-6">
+                              <div className="hero-images">
+                                <div className="images">
+                                  {imgs.map((src, idx) => (
+                                    <div key={`${slide.id}-${idx}`} className="image-item">
+                                      <img src={`/assets/images/${src}`} alt={productTitle} />
+                                    </div>
+                                  ))}
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div className="hero-slide-cta text-center" data-aos="fade-up" data-aos-delay="1100">
-                          <Link className="btn hero-cta-btn" href={`/product-details/${product.slug}`} prefetch={false}>
-                            <span data-lang="vi">Xem sản phẩm</span>
-                            <span data-lang="en">View Product</span>
-                          </Link>
+                          <div className="hero-slide-cta text-center" data-aos="fade-up" data-aos-delay="1100">
+                            <Link className="btn hero-cta-btn" href={slide.ctaLink} prefetch={false}>
+                              <span data-lang="vi">{slide.ctaTextVi}</span>
+                              <span data-lang="en">{slide.ctaTextEn}</span>
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
                 <div className="swiper-button-prev hero-carousel-btn-prev" aria-label="Previous slide"></div>
                 <div className="swiper-button-next hero-carousel-btn-next" aria-label="Next slide"></div>
@@ -512,11 +609,6 @@ export default function HomePage() {
                           <li>
                             <a href="#">
                               <i className="fab fa-facebook-f"></i>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fab fa-linkedin-in"></i>
                             </a>
                           </li>
                         </ul>

@@ -3337,6 +3337,28 @@ html[data-theme="dark"] .btn.btn-white::after {
   border-radius: 35px;
 }
 
+/* Lớp phủ gradient – thông tin và ảnh hòa quyện với nền */
+.techwix-hero-section-05 .techwix-hero-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 35px;
+  background: linear-gradient(
+    105deg,
+    rgba(2, 6, 23, 0.65) 0%,
+    rgba(2, 6, 23, 0.35) 45%,
+    rgba(2, 6, 23, 0.2) 70%,
+    rgba(2, 6, 23, 0.08) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .container,
+.techwix-hero-section-05 .techwix-hero-wrap .swiper-container {
+  position: relative;
+  z-index: 1;
+}
+
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content {
   position: relative;
   display: inline-block;
@@ -3473,8 +3495,8 @@ html[data-theme="dark"] .btn.btn-white::after {
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title {
-  font-size: 50px;
-  line-height: 58px;
+  font-size: 43px;
+  line-height: 49px;
   font-weight: 600;
   color: #ffffff;
   margin-top: 10px;
@@ -3491,6 +3513,161 @@ html[data-theme="dark"] .btn.btn-white::after {
   margin-top: 40px;
 }
 
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-tagline {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* Khối nội dung hòa vào nền – gradient nhẹ, blur mềm */
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content-card {
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.52) 0%,
+    rgba(15, 23, 42, 0.28) 50%,
+    rgba(15, 23, 42, 0.12) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 28px 32px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Hero subline */
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-subline {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* Cover: 3 sản phẩm dạng thẻ có số */
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-products.hero-products-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-product-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-product-card:hover {
+  background: rgba(8, 106, 216, 0.2);
+  border-color: rgba(8, 106, 216, 0.5);
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-product-num {
+  font-size: 12px;
+  font-weight: 700;
+  color: #086ad8;
+  letter-spacing: 0.02em;
+  min-width: 22px;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Product slides: khối Tính năng / Lợi ích / Công nghệ / Ứng dụng */
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-blocks {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-block {
+  margin-top: 0;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-block-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chip {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 14px;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(8, 106, 216, 0.25);
+  border: 1px solid rgba(8, 106, 216, 0.4);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chip-alt {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chip-tech {
+  background: rgba(168, 85, 247, 0.15);
+  border-color: rgba(168, 85, 247, 0.35);
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chip-app {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-block-apps {
+  margin-top: 18px;
+}
+
+@media only screen and (max-width: 991px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content-card {
+    padding: 22px 24px 20px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-subline {
+    font-size: 16px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-products.hero-products-cards {
+    flex-direction: column;
+    margin-top: 18px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-product-name {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content-card {
+    padding: 18px 20px 16px;
+    border-radius: 12px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-subline {
+    font-size: 15px;
+  }
+  .techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-chip {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
 /* Hero text: safe CSS fade-up on load (no JS dependency) */
 @keyframes heroFadeUpSoft {
   0% {
@@ -3503,7 +3680,12 @@ html[data-theme="dark"] .btn.btn-white::after {
   }
 }
 .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title,
-.techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content p,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-subline,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-products,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-blocks,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content .hero-block-apps,
+.techwix-hero-section-05 .techwix-hero-wrap .hero-content-card {
   animation: heroFadeUpSoft 0.7s ease-out both;
 }
 
@@ -3587,6 +3769,7 @@ html[data-theme="dark"] .btn.btn-white::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .techwix-hero-section-05 .techwix-hero-wrap .hero-images .images .image-item img {
@@ -3596,6 +3779,22 @@ html[data-theme="dark"] .btn.btn-white::after {
   object-position: center;
   display: block;
   border-radius: 16px;
+}
+
+/* Ảnh hòa nền – lớp phủ gradient nhẹ ở cạnh phải */
+.techwix-hero-section-05 .techwix-hero-wrap .hero-images .images {
+  position: relative;
+}
+.techwix-hero-section-05 .techwix-hero-wrap .hero-images .images::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80px;
+  background: linear-gradient(to left, rgba(2, 6, 23, 0.4), transparent);
+  pointer-events: none;
+  border-radius: 0 16px 16px 0;
 }
 
 /* Fix hero horizontal overflow on 560–770px (tablet / small screens) */
@@ -3657,8 +3856,8 @@ html[data-theme="dark"] .btn.btn-white::after {
 
 @media only screen and (max-width: 1199px) {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title {
-    font-size: 50px;
-    line-height: 60px;
+    font-size: 43px;
+    line-height: 51px;
   }
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
     font-size: 20px;
@@ -3678,8 +3877,8 @@ html[data-theme="dark"] .btn.btn-white::after {
 
 @media only screen and (max-width: 767px) {
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title {
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 34px;
+    line-height: 43px;
   }
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content p {
     font-size: 18px;
@@ -3691,8 +3890,8 @@ html[data-theme="dark"] .btn.btn-white::after {
     padding: 0 0;
   }
   .techwix-hero-section-05 .techwix-hero-wrap .hero-content .title {
-    font-size: 36px;
-    line-height: 45px;
+    font-size: 31px;
+    line-height: 38px;
   }
 }
 

@@ -575,7 +575,7 @@
                         slidesPerView: 1,
                         spaceBetween: 30,
                         loop: true,
-                        autoplay: { delay: 5000, disableOnInteraction: false },
+                        autoplay: { delay: 50000, disableOnInteraction: false },
                         pagination: paginationEl ? { el: paginationEl, clickable: true } : undefined,
                         navigation: (nextEl && prevEl) ? { nextEl: nextEl, prevEl: prevEl } : undefined,
                     });

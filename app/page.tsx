@@ -16,31 +16,55 @@ export default function HomePage() {
     <>
       {/* Hero - 4 slides: Cover, iVào, Bodycam AI, Surveillance Center */}
       <div id="hero" className="section techwix-hero-section-05">
-        <div className="techwix-hero-wrap" style={{ backgroundImage: "url(/assets/images/bg/hero-bg5.jpg)" }}>
+        <div className="techwix-hero-wrap">
           <div className="container">
             <div className="row align-items-center">
               <div className="swiper-container hero-carousel-active" style={{ width: "100%" }}>
                 <div className="swiper-wrapper">
-                  {HERO_SLIDES.map((slide) => {
+                  {HERO_SLIDES.slice(0, 1).map((slide, index) => {
                     const imgs = getHeroImages(slide.imageIndex);
                     const productTitle = PRODUCTS[slide.imageIndex]?.titleEn ?? slide.titleEn;
                     const isCover = "products" in slide && slide.products;
+                    const isFirstSlide = index === 0;
+
+                    if (isFirstSlide) {
+                      // Slide 1: image-only cover, image handles full display without cropping
+                      return (
+                        <div key={slide.id} className={`swiper-slide hero-slide-cover hero-slide-${slide.id}`}>
+                          <div className="hero-slide-inner hero-slide-cover-inner">
+                            <picture>
+                              <source
+                                srcSet="/assets/images/Hero/hero_slide1.png"
+                                media="(max-aspect-ratio: 3/4)"
+                              />
+                              <img
+                                src="/assets/images/Hero/hero_slide1_16_9.png"
+                                alt={slide.titleEn}
+                                className="hero-cover-image"
+                              />
+                            </picture>
+                          </div>
+                        </div>
+                      );
+                    }
+
                     return (
                       <div key={slide.id} className={`swiper-slide hero-slide-${slide.id}`}>
                         <div className="hero-slide-inner">
-                          <div className="row align-items-center">
-                            <div className="col-lg-6">
+                          <div className="hero-headline text-center">
+                            <h2 className="title">
+                              <span data-lang="vi">{slide.titleVi}</span>
+                              <span data-lang="en">{slide.titleEn}</span>
+                            </h2>
+                          </div>
+                          <div className="row align-items-stretch hero-row-two-cols">
+                            <div className="col-lg-7 col-hero-text">
                               <div className="hero-content-card">
                                 <div className="hero-content">
-                                  <h2 className="title">
-                                    <span data-lang="vi">{slide.titleVi}</span>
-                                    <span data-lang="en">{slide.titleEn}</span>
-                                  </h2>
                                   <p className="hero-subline">
                                     <span data-lang="vi">{slide.sublineVi}</span>
                                     <span data-lang="en">{slide.sublineEn}</span>
                                   </p>
-
                                   {isCover && slide.products && (
                                     <div className="hero-products hero-products-cards">
                                       {slide.products.map((item, i) => (
@@ -124,7 +148,7 @@ export default function HomePage() {
                                 </div>
                               </div>
                             </div>
-                            <div className="col-lg-6">
+                            <div className="col-lg-5 col-hero-images">
                               <div className="hero-images">
                                 <div className="images">
                                   {imgs.map((src, idx) => (
@@ -675,7 +699,7 @@ export default function HomePage() {
                     <img src="/assets/images/cta-icon2.png" alt="" />
                   </div>
                   <p><span data-lang="vi">Gọi cho chúng tôi để được tư vấn</span><span data-lang="en">Call Us For Any inquiry</span></p>
-                  <h3 className="number"><a href="tel:+84983835686" className="text-white text-decoration-none">+84 983 835 686</a></h3>
+                  <h3 className="number"><a href="tel:+84988478688" className="text-white text-decoration-none">0988 478 688</a></h3>
                   <Link className="btn mt-3" href="/contact"><span data-lang="vi">Liên hệ ngay</span><span data-lang="en">Contact Us</span></Link>
                 </div>
               </div>

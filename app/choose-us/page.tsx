@@ -198,7 +198,7 @@ export default function ChooseUsPage() {
                       <span data-lang="vi">Gọi cho chúng tôi để được tư vấn</span>
                       <span data-lang="en">Call us for any inquiry</span>
                     </p>
-                    <h3 className="number"><a href="tel:+84983835686" className="text-white text-decoration-none">+84 983 835 686</a></h3>
+                    <h3 className="number"><a href="tel:+84988478688" className="text-white text-decoration-none">0988 478 688</a></h3>
                   </div>
                 </div>
               </div>

@@ -19,13 +19,13 @@ export default function ContactPage() {
               <div className="col-lg-4 col-sm-6">
                 <div className="single-contact-info text-center">
                   <div className="info-icon">
-                    <a href="tel:+84983835686" aria-label="Call us at +84 983 835 686">
+                    <a href="tel:+84988478688" aria-label="Call us at 0988 478 688">
                       <img src="/assets/images/info-1.png" alt="" />
                     </a>
                   </div>
                   <div className="info-content">
                     <h5 className="title"><span data-lang="vi">Gọi cho chúng tôi</span><span data-lang="en">Give us a call</span></h5>
-                    <p><a href="tel:+84983835686">+84 983 835 686</a></p>
+                    <p><a href="tel:+84988478688">0988 478 688</a></p>
                   </div>
                 </div>
               </div>
